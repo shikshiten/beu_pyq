@@ -72,45 +72,53 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Top Navigation Bar */
+/* Sleek Compact Nothing-Style Top Bar */
 .nt-nav {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(14px);
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(14, 14, 14, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
 }
 
 body.light-mode .nt-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.94);
 }
 
 .nt-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 13.5px;
-  letter-spacing: 1.2px;
+  font-size: 12px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--text-primary);
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
 }
 
 .nt-red-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent-red);
-  box-shadow: 0 0 8px var(--accent-red);
+  box-shadow: 0 0 6px var(--accent-red);
+  flex-shrink: 0;
   display: inline-block;
   animation: pulse-dot 2.5s infinite;
 }
@@ -123,7 +131,8 @@ body.light-mode .nt-nav {
 .nt-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .nt-btn {
@@ -132,27 +141,46 @@ body.light-mode .nt-nav {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   background: var(--btn-bg);
-  border: 1px solid var(--btn-border);
+  border: 1px solid var(--border-color);
   color: var(--text-primary);
-  padding: 7px 14px;
-  border-radius: 20px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
 .nt-btn:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  border-color: var(--text-primary);
+  border-color: var(--border-light);
 }
 
 .nt-btn.active {
   background: var(--text-primary);
   color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+  .nt-nav {
+    padding: 0 10px;
+    height: 44px;
+    gap: 6px;
+  }
+  .nt-brand {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+  }
+  .nt-btn {
+    height: 28px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
 }
 
 /* Main Layout */

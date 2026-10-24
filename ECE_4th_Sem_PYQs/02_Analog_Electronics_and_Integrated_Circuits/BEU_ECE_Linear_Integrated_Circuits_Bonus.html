@@ -39,14 +39,14 @@ MathJax = {
   --bg-secondary: #0d0d0d;
   --bg-card: #121212;
   --bg-card-hover: #181818;
-  --border-color: #262626;
+  --border-color: #242424;
   --border-light: #333333;
   --text-primary: #f5f5f5;
   --text-secondary: #8e8e93;
   --text-muted: #555555;
   --accent-red: #d71921;
   --btn-bg: #1c1c1c;
-  --btn-border: #333333;
+  --btn-border: #2e2e2e;
   --font-main: 'Atyp', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
   --dot-color: rgba(255, 255, 255, 0.08);
@@ -71,7 +71,7 @@ body.light-mode {
 html {
   font-size: 15px;
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 65px;
 }
 
 body {
@@ -86,44 +86,72 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Nothing-style Top Bar */
+/* ============================================================
+   SLEEK COMPACT NOTHING-STYLE TOP NAVBAR (FIXED HEIGHT, NO WRAP)
+   ============================================================ */
 .nt-nav {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(12px);
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(14, 14, 14, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
 }
 
 body.light-mode .nt-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.94);
 }
 
-.nt-brand {
+.nt-nav-left {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.nt-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
   color: var(--text-primary);
   text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.nt-nav-back:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .nt-red-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent-red);
-  box-shadow: 0 0 8px var(--accent-red);
+  box-shadow: 0 0 6px var(--accent-red);
+  flex-shrink: 0;
   display: inline-block;
   animation: pulse-dot 2.5s infinite;
 }
@@ -133,46 +161,95 @@ body.light-mode .nt-nav {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-.nt-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.nt-nav-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
 }
 
-.nt-btn {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background: var(--btn-bg);
-  border: 1px solid var(--btn-border);
-  color: var(--text-primary);
-  padding: 6px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
+.nt-nav-right {
+  display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+}
+
+.nt-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
-.nt-btn:hover {
+.nt-nav-btn:hover {
+  border-color: var(--border-light);
+}
+
+.nt-nav-btn.nt-btn-pdf {
   background: var(--text-primary);
   color: var(--bg-primary);
   border-color: var(--text-primary);
 }
 
-.nt-btn.active {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+.nt-nav-btn.nt-btn-pdf:hover {
+  opacity: 0.9;
+}
+
+/* Mobile responsive compact styling */
+@media (max-width: 480px) {
+  .nt-nav {
+    padding: 0 8px;
+    height: 44px;
+    gap: 6px;
+  }
+  .nt-nav-back {
+    height: 28px;
+    padding: 0 8px;
+  }
+  .nt-nav-back .back-text {
+    display: none; /* Just show the sleek arrow */
+  }
+  .nt-nav-btn {
+    height: 28px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
+  .theme-text {
+    display: none; /* Just show the sun/moon icon */
+  }
+  .nt-nav-title {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+  }
 }
 
 /* Container */
 .nt-container {
   max-width: 900px;
-  margin: 20px auto;
-  padding: 0 16px;
+  margin: 16px auto;
+  padding: 0 14px;
 }
 
 /* Paper Card Header */
@@ -182,7 +259,6 @@ body.light-mode .nt-nav {
   border-radius: 18px;
   padding: 24px 20px;
   margin-bottom: 24px;
-  transition: border-color 0.2s ease;
 }
 
 .paper-header {
@@ -327,7 +403,6 @@ body.light-mode .nt-nav {
   background: var(--text-primary);
   color: var(--bg-primary);
   border-color: var(--text-primary);
-  transform: translateY(-1px);
 }
 
 .ask-ai-btn:active {
@@ -423,11 +498,11 @@ mjx-container {
   vertical-align: middle;
 }
 
-/* AI MODAL (NOTHING STYLE BOTTOM SHEET / DIALOG) */
+/* AI MODAL */
 .nt-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   z-index: 10000;
   display: flex;
@@ -575,7 +650,7 @@ mjx-container {
   opacity: 1;
 }
 
-/* Discreet Minimalist Footer */
+/* Discreet Footer */
 .nt-footer {
   text-align: center;
   padding: 30px 16px 15px 16px;
@@ -603,14 +678,14 @@ mjx-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
   color: var(--text-primary);
   box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -636,16 +711,31 @@ mjx-container {
 <body>
 
 <header class="nt-nav">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../../index.html" class="nt-btn" title="Back to Hub"><span>← HUB</span></a>
-        <a href="../../index.html" class="nt-brand">
-            <span class="nt-red-dot"></span>
-            <span>BEU ECE 4TH SEM</span>
-        </a>
+    <div class="nt-nav-left">
+        
+    <a href="../../index.html" class="nt-nav-back" title="Back to Hub">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span class="back-text">HUB</span>
+    </a>
+    
+        <span class="nt-red-dot"></span>
+        <span class="nt-nav-title">BEU ECE 4TH SEM</span>
     </div>
-    <div class="nt-controls">
-        <button id="theme-toggle" class="nt-btn">☀️ LIGHT</button>
-        <a href="https://files.catbox.moe/4avvs6.pdf" target="_blank" class="nt-btn active" title="Download PDF"><span>📥 PDF</span></a>
+    <div class="nt-nav-right">
+        <button id="theme-toggle" class="nt-nav-btn" title="Toggle Theme">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-text">LIGHT</span>
+        </button>
+        
+    <a href="https://files.catbox.moe/4avvs6.pdf" target="_blank" class="nt-nav-btn nt-btn-pdf" title="Download PDF">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        <span>PDF</span>
+    </a>
+    
     </div>
 </header>
 
@@ -653,17 +743,17 @@ mjx-container {
     
         <div class="nt-paper-card" style="text-align: center; margin-bottom: 24px;">
             <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase;">BIHAR ENGINEERING UNIVERSITY &bull; PATNA</div>
-            <h1 style="font-size: clamp(20px, 4.5vw, 26px); font-weight: 800; text-transform: uppercase; margin: 8px 0;">Analog Electronics & Integrated Circuits &bull; 2020 (Bonus)</h1>
-            <div style='font-family: var(--font-mono); font-size: 12px; color: var(--accent-red); margin-top: 6px;'>EXAM DATE: Saturday, 31 Oct 2026 (2:00 PM - 5:00 PM)</div>
+            <h1 style="font-size: clamp(19px, 4.5vw, 24px); font-weight: 800; text-transform: uppercase; margin: 8px 0;">Analog Electronics & Integrated Circuits &bull; 2020 (Bonus)</h1>
+            <div style='font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-red); margin-top: 6px;'>EXAM DATE: Saturday, 31 Oct 2026 (2:00 PM - 5:00 PM)</div>
             
-            <div style="overflow-x: auto; margin-top: 20px;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 450px;">
+            <div style="overflow-x: auto; margin-top: 18px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; min-width: 440px;">
                     <thead>
                         <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 8px; text-align: center;">YEAR</th>
-                            <th style="padding: 8px; text-align: left;">PAPER TITLE</th>
-                            <th style="padding: 8px; text-align: center;">CODE</th>
-                            <th style="padding: 8px; text-align: center;">EXAM SESSION</th>
+                            <th style="padding: 7px; text-align: center;">YEAR</th>
+                            <th style="padding: 7px; text-align: left;">PAPER TITLE</th>
+                            <th style="padding: 7px; text-align: center;">CODE</th>
+                            <th style="padding: 7px; text-align: center;">EXAM SESSION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -864,17 +954,14 @@ function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');
     if (!qBlock) return;
     
-    // Extract question content
     const qTitle = qBlock.querySelector('.question-title span')?.innerText || '';
     const qBody = qBlock.querySelector('.question-body')?.innerText || '';
     activeQuestionText = (qTitle + '\n\n' + qBody).trim();
     
-    // Set preview
     document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
     
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear explanations, formulas, derivations and final answers:\n\n${activeQuestionText}`;
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
     
-    // Setup AI URLs
     document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
     document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
     document.getElementById('btnClaude').href = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
@@ -914,7 +1001,6 @@ function shareQuestion() {
     }
 }
 
-// Close on backdrop click
 document.getElementById('aiModal').addEventListener('click', (e) => {
     if (e.target.id === 'aiModal') closeAiModal();
 });
@@ -923,18 +1009,22 @@ document.getElementById('aiModal').addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
+        const themeIcon = themeBtn.querySelector('.theme-icon');
+        const themeText = themeBtn.querySelector('.theme-text');
+        
         if (localStorage.getItem('nt-theme') === 'light') {
             document.body.classList.add('light-mode');
-            themeBtn.innerText = '🌙 DARK';
+            if (themeIcon) themeIcon.textContent = '🌙';
+            if (themeText) themeText.textContent = 'DARK';
         }
         themeBtn.addEventListener('click', () => {
             const isLight = document.body.classList.toggle('light-mode');
-            themeBtn.innerText = isLight ? '🌙 DARK' : '☀️ LIGHT';
+            if (themeIcon) themeIcon.textContent = isLight ? '🌙' : '☀️';
+            if (themeText) themeText.textContent = isLight ? 'DARK' : 'LIGHT';
             localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
         });
     }
 
-    // Scroll to top
     const fabTop = document.getElementById('fab-top');
     if (fabTop) {
         window.addEventListener('scroll', () => {
