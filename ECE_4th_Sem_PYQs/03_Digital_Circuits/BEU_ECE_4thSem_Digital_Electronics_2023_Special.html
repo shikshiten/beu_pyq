@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#000000">
+<title>Digital Electronics (2023 (DE Special)) &bull; BEU PYQ</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Atyp';
+  src: local('Atyp'), local('Atyp Display'), local('Space Grotesk');
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #121212;
+  --bg-card-hover: #181818;
+  --border-color: #262626;
+  --border-light: #333333;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8e8e93;
+  --text-muted: #555555;
+  --accent-red: #d71921;
+  --btn-bg: #1c1c1c;
+  --btn-border: #333333;
+  --font-main: 'Atyp', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --dot-color: rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode {
+  --bg-primary: #f7f7f8;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfc;
+  --border-color: #e5e5e5;
+  --border-light: #d4d4d4;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent-red: #d71921;
+  --btn-bg: #f0f0f2;
+  --btn-border: #d4d4d4;
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0 0 60px 0;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Nothing-style Top Bar */
+.nt-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.light-mode .nt-nav {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.nt-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nt-red-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  display: inline-block;
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.nt-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.nt-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-btn.active {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Container */
+.nt-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Paper Card Header */
+.nt-paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.paper-header {
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.paper-university {
+  font-size: clamp(16px, 4.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.paper-exam-title {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 3vw, 13.5px);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 6px 0;
+  letter-spacing: 0.5px;
+}
+
+.paper-header h3 {
+  font-size: clamp(15px, 4vw, 20px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 8px 0 !important;
+  color: var(--text-primary) !important;
+}
+
+.paper-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.paper-details span {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Instructions */
+.paper-instructions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.paper-instructions h4 {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  color: var(--text-primary);
+}
+
+.paper-instructions ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.paper-instructions li {
+  margin-bottom: 3px;
+}
+
+/* Question Block */
+.question-block {
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease;
+}
+
+.question-block:hover {
+  border-color: var(--border-light);
+}
+
+.question-title {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.question-title .marks {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ASK AI BUTTON */
+.ask-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.ask-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.ask-ai-btn:active {
+  transform: scale(0.95);
+}
+
+.question-body {
+  margin: 0;
+  padding: 8px 14px 12px 24px;
+}
+
+.sub-question {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.sub-question:last-child {
+  border-bottom: none;
+}
+
+.sub-question p {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+/* MCQ Options */
+.options-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 8px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .options-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+}
+
+.options-list li {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.options-list li:hover {
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.options-list li::before {
+  content: counter(list-item, lower-roman);
+  counter-increment: list-item;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+/* Diagrams */
+.question-diagram {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
+  margin: 12px auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 6px;
+  background: #ffffff;
+}
+
+/* MathJax Formulas Scrollable */
+mjx-container {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: inline-block !important;
+  padding: 2px 0;
+  vertical-align: middle;
+}
+
+/* AI MODAL (NOTHING STYLE BOTTOM SHEET / DIALOG) */
+.nt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.nt-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 640px) {
+  .nt-modal-backdrop {
+    align-items: center;
+  }
+}
+
+.nt-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .nt-modal {
+    border-radius: 20px;
+    transform: scale(0.95);
+  }
+}
+
+.nt-modal-backdrop.open .nt-modal {
+  transform: translateY(0) scale(1);
+}
+
+.nt-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.nt-modal-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nt-question-preview {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  max-height: 120px;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.nt-ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.nt-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.nt-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-ai-btn.full-width {
+  grid-column: span 2;
+}
+
+/* Toast */
+.nt-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.nt-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Discreet Minimalist Footer */
+.nt-footer {
+  text-align: center;
+  padding: 30px 16px 15px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+.nt-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nt-footer a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+/* Floating Action Button (Back to top) */
+.fab-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.fab-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fab-top:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+</style>
+</head>
+<body>
+
+<header class="nt-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../../index.html" class="nt-btn" title="Back to Hub"><span>← HUB</span></a>
+        <a href="../../index.html" class="nt-brand">
+            <span class="nt-red-dot"></span>
+            <span>BEU ECE 4TH SEM</span>
+        </a>
+    </div>
+    <div class="nt-controls">
+        <button id="theme-toggle" class="nt-btn">☀️ LIGHT</button>
+        <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Electronics_2023_Special.pdf" target="_blank" class="nt-btn active" title="Download PDF"><span>📥 PDF</span></a>
+    </div>
+</header>
+
+<main class="nt-container">
+    
+        <div class="nt-paper-card" style="text-align: center; margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase;">BIHAR ENGINEERING UNIVERSITY &bull; PATNA</div>
+            <h1 style="font-size: clamp(20px, 4.5vw, 26px); font-weight: 800; text-transform: uppercase; margin: 8px 0;">Digital Circuits &bull; 2023 (DE Special)</h1>
+            <div style='font-family: var(--font-mono); font-size: 12px; color: var(--accent-red); margin-top: 6px;'>EXAM DATE: Tuesday, 3 Nov 2026 (2:00 PM - 5:00 PM)</div>
+            
+            <div style="overflow-x: auto; margin-top: 20px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 450px;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+                            <th style="padding: 8px; text-align: center;">YEAR</th>
+                            <th style="padding: 8px; text-align: left;">PAPER TITLE</th>
+                            <th style="padding: 8px; text-align: center;">CODE</th>
+                            <th style="padding: 8px; text-align: center;">EXAM SESSION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style='text-align:center;'><b>2023 (DE Special)</b></td><td>Digital Electronics</td><td style='text-align:center;'><code>100403</code></td><td style='text-align:center;'>Special Examination - 2023</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    <section class="info-card paper-section " data-subject="de">
+<header class="paper-header">
+<div class="paper-university">Bihar Engineering University, Patna</div>
+<div class="paper-exam-title">Special Examination - 2023</div>
+<h3 style="color: var(--accent); margin: 8px 0 0;">Digital Electronics</h3>
+<div class="paper-details"><span>Time: 03 Hours</span><span>Code: 100403</span><span>Full Marks: 70</span>
+</div>
+</header>
+<div class="paper-instructions">
+<h4>Instructions:</h4>
+<ol>
+<li>The marks are indicated in the right-hand margin.</li>
+<li>There are NINE questions in this paper.</li>
+<li>Attempt FIVE questions in all.</li>
+<li>Question No. 1 is compulsory.</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.1 Answer any seven question only:</span><span class="marks">[14]</span>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Define Dynamic RAM.</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>The resolution of a 10-bit AD converter for an input range of 10 V is approximately _________</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>The parameter through which 16 distinct values can be represented is known as _________</p>
+</li>
+<li class="sub-question">
+<p>Define Multiplexing.</p>
+</li>
+<li class="sub-question">
+<p>Write the significance of Truth table.</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Write the differences between Combinational and Sequential circuit.</p>
+</li>
+<li class="sub-question">
+<p>A hexadecimal odometer displays F52F. The next reading will be _________</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>The basic property of Sequential circuit is _________</p>
+</li>
+<li class="sub-question">
+<p>How many entries will be in the truth table of a 4-input NAND gate?</p>
+</li>
+<li class="sub-question">
+<p>What is Dual Slope ADC?</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>What are weighted, non-weighted, cyclic and self-complementary codes? Explain each with examples.
+                    </p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Design a BCD to 7-segment display decoder circuit using logic gates.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Design a 3-bit parallel comparator A/D convertor that provides output in 2's complement format.
+                    </p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Design full adder using 8:1 mux.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Design full adder using 4:1 mux.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>What is binary shift register? Write down their application.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Minimize the following expression using k-map<br/>
+                        \( f(P,Q,R,S) = \Sigma m(0,1,4,5,7,12,13) \)</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Describe the procedure to design Mod-6 counter.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<ul class="options-list" style="list-style-type: lower-roman; padding-left: 20px;">
+<li>RAM</li>
+<li>ROM</li>
+<li>CMOS logic</li>
+<li>Operation of TTL logic circuit working as NAND Gate</li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+</main>
+
+<button id="fab-top" class="fab-top" title="Scroll to Top">↑</button>
+
+
+<!-- NOTHING STYLE AI SOLVER MODAL -->
+<div id="aiModal" class="nt-modal-backdrop">
+    <div class="nt-modal">
+        <div class="nt-modal-header">
+            <div class="nt-modal-title">
+                <span class="nt-red-dot"></span>
+                <span>AI QUESTION SOLVER</span>
+            </div>
+            <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
+        </div>
+        
+        <div id="aiQuestionPreview" class="nt-question-preview"></div>
+        
+        <div class="nt-ai-grid">
+            <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
+                <span>⚡ ChatGPT</span>
+            </a>
+            <a id="btnGemini" target="_blank" class="nt-ai-btn">
+                <span>🔮 Google Gemini</span>
+            </a>
+            <a id="btnClaude" target="_blank" class="nt-ai-btn">
+                <span>🧠 Claude AI</span>
+            </a>
+            <a id="btnDeepSeek" target="_blank" class="nt-ai-btn">
+                <span>🐬 DeepSeek</span>
+            </a>
+            <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
+                <span>📱 Open in AI App (Share)</span>
+            </button>
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
+                <span>📋 Copy Solution Prompt</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="ntToast" class="nt-toast">Prompt copied to clipboard!</div>
+
+<script>
+let activeQuestionText = '';
+
+function openAiModal(btn) {
+    const qBlock = btn.closest('.question-block');
+    if (!qBlock) return;
+    
+    // Extract question content
+    const qTitle = qBlock.querySelector('.question-title span')?.innerText || '';
+    const qBody = qBlock.querySelector('.question-body')?.innerText || '';
+    activeQuestionText = (qTitle + '\n\n' + qBody).trim();
+    
+    // Set preview
+    document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
+    
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear explanations, formulas, derivations and final answers:\n\n${activeQuestionText}`;
+    
+    // Setup AI URLs
+    document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
+    document.getElementById('btnClaude').href = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnDeepSeek').href = `https://chat.deepseek.com/`;
+    
+    document.getElementById('aiModal').classList.add('open');
+}
+
+function closeAiModal() {
+    document.getElementById('aiModal').classList.remove('open');
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('ntToast');
+    toast.innerText = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+function copyAiPrompt() {
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    navigator.clipboard.writeText(prompt).then(() => {
+        showToast('✓ Solution prompt copied to clipboard!');
+    }).catch(() => {
+        showToast('Failed to copy');
+    });
+}
+
+function shareQuestion() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'BEU ECE Question',
+            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+        }).catch(() => {});
+    } else {
+        copyAiPrompt();
+    }
+}
+
+// Close on backdrop click
+document.getElementById('aiModal').addEventListener('click', (e) => {
+    if (e.target.id === 'aiModal') closeAiModal();
+});
+
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        if (localStorage.getItem('nt-theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeBtn.innerText = '🌙 DARK';
+        }
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-mode');
+            themeBtn.innerText = isLight ? '🌙 DARK' : '☀️ LIGHT';
+            localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    // Scroll to top
+    const fabTop = document.getElementById('fab-top');
+    if (fabTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) fabTop.classList.add('show');
+            else fabTop.classList.remove('show');
+        });
+        fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+});
+</script>
+
+
+<footer class="nt-footer">
+    <div>Credit: Apna BEU &bull; Crafted by <a href="https://stutosed.vercel.app" target="_blank">Stutosed</a></div>
+</footer>
+
+</body>
+</html>

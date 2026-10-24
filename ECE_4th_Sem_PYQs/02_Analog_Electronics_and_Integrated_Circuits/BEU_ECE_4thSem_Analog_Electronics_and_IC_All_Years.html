@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#000000">
+<title>Analog Electronics & Integrated Circuits (All Years) &bull; BEU PYQ</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Atyp';
+  src: local('Atyp'), local('Atyp Display'), local('Space Grotesk');
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #121212;
+  --bg-card-hover: #181818;
+  --border-color: #262626;
+  --border-light: #333333;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8e8e93;
+  --text-muted: #555555;
+  --accent-red: #d71921;
+  --btn-bg: #1c1c1c;
+  --btn-border: #333333;
+  --font-main: 'Atyp', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --dot-color: rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode {
+  --bg-primary: #f7f7f8;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfc;
+  --border-color: #e5e5e5;
+  --border-light: #d4d4d4;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent-red: #d71921;
+  --btn-bg: #f0f0f2;
+  --btn-border: #d4d4d4;
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0 0 60px 0;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Nothing-style Top Bar */
+.nt-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.light-mode .nt-nav {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.nt-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nt-red-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  display: inline-block;
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.nt-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.nt-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-btn.active {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Container */
+.nt-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Paper Card Header */
+.nt-paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.paper-header {
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.paper-university {
+  font-size: clamp(16px, 4.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.paper-exam-title {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 3vw, 13.5px);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 6px 0;
+  letter-spacing: 0.5px;
+}
+
+.paper-header h3 {
+  font-size: clamp(15px, 4vw, 20px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 8px 0 !important;
+  color: var(--text-primary) !important;
+}
+
+.paper-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.paper-details span {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Instructions */
+.paper-instructions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.paper-instructions h4 {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  color: var(--text-primary);
+}
+
+.paper-instructions ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.paper-instructions li {
+  margin-bottom: 3px;
+}
+
+/* Question Block */
+.question-block {
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease;
+}
+
+.question-block:hover {
+  border-color: var(--border-light);
+}
+
+.question-title {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.question-title .marks {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ASK AI BUTTON */
+.ask-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.ask-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.ask-ai-btn:active {
+  transform: scale(0.95);
+}
+
+.question-body {
+  margin: 0;
+  padding: 8px 14px 12px 24px;
+}
+
+.sub-question {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.sub-question:last-child {
+  border-bottom: none;
+}
+
+.sub-question p {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+/* MCQ Options */
+.options-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 8px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .options-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+}
+
+.options-list li {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.options-list li:hover {
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.options-list li::before {
+  content: counter(list-item, lower-roman);
+  counter-increment: list-item;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+/* Diagrams */
+.question-diagram {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
+  margin: 12px auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 6px;
+  background: #ffffff;
+}
+
+/* MathJax Formulas Scrollable */
+mjx-container {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: inline-block !important;
+  padding: 2px 0;
+  vertical-align: middle;
+}
+
+/* AI MODAL (NOTHING STYLE BOTTOM SHEET / DIALOG) */
+.nt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.nt-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 640px) {
+  .nt-modal-backdrop {
+    align-items: center;
+  }
+}
+
+.nt-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .nt-modal {
+    border-radius: 20px;
+    transform: scale(0.95);
+  }
+}
+
+.nt-modal-backdrop.open .nt-modal {
+  transform: translateY(0) scale(1);
+}
+
+.nt-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.nt-modal-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nt-question-preview {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  max-height: 120px;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.nt-ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.nt-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.nt-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-ai-btn.full-width {
+  grid-column: span 2;
+}
+
+/* Toast */
+.nt-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.nt-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Discreet Minimalist Footer */
+.nt-footer {
+  text-align: center;
+  padding: 30px 16px 15px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+.nt-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nt-footer a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+/* Floating Action Button (Back to top) */
+.fab-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.fab-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fab-top:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+</style>
+</head>
+<body>
+
+<header class="nt-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="../../index.html" class="nt-btn" title="Back to Hub"><span>← HUB</span></a>
+        <a href="../../index.html" class="nt-brand">
+            <span class="nt-red-dot"></span>
+            <span>BEU ECE 4TH SEM</span>
+        </a>
+    </div>
+    <div class="nt-controls">
+        <button id="theme-toggle" class="nt-btn">☀️ LIGHT</button>
+        <a href="https://files.catbox.moe/j42oi9.pdf" target="_blank" class="nt-btn active" title="Download PDF"><span>📥 PDF</span></a>
+    </div>
+</header>
+
+<main class="nt-container">
+    
+        <div class="nt-paper-card" style="text-align: center; margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase;">BIHAR ENGINEERING UNIVERSITY &bull; PATNA</div>
+            <h1 style="font-size: clamp(20px, 4.5vw, 26px); font-weight: 800; text-transform: uppercase; margin: 8px 0;">Analog Electronics & Integrated Circuits</h1>
+            <div style='font-family: var(--font-mono); font-size: 12px; color: var(--accent-red); margin-top: 6px;'>EXAM DATE: Saturday, 31 Oct 2026 (2:00 PM - 5:00 PM)</div>
+            
+            <div style="overflow-x: auto; margin-top: 20px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 450px;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+                            <th style="padding: 8px; text-align: center;">YEAR</th>
+                            <th style="padding: 8px; text-align: left;">PAPER TITLE</th>
+                            <th style="padding: 8px; text-align: center;">CODE</th>
+                            <th style="padding: 8px; text-align: center;">EXAM SESSION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style='text-align:center;'><b>2024</b></td><td>Analog Circuits</td><td style='text-align:center;'><code>104401</code></td><td style='text-align:center;'>B.Tech 4th Semester Examination, 2024</td></tr><tr><td style='text-align:center;'><b>2023</b></td><td>ECE Analog Circuit</td><td style='text-align:center;'><code>104401</code></td><td style='text-align:center;'>End Semester Examination - 2023 Semester-IV</td></tr><tr><td style='text-align:center;'><b>2022</b></td><td>Analog Electronic Circuits</td><td style='text-align:center;'><code>110401</code></td><td style='text-align:center;'>B.Tech 4th Semester Exam., 2022</td></tr><tr><td style='text-align:center;'><b>2020 (Bonus)</b></td><td>Linear Integrated Circuits and Applications</td><td style='text-align:center;'><code>104504</code></td><td style='text-align:center;'>B.Tech 5th Semester Exam., 2020 (New Course)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    <section class="info-card paper-section " data-subject="analog">
+<header class="paper-header">
+<div class="paper-university">Bihar Engineering University, Patna</div>
+<div class="paper-exam-title">B.Tech 4th Semester Examination, 2024</div>
+<h3 style="color: var(--accent); margin: 8px 0 0;">Analog Circuits</h3>
+<div class="paper-details"><span>Time: 03 Hours</span><span>Code: 104401</span><span>Full Marks: 70</span>
+</div>
+</header>
+<div class="paper-instructions">
+<h4>Instructions:</h4>
+<ol>
+<li>The marks are indicated in the right-hand margin.</li>
+<li>There are NINE questions in this paper.</li>
+<li>Attempt FIVE questions in all.</li>
+<li>Question No. 1 is compulsory.</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.1 Choose the correct option/answer the following (Any seven question
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>JFET can be operated with</p>
+<ol class="options-list">
+<li>negative gate only</li>
+<li>gate voltage only</li>
+<li>positive as well as negative gate voltage</li>
+<li>none of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>Which power amplifier has the highest collector efficiency</p>
+<ol class="options-list">
+<li>C</li>
+<li>A</li>
+<li>B</li>
+<li>AB</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>Which amplifier is used for 180-degree phase shift</p>
+<ol class="options-list">
+<li>differential amplifier</li>
+<li>non inverting amplifier</li>
+<li>inverting amplifier</li>
+<li>None of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>A MOSFET has three terminals, namely</p>
+<ol class="options-list">
+<li>cathode, anode, grid</li>
+<li>source, gate, drain</li>
+<li>emitter, base, collector</li>
+<li>none of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>The maximum efficiency of resistance loaded class B power amplifier is</p>
+<ol class="options-list">
+<li>5%</li>
+<li>50%</li>
+<li>30%</li>
+<li>None of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>A JFET is also called _______ transistor</p>
+<ol class="options-list">
+<li>unipolar</li>
+<li>bipolar</li>
+<li>injunction</li>
+<li>none of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>In a phase shift oscillator, the frequency determining elements are</p>
+<ol class="options-list">
+<li>L and C</li>
+<li>R, L and C</li>
+<li>R and C</li>
+<li>None of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>The leakage current across a pn junction is due to</p>
+<ol class="options-list">
+<li>Minority carriers</li>
+<li>Majority carriers</li>
+<li>Junction capacitance</li>
+<li>None of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>An oscillator converts</p>
+<ol class="options-list">
+<li>a.c. power into d.c. power</li>
+<li>a.c. power into a.c. power</li>
+<li>mechanical power into a.c. power</li>
+<li>none of the above</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>In a transistor</p>
+<ol class="options-list">
+<li>\( I_E = I_C - I_B \)</li>
+<li>\( I_B = I_C + I_E \)</li>
+<li>\( I_C = I_E + I_B \)</li>
+<li>\( I_E = I_C + I_B \)</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>In a full wave rectifier, the input is from 30-0-30V transformer. The load and diode forward
+                        resistances are 100\( \Omega \) and 10\( \Omega \) respectively. Calculate the average
+                        voltage, dc output power, ac input power, rectification efficiency and percentage regulation.
+                    </p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain the working of positive clamping circuit.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Draw the common emitter circuit and sketch the input and output characteristics. Also explain
+                        active region, cutoff region and saturation region by indicating them on the characteristic
+                        curve.</p>
+</li>
+<li class="sub-question">
+<p>With a neat circuit diagram explain the Voltage Divider Bias circuit by giving its exact
+                        analysis.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Explain the characteristics of an Ideal Op-Amp. Mention some of the applications of Op-Amp.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain R-2R ladder DAC with example?</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Explain Successive type ADC with neat circuit diagram.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Describe the construction and operation of JFET and draw its characteristics.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="4" data-stars="★★★★">
+<p>Explain Colpitts oscillator with Circuit diagram and derive its frequency.</p>
+</li>
+<li class="sub-question" data-freq="4" data-stars="★★★★">
+<p>Explain RC coupled transistor amplifier with neat circuit diagram in a middle frequency Range.
+                    </p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="4" data-stars="★★★★">
+<p>Explain RC- phase shift oscillator using op-amp and derive its frequency.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Describe the construction and operation of depletion type MOSFET and draw its characteristics.
+                    </p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Describe class A Power Amplifier. Derive the expression for its maximum conversion Efficiency.
+                    </p>
+</li>
+<li class="sub-question" data-freq="4" data-stars="★★★★">
+<p>Explain Wien bridge oscillator using op-amp and derive its frequency.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Explain MOSFET as an amplifier?</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>Describe class B Power Amplifier. Derive the expression for its maximum conversion Efficiency.
+                    </p>
+</li>
+</ol>
+</div>
+</section>
+<section class="info-card paper-section " data-subject="analog">
+<header class="paper-header">
+<div class="paper-university">Bihar Engineering University, Patna</div>
+<div class="paper-exam-title">End Semester Examination - 2023 Semester-IV</div>
+<h3 style="color: var(--accent); margin: 8px 0 0;">ECE Analog Circuit</h3>
+<div class="paper-details"><span>Time: 03 Hours</span><span>Code: 104401</span><span>Full Marks: 70</span>
+</div>
+</header>
+<div class="paper-instructions">
+<h4>Instructions:</h4>
+<ol>
+<li>The marks are indicated in the right-hand margin.</li>
+<li>There are NINE questions in this paper.</li>
+<li>Attempt FIVE questions in all.</li>
+<li>Question No. 1 is compulsory.</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.1 Write the answer of the following (Any seven question
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Which of these are incorrect about Darlington amplifier?</p>
+<ol class="options-list">
+<li>It has a high input resistance</li>
+<li>The output resistance is low</li>
+<li>It has a unity voltage gain</li>
+<li>It is a current buffer</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>What is a cascade amplifier?</p>
+<ol class="options-list">
+<li>A cascade of two CE amplifiers</li>
+<li>A cascade of two CB amplifiers</li>
+<li>A cascade of CE and CB amplifiers</li>
+<li>A cascade of CB and CC amplifiers</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>What is the output of a class B amplifier for sinusoidal input?</p>
+<ol class="options-list">
+<li>Sinusoidal amplifier</li>
+<li>Half-sinusoidal</li>
+<li>Sinusoidal with higher frequency</li>
+<li>Square wave</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>In a class B amplifier, it is found that DC power is 25W, find the ac power.</p>
+<ol class="options-list">
+<li>10 W</li>
+<li>62.5 W</li>
+<li>25 W</li>
+<li>50 W</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>In an oscillator if phase of feedback is same as that of oscillation waveform then feedback is
+                        called</p>
+<ol class="options-list">
+<li>Positive feedback</li>
+<li>Negative feedback</li>
+<li>Cannot be predicted</li>
+<li>Either positive or negative depending upon frequency</li>
+</ol>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>For a MOSFET, the pinch-off voltage is -3V. Gate to source voltage is 20V. W/L ratio is 5.
+                        Process transconductance parameter is 40\( \mu A/V^2 \). Find drain to source current in
+                        saturation.</p>
+<ol class="options-list">
+<li>0.10 mA</li>
+<li>0.05mA</li>
+<li>- 0.05mA</li>
+<li>-50A</li>
+</ol>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>For a MOSFET, the pinch-off voltage is -3V. Gate to source voltage is 20V. W/L ratio is 5.
+                        Process transconductance parameter is 40\( \mu A/V^2 \). Find drain to source current in
+                        saturation.</p>
+<ol class="options-list">
+<li>1100 \( \Omega \)</li>
+<li>11000 \( \Omega \)</li>
+<li>900 \( \Omega \)</li>
+<li>110 \( \Omega \)</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>The hybrid \( \pi \) model is used for</p>
+<ol class="options-list">
+<li>Analysis of BJT for low frequency</li>
+<li>Analysis of BJT at high frequency</li>
+<li>Analysis of BJT for feedback</li>
+<li>Analysis of BJT for large signal</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>Which oscillator is characterized by a split capacitor in its tank circuit?</p>
+<ol class="options-list">
+<li>RC phase shift oscillator</li>
+<li>Colpitts oscillator</li>
+<li>Wien bridge oscillator</li>
+<li>none</li>
+</ol>
+</li>
+<li class="sub-question">
+<p>The gate voltage in a JFET at which drain current becomes zero is called</p>
+<ol class="options-list">
+<li>pinch-off voltage.</li>
+<li>saturation voltage</li>
+<li>active voltage.</li>
+<li>cut-off voltage.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Explain construction and working of Enhancement and Depletion type MOSFET.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>What is power amplifier. Explain Transformer coupled Class-A amplifier.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Barkhausen criteria play an important role while designing Oscillator justify. Explain Hartley
+                        and RC phase shift Oscillator.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Explain the effect of voltage series and voltage shunt feedback on gain &amp; impedance of amplifier.
+                    </p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>The BJT is connected as a CE amplifier. Determine \( Z_i \), \( Z_0 \), \( A_v \), \( A_i
+                        \) hybrid model.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Describe current mirror circuit in BJT. What are the condition to design current mirror circuit.
+                        Obtain the expression for current transfer ratio.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Derive the expression for voltage gain and current gain and B.W of multistage amplifier.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>In brief explain the working of voltage series and current series circuit. Explain the same in
+                        case of BJT.</p>
+</li>
+</ol>
+</div>
+</section>
+<section class="info-card paper-section " data-subject="analog">
+<header class="paper-header">
+<div class="paper-university">Bihar Engineering University, Patna</div>
+<div class="paper-exam-title">B.Tech 4th Semester Exam., 2022</div>
+<h3 style="color: var(--accent); margin: 8px 0 0;">Analog Electronic Circuits</h3>
+<div class="paper-details"><span>Time: 03 Hours</span><span>Code: 110401</span><span>Full Marks: 70</span>
+</div>
+</header>
+<div class="paper-instructions">
+<h4>Instructions:</h4>
+<ol>
+<li>The marks are indicated in the right-hand margin.</li>
+<li>There are NINE questions in this paper.</li>
+<li>Attempt FIVE questions in all.</li>
+<li>Question No. 1 is compulsory.</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.1 Attempt any seven from the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>What is avalanche multiplication?</p>
+</li>
+<li class="sub-question">
+<p>Compare CE, CC and CB for current gain, voltage gain, input and output impedance.</p>
+</li>
+<li class="sub-question">
+<p>Junction transistor is an active device. Justify.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Write the equation of a diode and draw its VI characteristics.</p>
+</li>
+<li class="sub-question">
+<p>What is early effect in bipolar junction transistors?</p>
+</li>
+<li class="sub-question">
+<p>Draw an npn transistor in CB configuration and draw its input characteristics.</p>
+</li>
+<li class="sub-question">
+<p>BJT has higher driving capability as compared to MOSFET. Justify.</p>
+</li>
+<li class="sub-question">
+<p>For an ideal negative feedback configuration, there is a virtual short circuit between the input
+                        terminals. Why?</p>
+</li>
+<li class="sub-question">
+<p>Draw a circuit which can be used as limiter or clamper or both.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Write brief notes on: (i) Avalanche breakdown (ii) Zener breakdown</p>
+</li>
+<li class="sub-question">
+<p>The saturation currents of the diodes are 1 \( \mu A \) and 2 \( \mu A \). The breakdown
+                        voltages of the diodes are the same and are equal to 100 V: (i) Calculate the current and
+                        voltage for each diode if V = 90 V and V = 110 V (ii) Repeat part (i) if each diode is shunted
+                        by 10 M\( \Omega \) resistor.</p>
+<img alt="Question Diagram" class="question-diagram" src="data:image/jpeg;base64,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"/>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>With reference to rectifying circuits, explain- (i) ripple factor (\( \gamma \)); (ii)
+                        transformer utility factor (TUF); (iii) peak inverse voltage (PIV); (iv) rectifier efficiency
+                        (\( \eta \)).</p>
+</li>
+<li class="sub-question">
+<p>For HW rectifier and capacitor filter- (i) draw the circuit diagram; (ii) draw the waveforms;
+                        (iii) give a brief explanation of the functioning of the circuit.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Draw Ebers Moll model for pnp transistor and show that transistor action is not possible by
+                        connecting two diodes back to back.</p>
+</li>
+<li class="sub-question">
+<p>For the transistor shown below, \( \alpha = 0.98 \) and \( V_{BB} = 0.7 \), find \( R_1 \)
+                        for an emitter current \( I_E = -2 mA \). Neglect \( I_{CO} \).</p>
+<img alt="Question Diagram" class="question-diagram" src="data:image/jpeg;base64,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"/>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Given the following measurements made at \( I_C = 5 mA \), \( V_{CE} = 10 V \) and at room
+                        temperature \( h_{fe} = 100 \), \( h_{ie} = 600 \Omega \), \( A_{ie} = 10 \) at 10 MHz,
+                        \( C_C = 3 pF \). Find \( f_T \), \( f_\alpha \), \( r_{b'e} \) and \( r_{bb'} \) for
+                        the transistor.</p>
+</li>
+<li class="sub-question">
+<p>A silicon transistor with \( \beta = h_{FE} = 100 \), \( V_{BE}(sat) = 0.8V \), \(
+                        V_{CE}(sat) = 0.2 V \) is used in the circuit shown. Find the minimum value of \( R_C \) for
+                        which transistor remains in saturation.</p>
+<img alt="Question Diagram" class="question-diagram" src="data:image/jpeg;base64,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"/>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Compare the performance of MOSFET and BJT.</p>
+</li>
+<li class="sub-question">
+<p>Explain the construction of p-channel MOSFET. Draw and explain both depletion and enhancement
+                        mode MOSFET.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>Calculate \( v_0 \) and the op-amp's output current as shown in the circuit and if \( E_i \)
+                        equals (i) +5 V and (ii) -2 V. For each situation, state if the op-amp sources or sinks current.
+                    </p>
+<img alt="Question Diagram" class="question-diagram" src="data:image/jpeg;base64,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"/>
+</li>
+<li class="sub-question">
+<p>(i) Design an inverting amplifier with a gain of -5 and an input resistance of 10 k\( \Omega
+                        \). (ii) Design a non-inverting amplifier with a gain of 5.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body">
+<li class="sub-question">
+<p>The circuit shown is required to supply on average voltage of 120 V. Determine the r.m.s. value
+                        of secondary voltage, average current delivered to the load, peak current through each diode and
+                        PIV of diodes.</p>
+<img alt="Question Diagram" class="question-diagram" src="data:image/jpeg;base64,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"/>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain different amplifiers with suitable example.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Precision comparator</p>
+</li>
+<li class="sub-question">
+<p>Zero crossing detector with hysteresis</p>
+</li>
+</ol>
+</div>
+</section>
+<section class="info-card paper-section " data-subject="lint">
+<header class="paper-header">
+<div class="paper-university">Bihar Engineering University, Patna</div>
+<div class="paper-exam-title">B.Tech 5th Semester Exam., 2020 (New Course)</div>
+<h3 style="color: var(--accent); margin: 8px 0 0;">Linear Integrated Circuits and Applications</h3>
+<div class="paper-details"><span>Time: 03 Hours</span><span>Code: 104504</span><span>Full Marks: 70</span>
+</div>
+</header>
+<div class="paper-instructions">
+<h4>Instructions:</h4>
+<ol>
+<li>The marks are indicated in the right-hand margin.</li>
+<li>There are EIGHT questions in this paper.</li>
+<li>Attempt FIVE questions in all.</li>
+<li>Question No. 1 is compulsory.</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.1 Answer any seven of the following short answer-type questions
+                    :</span><span class="marks">[2×7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Write two requirements to be met for a good current source.</p>
+</li>
+<li class="sub-question">
+<p>Why VCO is also called as v-to-f converter?</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>What is a switched capacitor filter?</p>
+</li>
+<li class="sub-question">
+<p>What output voltage would be produced by a D/A converter whose output range is 0 to 10 V and
+                        whose input binary number is 0110 for a 4-bit DAC?</p>
+</li>
+<li class="sub-question" data-freq="2" data-stars="★★">
+<p>What is a power amplifier?</p>
+</li>
+<li class="sub-question">
+<p>What is the purpose of connecting a capacitor at the input and the output side of an IC voltage
+                        regulator?</p>
+</li>
+<li class="sub-question">
+<p>Mention any two applications of PLL.</p>
+</li>
+<li class="sub-question">
+<p>For an n-bit flash-type A/D converter, how many comparators are required?</p>
+</li>
+<li class="sub-question">
+<p>What is meant by frequency synthesizing?</p>
+</li>
+<li class="sub-question">
+<p>Why are integrators preferred over differentiators?</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>With suitable circuit diagram, explain the operation of voltage reference circuit using
+                        temperature compensation.</p>
+</li>
+<li class="sub-question">
+<p>What are the different methods used in fabrication of integrated resistors? Explain any one
+                        method with suitable diagrams.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Draw and explain the circuit of a voltage to current converter if the load is (i) floating and
+                        (ii) grounded.</p>
+</li>
+<li class="sub-question">
+<p>Define and explain slew rate. What is full-power bandwidth? Also explain the methods to improve
+                        the slew rate.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Explain the working of a anti logarithmic amplifier using suitable op-amp circuit diagram and
+                        supporting equations.</p>
+</li>
+<li class="sub-question">
+<p>Draw the functional diagram of 723 regulators and explain its working.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Draw the block diagram and explain the principle of working, characteristic and applications of a
+                        frequency shift keying (FSK) demodulator.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain the operation of frequency to voltage converter with suitable circuit diagram.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain the working of R-2R ladder D/A converter with circuit diagram.</p>
+</li>
+<li class="sub-question" data-freq="3" data-stars="★★★">
+<p>Explain the oversampling A/D converter with functional block diagram.</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Explain with block diagram how PLL is used as frequency modulation (FM) detector.</p>
+</li>
+<li class="sub-question">
+<p>Design a VCO having the maximum range of 1 kHz. Assume power supply \( V_{cc} = 15 \text{ V}
+                        \). Required pulse width should not exceed 100 \( \mu\text{s} \).</p>
+</li>
+</ol>
+</div>
+<div class="question-block">
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<ol class="question-body" style="list-style-type: lower-alpha;">
+<li class="sub-question">
+<p>Design an astable multivibrator circuit which will flash the electric bulb such that its on time
+                        will be 4 seconds and off time will be 2 seconds.</p>
+</li>
+<li class="sub-question">
+<p>Explain the working of Schmitt trigger using 555 timer.</p>
+</li>
+</ol>
+</div>
+</section>
+</main>
+
+<button id="fab-top" class="fab-top" title="Scroll to Top">↑</button>
+
+
+<!-- NOTHING STYLE AI SOLVER MODAL -->
+<div id="aiModal" class="nt-modal-backdrop">
+    <div class="nt-modal">
+        <div class="nt-modal-header">
+            <div class="nt-modal-title">
+                <span class="nt-red-dot"></span>
+                <span>AI QUESTION SOLVER</span>
+            </div>
+            <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
+        </div>
+        
+        <div id="aiQuestionPreview" class="nt-question-preview"></div>
+        
+        <div class="nt-ai-grid">
+            <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
+                <span>⚡ ChatGPT</span>
+            </a>
+            <a id="btnGemini" target="_blank" class="nt-ai-btn">
+                <span>🔮 Google Gemini</span>
+            </a>
+            <a id="btnClaude" target="_blank" class="nt-ai-btn">
+                <span>🧠 Claude AI</span>
+            </a>
+            <a id="btnDeepSeek" target="_blank" class="nt-ai-btn">
+                <span>🐬 DeepSeek</span>
+            </a>
+            <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
+                <span>📱 Open in AI App (Share)</span>
+            </button>
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
+                <span>📋 Copy Solution Prompt</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="ntToast" class="nt-toast">Prompt copied to clipboard!</div>
+
+<script>
+let activeQuestionText = '';
+
+function openAiModal(btn) {
+    const qBlock = btn.closest('.question-block');
+    if (!qBlock) return;
+    
+    // Extract question content
+    const qTitle = qBlock.querySelector('.question-title span')?.innerText || '';
+    const qBody = qBlock.querySelector('.question-body')?.innerText || '';
+    activeQuestionText = (qTitle + '\n\n' + qBody).trim();
+    
+    // Set preview
+    document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
+    
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear explanations, formulas, derivations and final answers:\n\n${activeQuestionText}`;
+    
+    // Setup AI URLs
+    document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
+    document.getElementById('btnClaude').href = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnDeepSeek').href = `https://chat.deepseek.com/`;
+    
+    document.getElementById('aiModal').classList.add('open');
+}
+
+function closeAiModal() {
+    document.getElementById('aiModal').classList.remove('open');
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('ntToast');
+    toast.innerText = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+function copyAiPrompt() {
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    navigator.clipboard.writeText(prompt).then(() => {
+        showToast('✓ Solution prompt copied to clipboard!');
+    }).catch(() => {
+        showToast('Failed to copy');
+    });
+}
+
+function shareQuestion() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'BEU ECE Question',
+            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+        }).catch(() => {});
+    } else {
+        copyAiPrompt();
+    }
+}
+
+// Close on backdrop click
+document.getElementById('aiModal').addEventListener('click', (e) => {
+    if (e.target.id === 'aiModal') closeAiModal();
+});
+
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        if (localStorage.getItem('nt-theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeBtn.innerText = '🌙 DARK';
+        }
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-mode');
+            themeBtn.innerText = isLight ? '🌙 DARK' : '☀️ LIGHT';
+            localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    // Scroll to top
+    const fabTop = document.getElementById('fab-top');
+    if (fabTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) fabTop.classList.add('show');
+            else fabTop.classList.remove('show');
+        });
+        fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+});
+</script>
+
+
+<footer class="nt-footer">
+    <div>Credit: Apna BEU &bull; Crafted by <a href="https://stutosed.vercel.app" target="_blank">Stutosed</a></div>
+</footer>
+
+</body>
+</html>

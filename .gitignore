@@ -1,0 +1,20 @@
+# Node & Package
+node_modules/
+package.json
+package-lock.json
+
+# Original APK archive and dump
+*.xapk
+extracted_apk/
+*.log
+
+# Scripts and temporary build helpers
+# Python
+__pycache__/
+*.pyc
+*.py
+*.js
+qp*_extracted.html
+*.png
+render_manifest.json
+papers_inventory.txt
