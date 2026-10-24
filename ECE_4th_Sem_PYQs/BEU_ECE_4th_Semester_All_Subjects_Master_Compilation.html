@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#000000">
-<title>BEU ECE 4th Semester &bull; Master PYQ Archive</title>
+<title>BEU ECE 4th Sem PYQ</title>
 <script>
 MathJax = {
   tex: {
@@ -86,9 +86,7 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* ============================================================
-   SLEEK COMPACT NOTHING-STYLE TOP NAVBAR (FIXED HEIGHT, NO WRAP)
-   ============================================================ */
+/* SLEEK COMPACT NOTHING-STYLE TOP NAVBAR */
 .nt-nav {
   position: sticky;
   top: 0;
@@ -123,7 +121,7 @@ body.light-mode .nt-nav {
 .nt-nav-back {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
   height: 30px;
   padding: 0 10px;
   background: var(--btn-bg);
@@ -185,7 +183,6 @@ body.light-mode .nt-nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
   height: 30px;
   padding: 0 10px;
   background: var(--btn-bg);
@@ -217,7 +214,6 @@ body.light-mode .nt-nav {
   opacity: 0.9;
 }
 
-/* Mobile responsive compact styling */
 @media (max-width: 480px) {
   .nt-nav {
     padding: 0 8px;
@@ -228,16 +224,10 @@ body.light-mode .nt-nav {
     height: 28px;
     padding: 0 8px;
   }
-  .nt-nav-back .back-text {
-    display: none; /* Just show the sleek arrow */
-  }
   .nt-nav-btn {
     height: 28px;
     padding: 0 8px;
     font-size: 10.5px;
-  }
-  .theme-text {
-    display: none; /* Just show the sun/moon icon */
   }
   .nt-nav-title {
     font-size: 11px;
@@ -395,7 +385,7 @@ body.light-mode .nt-nav {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
   transition: all 0.15s ease;
 }
 
@@ -610,7 +600,6 @@ mjx-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.15s ease;
@@ -673,19 +662,21 @@ mjx-container {
   text-decoration: underline;
 }
 
-/* Floating Action Button (Back to top) */
+/* Floating Action Button */
 .fab-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 44px;
+  height: 32px;
+  border-radius: 8px;
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
   color: var(--text-primary);
   box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-  font-size: 15px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -714,25 +705,16 @@ mjx-container {
     <div class="nt-nav-left">
         
     <a href="../index.html" class="nt-nav-back" title="Back to Hub">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        <span class="back-text">HUB</span>
+        <span>HUB</span>
     </a>
     
         <span class="nt-red-dot"></span>
         <span class="nt-nav-title">BEU ECE 4TH SEM</span>
     </div>
     <div class="nt-nav-right">
-        <button id="theme-toggle" class="nt-nav-btn" title="Toggle Theme">
-            <span class="theme-icon">☀️</span>
-            <span class="theme-text">LIGHT</span>
-        </button>
+        <button id="theme-toggle" class="nt-nav-btn">LIGHT</button>
         
     <a href="https://files.catbox.moe/o9v4eo.pdf" target="_blank" class="nt-nav-btn nt-btn-pdf" title="Download PDF">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-        </svg>
         <span>PDF</span>
     </a>
     
@@ -782,7 +764,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct option / answer the following (Any seven question
-                    only):-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>If the carrier of a 100% modulated A.M. wave is suppressed, the power saving will be in percent-
@@ -879,7 +861,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Draw the block diagram of communication system. Explain the concept of frequency mixing.</p>
@@ -890,7 +872,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain generation of DSB-SC signal with the help of balanced modulator using diodes.</p>
@@ -902,7 +884,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write short note on Pre-Emphasis and De-Emphasis circuits.</p>
@@ -913,7 +895,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>(i) The maximum peak-to-peak voltage of an AM wave is 12 mV and the minimum voltage is 4mV.
@@ -926,7 +908,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With block diagram explain the generation of PWM signals.</p>
@@ -937,7 +919,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The output signal from an AM modulator is: \( s(t) = 5\cos(1800\pi t) + 20\cos(2000\pi t) +
@@ -952,7 +934,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define amplitude modulation and describe it in detail with suitable diagrams.</p>
@@ -963,7 +945,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write short notes our Envelope Detector.</p>
@@ -995,7 +977,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>In NBFM, the modulation index is close to</p>
@@ -1091,7 +1073,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A radio receiver with equivalent noise bandwidth of 10kHz has a noise figure of 20dB.If input SNR
@@ -1101,7 +1083,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss the Armstrong method for the generation of wideband FM.</p>
@@ -1109,7 +1091,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the working of slope detector method used for demodulation.</p>
@@ -1120,7 +1102,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain need of modulation and its advantage.</p>
@@ -1131,7 +1113,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>When a super-heterodyne receiver is tuned to 600kHz,its local oscillator provides the mixer with
@@ -1142,7 +1124,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is demodulation? Explain square law demodulator.</p>
@@ -1150,7 +1132,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the expression of AM modulated wave and draw its waveform.</p>
@@ -1158,7 +1140,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -1190,7 +1172,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct option/answer the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>JFET can be operated with</p>
@@ -1285,7 +1267,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>In a full wave rectifier, the input is from 30-0-30V transformer. The load and diode forward
@@ -1299,7 +1281,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Draw the common emitter circuit and sketch the input and output characteristics. Also explain
@@ -1313,7 +1295,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the characteristics of an Ideal Op-Amp. Mention some of the applications of Op-Amp.</p>
@@ -1324,7 +1306,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain Successive type ADC with neat circuit diagram.</p>
@@ -1335,7 +1317,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="4" data-stars="★★★★">
 <p>Explain Colpitts oscillator with Circuit diagram and derive its frequency.</p>
@@ -1347,7 +1329,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="4" data-stars="★★★★">
 <p>Explain RC- phase shift oscillator using op-amp and derive its frequency.</p>
@@ -1359,7 +1341,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Describe class A Power Amplifier. Derive the expression for its maximum conversion Efficiency.
@@ -1371,7 +1353,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain MOSFET as an amplifier?</p>
@@ -1402,7 +1384,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Write the answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Which of these are incorrect about Darlington amplifier?</p>
@@ -1502,7 +1484,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain construction and working of Enhancement and Depletion type MOSFET.</p>
@@ -1510,7 +1492,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is power amplifier. Explain Transformer coupled Class-A amplifier.</p>
@@ -1518,7 +1500,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Barkhausen criteria play an important role while designing Oscillator justify. Explain Hartley
@@ -1527,7 +1509,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the effect of voltage series and voltage shunt feedback on gain &amp; impedance of amplifier.
@@ -1536,7 +1518,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The BJT is connected as a CE amplifier. Determine \( Z_i \), \( Z_0 \), \( A_v \), \( A_i
@@ -1545,7 +1527,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe current mirror circuit in BJT. What are the condition to design current mirror circuit.
@@ -1554,7 +1536,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the expression for voltage gain and current gain and B.W of multistage amplifier.</p>
@@ -1562,7 +1544,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>In brief explain the working of voltage series and current series circuit. Explain the same in
@@ -1589,7 +1571,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Attempt any seven from the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.1 Attempt any seven from the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>What is avalanche multiplication?</p>
@@ -1622,7 +1604,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write brief notes on: (i) Avalanche breakdown (ii) Zener breakdown</p>
@@ -1637,7 +1619,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With reference to rectifying circuits, explain- (i) ripple factor (\( \gamma \)); (ii)
@@ -1651,7 +1633,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Draw Ebers Moll model for pnp transistor and show that transistor action is not possible by
@@ -1665,7 +1647,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Given the following measurements made at \( I_C = 5 mA \), \( V_{CE} = 10 V \) and at room
@@ -1682,7 +1664,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Compare the performance of MOSFET and BJT.</p>
@@ -1694,7 +1676,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Calculate \( v_0 \) and the op-amp's output current as shown in the circuit and if \( E_i \)
@@ -1709,7 +1691,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The circuit shown is required to supply on average voltage of 120 V. Determine the r.m.s. value
@@ -1724,7 +1706,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Precision comparator</p>
@@ -1754,7 +1736,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven of the following short answer-type questions
-                    :</span><span class="marks">[2×7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    :</span><span class="marks">[2×7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Write two requirements to be met for a good current source.</p>
@@ -1791,7 +1773,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>With suitable circuit diagram, explain the operation of voltage reference circuit using
@@ -1804,7 +1786,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Draw and explain the circuit of a voltage to current converter if the load is (i) floating and
@@ -1817,7 +1799,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Explain the working of a anti logarithmic amplifier using suitable op-amp circuit diagram and
@@ -1829,7 +1811,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Draw the block diagram and explain the principle of working, characteristic and applications of a
@@ -1841,7 +1823,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Explain the working of R-2R ladder D/A converter with circuit diagram.</p>
@@ -1852,7 +1834,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Explain with block diagram how PLL is used as frequency modulation (FM) detector.</p>
@@ -1864,7 +1846,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Design an astable multivibrator circuit which will flash the electric bulb such that its on time
@@ -1895,7 +1877,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Write the short answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the hexadecimal equivalent of the decimal number 256.</p>
@@ -1931,7 +1913,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[10+4=14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the procedure to design of asynchronous sequential circuit in detail with an example.
@@ -1944,7 +1926,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[10+4=14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the characteristics and about TTL parameters. Discuss implementation of the following
@@ -1957,7 +1939,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the realization of JK flipflop from T flipflop.</p>
@@ -1968,7 +1950,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is meant by magnitude comparator? Discuss in detail about two bit magnitude comparator.</p>
@@ -1979,7 +1961,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain briefly about SOP and POS forms with example.</p>
@@ -1992,7 +1974,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>How does don't care condition in K-map help for circuit simplification?</p>
@@ -2005,7 +1987,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Implement the following function using suitable multiplexer. \( F(a,b,c)=\Sigma m(3,4,5,7) \).
@@ -2017,7 +1999,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write Short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write Short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>(a) Analog to Digital Converter</p>
@@ -2049,7 +2031,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Answer of the following questions (any seven only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.1 Answer of the following questions (any seven only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>What is the use of K-map?</p>
@@ -2084,7 +2066,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Realize XNOR logic function using NAND gate only.</p>
@@ -2095,7 +2077,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>A logic circuit has four inputs A, B, C, D and output Y. Y = 1 when A &amp; B are both 1 subjected to
@@ -2104,7 +2086,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design 8 to 3 line Encoder circuit.</p>
@@ -2115,7 +2097,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Design a parallel-to-serial converter using shift registers and explain its operation.</p>
@@ -2126,7 +2108,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Explain the working principle of an R-2R ladder DAC with a detailed diagram.</p>
@@ -2137,7 +2119,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the Simplified logical expression for Y.<br/>
@@ -2150,7 +2132,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Implement S-R, T, D flip-flops using J-K flip-flop. Also show the implementation with help of
@@ -2162,7 +2144,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>(a) Binary Parallel Adder<br/>
@@ -2190,7 +2172,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define Dynamic RAM.</p>
@@ -2225,7 +2207,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>What are weighted, non-weighted, cyclic and self-complementary codes? Explain each with examples.
@@ -2234,7 +2216,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design a BCD to 7-segment display decoder circuit using logic gates.</p>
@@ -2242,7 +2224,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design a 3-bit parallel comparator A/D convertor that provides output in 2's complement format.
@@ -2251,7 +2233,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Design full adder using 8:1 mux.</p>
@@ -2262,7 +2244,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is binary shift register? Write down their application.</p>
@@ -2270,7 +2252,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Minimize the following expression using k-map<br/>
@@ -2279,7 +2261,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the procedure to design Mod-6 counter.</p>
@@ -2287,7 +2269,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-roman; padding-left: 20px;">
@@ -2319,7 +2301,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven Question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Draw Truth table of JK flip flop.</p>
@@ -2354,7 +2336,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Implement the following function using only NAND gate \( F(A,B,C)=\Sigma m(0,1,2,3,7) \).</p>
@@ -2362,7 +2344,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Realize XNOR logic function using NAND gate only.</p>
@@ -2373,7 +2355,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>A logic circuit has four inputs A,B,C,D and output Y. Y=1 when A &amp; B are both 1, subjected to the
@@ -2382,7 +2364,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain Master-slave flip flop. What are race around condition?. How it can be circumvented with
@@ -2392,7 +2374,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design 8 to 3 line Encoder circuit.</p>
@@ -2403,7 +2385,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Summarize the design procedure for a synchronous sequential circuit.</p>
@@ -2411,7 +2393,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Explain the working of R-2R Ladder DAC. </p>
@@ -2423,7 +2405,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>(a) Binary Parallel Adder</p>
@@ -2453,7 +2435,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The divergence of the vector field is</p>
@@ -2549,7 +2531,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write the differential elements (dl, da, dv) in both Cartesian, cylindrical co-ordinate system.
@@ -2561,7 +2543,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Given the two points, \( C(-3,2,1) \) and \( D(r=5, \theta=20^{\circ},
@@ -2577,7 +2559,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>State and derive Coulomb's law. Write coulomb's law in vector forms.</p>
@@ -2589,7 +2571,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>An infinite long line charge of uniform density \( \rho_{L} \) C/cm is situated along the
@@ -2602,7 +2584,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Four 3pC charges are at the corners of a 1-m square. The two charges at the left side of the
@@ -2621,7 +2603,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Show that the Faraday's law of electromagnetic induction can be expressed as \( \nabla \times
@@ -2637,7 +2619,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss reflection of plane electromagnetic wave incident normally on a perfect dielectric and
@@ -2650,7 +2632,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -2682,7 +2664,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>What is physical significance of divergence?</p>
@@ -2717,7 +2699,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the expression for the attenuation constant, phase constant and intrinsic impedance for a
@@ -2731,7 +2713,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive suitable relations for integral and point forms of poynting theorem.</p>
@@ -2742,7 +2724,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With explanation, derive the Maxwell's equation in differential and integral forms.</p>
@@ -2750,7 +2732,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>An iron ring with a cross sectional area of 3 \( cm^{2} \) and mean circumference of 15 cm is
@@ -2765,7 +2747,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>State and proof gauss law and explain applications of Gauss law.</p>
@@ -2776,7 +2758,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>State and proof divergence theorem.</p>
@@ -2788,7 +2770,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Define and explain Biot-Savart Law.</p>
@@ -2800,7 +2782,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -2832,7 +2814,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Choose the correct answer of any seven of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.1 Choose the correct answer of any seven of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>In free space, the Poisson equation becomes</p>
@@ -2920,7 +2902,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A rectangular waveguide with dimensions of \( 3 \text{ cm} \times 2 \text{ cm} \) operates
@@ -2938,7 +2920,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>(i) Define quality factor. Give its relation with attenuation factor. (ii) Define reflection
@@ -2954,7 +2936,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive an expression for input impedance when transmission line is terminated with any load
@@ -2969,7 +2951,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the Gauss divergence theorem and Stokes' theorem along with their significances.</p>
@@ -2986,7 +2968,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the reflection and transmission
@@ -3011,7 +2993,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is polarization of wave? Discuss the properties of S- and P-polarized light. Explain why
@@ -3028,7 +3010,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A transmission line has a characteristic impedance of 100 ohms and is terminated in a load
@@ -3046,7 +3028,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A uniform plane wave propagating in a medium has \( E = 2e^{-\alpha z}\sin(10^8t - \beta
@@ -3087,7 +3069,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct option/answer the following (Any seven question
-                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Which of the following best describes the energy band model of a semiconductor?</p>
@@ -3187,7 +3169,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain the concept of the bonding model and energy band model in semiconductors.</p>
@@ -3200,7 +3182,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Discuss the different types of recombination mechanisms and their significance in semiconductor
@@ -3214,7 +3196,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain the Ideal Diode Equation. Derive it quantitatively using the band model and boundary
@@ -3229,7 +3211,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Discuss the two primary mechanisms of junction breakdown in a PN junction diode- Avalanche
@@ -3239,7 +3221,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Describe the impact of base width modulation (Early effect) on BJT operation. How does it affect
@@ -3250,7 +3232,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Explain the deviations from ideal MOS behaviour, including metal-semiconductor work function
@@ -3260,7 +3242,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Discuss the working principles and characteristics of different optoelectronic devices: PIN
@@ -3269,7 +3251,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Explain the working of a solid-state laser diode. How does it differ from an LED in terms of
@@ -3299,7 +3281,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Write the short answer of the following (Any seven question
-                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Define the term drift velocity.</p>
@@ -3334,7 +3316,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain (i) Solar Cell (ii) LED (iii) LASER diode.</p>
@@ -3345,7 +3327,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>What is MOS Capacitor? Draw its C-V Characteristic.</p>
@@ -3356,7 +3338,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Discuss the punch-through breakdown in BJT. Write the expression for the punch though voltage.
@@ -3370,7 +3352,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>With a neat diagrams explain the working of a PN junction diode in forward bias and reverse bias
@@ -3385,7 +3367,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>What is Zener diode. Explain V-I characteristics of Zener diode.</p>
@@ -3397,7 +3379,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>What is intrinsic semiconductor and explain the formation extrinsic semiconductors through
@@ -3407,7 +3389,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Derive the expression for current generated due to drifting of charge carriers in semiconductors
@@ -3420,7 +3402,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write Short notes ver any two of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write Short notes ver any two of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -3451,7 +3433,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The high torque to weight ratio in an analog indicating instrument indicates</p>
@@ -3546,7 +3528,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain how the unknown frequency is measured using Wien bridge method?</p>
@@ -3557,7 +3539,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>How do you measure the unknown inductance using Hay's Bridge?</p>
@@ -3570,7 +3552,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>How do you measure the unknown capacitance using Schering Bridge? Also draw the phasor diagram.
@@ -3584,7 +3566,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>List out comparisons between CT's and PT's (Any four).</p>
@@ -3601,7 +3583,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the construction and principle of operation of D' Arsonval type Galvanometer.</p>
@@ -3612,7 +3594,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the measurement of frequency, phase angle and time delay using oscilloscope with
@@ -3630,7 +3612,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Draw the block diagram of an electronic voltmeter and explain its operation.</p>
@@ -3641,7 +3623,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Prove that for electrodynamometer type wattmeter true power = \( \frac{\cos \Phi}{\cos \Phi
@@ -3681,7 +3663,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Which system analyzes brain wave activity?</p>
@@ -3776,7 +3758,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss the use of instrument transformers for current and voltage measurement in power systems.
@@ -3788,7 +3770,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the Hall effect and its application in Hall sensors for current and voltage measurements.
@@ -3800,7 +3782,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define and differentiate between true value, accuracy, and precision in measurement systems.</p>
@@ -3813,7 +3795,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the Six-Sigma approach to quality control in industrial processes.</p>
@@ -3824,7 +3806,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain hysteresis and dead-band in measurement systems. How do they influence the performance of
@@ -3836,7 +3818,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss the types of errors that occur in measurements. Explain the difference between systematic
@@ -3849,7 +3831,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the role of sensitivity in measurement systems. How is sensitivity calculated, and what
@@ -3863,7 +3845,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha;">
@@ -3894,7 +3876,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Which of the following causes a controlled variable to change?</p>
@@ -3995,7 +3977,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define the following: (i) Transducer (ii) Resolution (iii) Linearity (iv) Accuracy (v)
@@ -4008,7 +3990,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Differentiate among piezoelectric, inductive and capacitance-type transducers.</p>
@@ -4019,7 +4001,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the working of electrical resistance strain gauge. Explain how the resistance change of a
@@ -4034,7 +4016,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve all questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve all questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Consider a system with controller \( G_c \), reference input \( R \), and disturbance input
@@ -4068,7 +4050,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With the help of a suitable example, explain the difference between open-loop control and
@@ -4084,7 +4066,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the operations of the following: (i) Inverting op-amp (ii) Summing op-amp (iii)
@@ -4096,7 +4078,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>For the open-loop transfer function \( G(s) = \frac{400(s+1)(s+10)}{s^3(s+100)(s+1000)} \),
@@ -4108,7 +4090,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any four of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any four of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ol class="options-list" style="list-style-type: lower-alpha;">
@@ -4124,7 +4106,7 @@ mjx-container {
 </section>
 </main>
 
-<button id="fab-top" class="fab-top" title="Scroll to Top">↑</button>
+<button id="fab-top" class="fab-top" title="Scroll to Top">TOP</button>
 
 
 <!-- NOTHING STYLE AI SOLVER MODAL -->
@@ -4142,22 +4124,22 @@ mjx-container {
         
         <div class="nt-ai-grid">
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
-                <span>⚡ ChatGPT</span>
+                <span>ChatGPT</span>
             </a>
             <a id="btnGemini" target="_blank" class="nt-ai-btn">
-                <span>🔮 Google Gemini</span>
+                <span>Google Gemini</span>
             </a>
             <a id="btnClaude" target="_blank" class="nt-ai-btn">
-                <span>🧠 Claude AI</span>
+                <span>Claude AI</span>
             </a>
             <a id="btnDeepSeek" target="_blank" class="nt-ai-btn">
-                <span>🐬 DeepSeek</span>
+                <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>📱 Open in AI App (Share)</span>
+                <span>Open in AI App</span>
             </button>
             <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>📋 Copy Solution Prompt</span>
+                <span>Copy Solution Prompt</span>
             </button>
         </div>
     </div>
@@ -4202,7 +4184,7 @@ function showToast(msg) {
 function copyAiPrompt() {
     const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
     navigator.clipboard.writeText(prompt).then(() => {
-        showToast('✓ Solution prompt copied to clipboard!');
+        showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
         showToast('Failed to copy');
     });
@@ -4227,18 +4209,13 @@ document.getElementById('aiModal').addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
-        const themeIcon = themeBtn.querySelector('.theme-icon');
-        const themeText = themeBtn.querySelector('.theme-text');
-        
         if (localStorage.getItem('nt-theme') === 'light') {
             document.body.classList.add('light-mode');
-            if (themeIcon) themeIcon.textContent = '🌙';
-            if (themeText) themeText.textContent = 'DARK';
+            themeBtn.textContent = 'DARK';
         }
         themeBtn.addEventListener('click', () => {
             const isLight = document.body.classList.toggle('light-mode');
-            if (themeIcon) themeIcon.textContent = isLight ? '🌙' : '☀️';
-            if (themeText) themeText.textContent = isLight ? 'DARK' : 'LIGHT';
+            themeBtn.textContent = isLight ? 'DARK' : 'LIGHT';
             localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
         });
     }

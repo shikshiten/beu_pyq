@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#000000">
-<title>Linear Integrated Circuits and Applications (2020 (Bonus)) &bull; BEU PYQ</title>
+<title>BEU ECE 4th Sem PYQ</title>
 <script>
 MathJax = {
   tex: {
@@ -86,9 +86,7 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* ============================================================
-   SLEEK COMPACT NOTHING-STYLE TOP NAVBAR (FIXED HEIGHT, NO WRAP)
-   ============================================================ */
+/* SLEEK COMPACT NOTHING-STYLE TOP NAVBAR */
 .nt-nav {
   position: sticky;
   top: 0;
@@ -123,7 +121,7 @@ body.light-mode .nt-nav {
 .nt-nav-back {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
   height: 30px;
   padding: 0 10px;
   background: var(--btn-bg);
@@ -185,7 +183,6 @@ body.light-mode .nt-nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
   height: 30px;
   padding: 0 10px;
   background: var(--btn-bg);
@@ -217,7 +214,6 @@ body.light-mode .nt-nav {
   opacity: 0.9;
 }
 
-/* Mobile responsive compact styling */
 @media (max-width: 480px) {
   .nt-nav {
     padding: 0 8px;
@@ -228,16 +224,10 @@ body.light-mode .nt-nav {
     height: 28px;
     padding: 0 8px;
   }
-  .nt-nav-back .back-text {
-    display: none; /* Just show the sleek arrow */
-  }
   .nt-nav-btn {
     height: 28px;
     padding: 0 8px;
     font-size: 10.5px;
-  }
-  .theme-text {
-    display: none; /* Just show the sun/moon icon */
   }
   .nt-nav-title {
     font-size: 11px;
@@ -395,7 +385,7 @@ body.light-mode .nt-nav {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
   transition: all 0.15s ease;
 }
 
@@ -610,7 +600,6 @@ mjx-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.15s ease;
@@ -673,19 +662,21 @@ mjx-container {
   text-decoration: underline;
 }
 
-/* Floating Action Button (Back to top) */
+/* Floating Action Button */
 .fab-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 44px;
+  height: 32px;
+  border-radius: 8px;
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
   color: var(--text-primary);
   box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-  font-size: 15px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -714,25 +705,16 @@ mjx-container {
     <div class="nt-nav-left">
         
     <a href="../../index.html" class="nt-nav-back" title="Back to Hub">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        <span class="back-text">HUB</span>
+        <span>HUB</span>
     </a>
     
         <span class="nt-red-dot"></span>
         <span class="nt-nav-title">BEU ECE 4TH SEM</span>
     </div>
     <div class="nt-nav-right">
-        <button id="theme-toggle" class="nt-nav-btn" title="Toggle Theme">
-            <span class="theme-icon">☀️</span>
-            <span class="theme-text">LIGHT</span>
-        </button>
+        <button id="theme-toggle" class="nt-nav-btn">LIGHT</button>
         
     <a href="https://files.catbox.moe/4avvs6.pdf" target="_blank" class="nt-nav-btn nt-btn-pdf" title="Download PDF">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-        </svg>
         <span>PDF</span>
     </a>
     
@@ -782,7 +764,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven of the following short answer-type questions
-                    :</span><span class="marks">[2×7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+                    :</span><span class="marks">[2×7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Write two requirements to be met for a good current source.</p>
@@ -819,7 +801,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>With suitable circuit diagram, explain the operation of voltage reference circuit using
@@ -832,7 +814,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Draw and explain the circuit of a voltage to current converter if the load is (i) floating and
@@ -845,7 +827,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Explain the working of a anti logarithmic amplifier using suitable op-amp circuit diagram and
@@ -857,7 +839,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Draw the block diagram and explain the principle of working, characteristic and applications of a
@@ -869,7 +851,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Explain the working of R-2R ladder D/A converter with circuit diagram.</p>
@@ -880,7 +862,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Explain with block diagram how PLL is used as frequency modulation (FM) detector.</p>
@@ -892,7 +874,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">✦ ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>Design an astable multivibrator circuit which will flash the electric bulb such that its on time
@@ -906,7 +888,7 @@ mjx-container {
 </section>
 </main>
 
-<button id="fab-top" class="fab-top" title="Scroll to Top">↑</button>
+<button id="fab-top" class="fab-top" title="Scroll to Top">TOP</button>
 
 
 <!-- NOTHING STYLE AI SOLVER MODAL -->
@@ -924,22 +906,22 @@ mjx-container {
         
         <div class="nt-ai-grid">
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
-                <span>⚡ ChatGPT</span>
+                <span>ChatGPT</span>
             </a>
             <a id="btnGemini" target="_blank" class="nt-ai-btn">
-                <span>🔮 Google Gemini</span>
+                <span>Google Gemini</span>
             </a>
             <a id="btnClaude" target="_blank" class="nt-ai-btn">
-                <span>🧠 Claude AI</span>
+                <span>Claude AI</span>
             </a>
             <a id="btnDeepSeek" target="_blank" class="nt-ai-btn">
-                <span>🐬 DeepSeek</span>
+                <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>📱 Open in AI App (Share)</span>
+                <span>Open in AI App</span>
             </button>
             <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>📋 Copy Solution Prompt</span>
+                <span>Copy Solution Prompt</span>
             </button>
         </div>
     </div>
@@ -984,7 +966,7 @@ function showToast(msg) {
 function copyAiPrompt() {
     const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
     navigator.clipboard.writeText(prompt).then(() => {
-        showToast('✓ Solution prompt copied to clipboard!');
+        showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
         showToast('Failed to copy');
     });
@@ -1009,18 +991,13 @@ document.getElementById('aiModal').addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
-        const themeIcon = themeBtn.querySelector('.theme-icon');
-        const themeText = themeBtn.querySelector('.theme-text');
-        
         if (localStorage.getItem('nt-theme') === 'light') {
             document.body.classList.add('light-mode');
-            if (themeIcon) themeIcon.textContent = '🌙';
-            if (themeText) themeText.textContent = 'DARK';
+            themeBtn.textContent = 'DARK';
         }
         themeBtn.addEventListener('click', () => {
             const isLight = document.body.classList.toggle('light-mode');
-            if (themeIcon) themeIcon.textContent = isLight ? '🌙' : '☀️';
-            if (themeText) themeText.textContent = isLight ? 'DARK' : 'LIGHT';
+            themeBtn.textContent = isLight ? 'DARK' : 'LIGHT';
             localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
         });
     }
