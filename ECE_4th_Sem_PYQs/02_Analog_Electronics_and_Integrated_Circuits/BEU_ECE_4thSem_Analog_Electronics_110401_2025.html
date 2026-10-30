@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#000000">
+<title>BEU ECE 4th Sem PYQ</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Atyp';
+  src: local('Atyp'), local('Atyp Display'), local('Space Grotesk');
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #121212;
+  --bg-card-hover: #181818;
+  --border-color: #242424;
+  --border-light: #333333;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8e8e93;
+  --text-muted: #555555;
+  --accent-red: #d71921;
+  --btn-bg: #1c1c1c;
+  --btn-border: #2e2e2e;
+  --font-main: 'Atyp', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --dot-color: rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode {
+  --bg-primary: #f7f7f8;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfc;
+  --border-color: #e5e5e5;
+  --border-light: #d4d4d4;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent-red: #d71921;
+  --btn-bg: #f0f0f2;
+  --btn-border: #d4d4d4;
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0 0 60px 0;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* SLEEK COMPACT NOTHING-STYLE TOP NAVBAR */
+.nt-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(14, 14, 14, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+body.light-mode .nt-nav {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.nt-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.nt-nav-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.nt-nav-back:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.nt-red-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 6px var(--accent-red);
+  flex-shrink: 0;
+  display: inline-block;
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.nt-nav-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.nt-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.nt-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.nt-nav-btn:hover {
+  border-color: var(--border-light);
+}
+
+.nt-nav-btn.nt-btn-pdf {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-nav-btn.nt-btn-pdf:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .nt-nav {
+    padding: 0 8px;
+    height: 44px;
+    gap: 6px;
+  }
+  .nt-nav-back {
+    height: 28px;
+    padding: 0 8px;
+  }
+  .nt-nav-btn {
+    height: 28px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
+  .nt-nav-title {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+  }
+}
+
+/* Container */
+.nt-container {
+  max-width: 900px;
+  margin: 16px auto;
+  padding: 0 14px;
+}
+
+/* Paper Card Header */
+.nt-paper-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px 20px;
+  margin-bottom: 24px;
+}
+
+.paper-header {
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.paper-university {
+  font-size: clamp(16px, 4.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.paper-exam-title {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 3vw, 13.5px);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 6px 0;
+  letter-spacing: 0.5px;
+}
+
+.paper-header h3 {
+  font-size: clamp(15px, 4vw, 20px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 8px 0 !important;
+  color: var(--text-primary) !important;
+}
+
+.paper-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.paper-details span {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Instructions */
+.paper-instructions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.paper-instructions h4 {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px 0;
+  color: var(--text-primary);
+}
+
+.paper-instructions ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.paper-instructions li {
+  margin-bottom: 3px;
+}
+
+/* Question Block */
+.question-block {
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease;
+}
+
+.question-block:hover {
+  border-color: var(--border-light);
+}
+
+.question-title {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.question-title .marks {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ASK AI BUTTON */
+.ask-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.ask-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.ask-ai-btn:active {
+  transform: scale(0.95);
+}
+
+.question-body {
+  margin: 0;
+  padding: 8px 14px 12px 24px;
+}
+
+.sub-question {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.sub-question:last-child {
+  border-bottom: none;
+}
+
+.sub-question p {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+/* MCQ Options */
+.options-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 8px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .options-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+}
+
+.options-list li {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.options-list li:hover {
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.options-list li::before {
+  content: counter(list-item, lower-roman);
+  counter-increment: list-item;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+/* Diagrams */
+.question-diagram {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
+  margin: 12px auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 6px;
+  background: #ffffff;
+}
+
+/* MathJax Formulas Scrollable */
+mjx-container {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  display: inline-block !important;
+  padding: 2px 0;
+  vertical-align: middle;
+}
+
+/* AI MODAL */
+.nt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.nt-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 640px) {
+  .nt-modal-backdrop {
+    align-items: center;
+  }
+}
+
+.nt-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .nt-modal {
+    border-radius: 20px;
+    transform: scale(0.95);
+  }
+}
+
+.nt-modal-backdrop.open .nt-modal {
+  transform: translateY(0) scale(1);
+}
+
+.nt-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.nt-modal-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nt-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nt-question-preview {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  max-height: 120px;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.nt-ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.nt-ai-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.nt-ai-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+.nt-ai-btn.full-width {
+  grid-column: span 2;
+}
+
+/* Toast */
+.nt-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 10001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.nt-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Discreet Footer */
+.nt-footer {
+  text-align: center;
+  padding: 30px 16px 15px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+.nt-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nt-footer a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+/* Floating Action Button */
+.fab-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.fab-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fab-top:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+</style>
+</head>
+<body>
+
+<header class="nt-nav">
+    <div class="nt-nav-left">
+        
+    <a href="../../index.html" class="nt-nav-back" title="Back to Hub">
+        <span>HUB</span>
+    </a>
+    
+        <span class="nt-red-dot"></span>
+        <span class="nt-nav-title">BEU ECE 4TH SEM</span>
+    </div>
+    <div class="nt-nav-right">
+        <button id="theme-toggle" class="nt-nav-btn">LIGHT</button>
+        
+        <a href="BEU_ECE_4thSem_Analog_Electronics_110401_2025.pdf" target="_blank" class="nt-nav-btn nt-btn-pdf" title="Download PDF">
+            <span>PDF</span>
+        </a>
+        
+    </div>
+</header>
+
+<main class="nt-container">
+    
+        <div class="nt-paper-card" style="text-align: center; margin-bottom: 24px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase;">BIHAR ENGINEERING UNIVERSITY &bull; PATNA</div>
+            <h1 style="font-size: clamp(19px, 4.5vw, 24px); font-weight: 800; text-transform: uppercase; margin: 8px 0;">Analog Electronics & Integrated Circuits &bull; 2025 (110401)</h1>
+            <div style='font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-red); margin-top: 6px;'>EXAM DATE: Saturday, 31 Oct 2026 (2:00 PM - 5:00 PM)</div>
+            
+            <div style="overflow-x: auto; margin-top: 18px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; min-width: 440px;">
+                    <thead>
+                        <tr style="background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);">
+                            <th style="padding: 7px; text-align: center;">YEAR</th>
+                            <th style="padding: 7px; text-align: left;">PAPER TITLE</th>
+                            <th style="padding: 7px; text-align: center;">CODE</th>
+                            <th style="padding: 7px; text-align: center;">EXAM SESSION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style='text-align:center;'><b>2025 (110401)</b></td><td>Analog Electronics</td><td style='text-align:center;'><code>110401</code></td><td style='text-align:center;'>B.Tech 4th Semester Examination, 2025</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    
+    <div class="nt-paper-card">
+        <div class="paper-header">
+            <div class="paper-university">BIHAR ENGINEERING UNIVERSITY, PATNA</div>
+            <h1 class="paper-exam-title">B.Tech 4th Semester Examination, 2025</h1>
+            <div class="paper-details">Course: B.Tech &bull; Code: <code>110401</code> &bull; Time: 03 Hours &bull; Full Marks: 70</div>
+            <div class="paper-instructions">(i) The marks are indicated in the right-hand margin.<br>(ii) There are NINE questions in this paper.<br>(iii) Attempt FIVE questions in all.<br>(iv) Question No. 1 is compulsory.</div>
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.1 Choose the correct option / answer the following (Any seven only): [2 &times; 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+<p>Choose the correct option / answer the following (Any seven question only):</p>
+<div class="sub-question">
+    <p><b>(a)</b> Biasing is required to:</p>
+    <ul class="options-list">
+        <li>Increase gain</li>
+        <li>Reduce noise</li>
+        <li>Stabilize the operating point</li>
+        <li>Increase bandwidth</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(b)</b> In the active region of the BJT:</p>
+    <ul class="options-list">
+        <li>Both junctions are forward-biased</li>
+        <li>E-B junction is forward-biased, C-B junction is reverse-biased</li>
+        <li>Both junctions are reverse-biased</li>
+        <li>E-B junction is reverse-biased, C-B junction is forward-biased</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(c)</b> An astable multivibrator produces:</p>
+    <ul class="options-list">
+        <li>No output</li>
+        <li>DC output</li>
+        <li>Continuous oscillations (square wave)</li>
+        <li>Single pulse</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(d)</b> The Wien bridge oscillator produces a:</p>
+    <ul class="options-list">
+        <li>Square wave</li>
+        <li>Triangular wave</li>
+        <li>Sine wave</li>
+        <li>Sawtooth wave</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(e)</b> A Zener diode normally operates in the:</p>
+    <ul class="options-list">
+        <li>Forward region</li>
+        <li>Saturation region</li>
+        <li>Breakdown region</li>
+        <li>Cut-off region</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(f)</b> Peak Inverse Voltage (PIV) is maximum across the diodes in a:</p>
+    <ul class="options-list">
+        <li>Half-wave rectifier</li>
+        <li>Bridge rectifier</li>
+        <li>Center-tapped full-wave rectifier (2 Vm)</li>
+        <li>Clipper circuit</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(g)</b> In reverse bias, the diode current is mainly due to:</p>
+    <ul class="options-list">
+        <li>Holes</li>
+        <li>Majority carriers</li>
+        <li>Minority carriers</li>
+        <li>Drift current of majority carriers</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(h)</b> The square wave generator uses an op-amp configured as a:</p>
+    <ul class="options-list">
+        <li>Comparator / Schmitt trigger</li>
+        <li>Integrator</li>
+        <li>Differentiator</li>
+        <li>Low-pass filter</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(i)</b> An ideal differential amplifier has a Common Mode Rejection Ratio (CMRR) of:</p>
+    <ul class="options-list">
+        <li>0</li>
+        <li>1</li>
+        <li>&infin; (Infinite)</li>
+        <li>100</li>
+    </ul>
+</div>
+<div class="sub-question">
+    <p><b>(j)</b> MOSFET is preferred over BJT primarily because of its:</p>
+    <ul class="options-list">
+        <li>Higher power consumption</li>
+        <li>Lower speed</li>
+        <li>Extremely high input impedance</li>
+        <li>Larger silicon size</li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.2 Current Mirror Circuit & Enhancement MOSFET [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Describe the current mirror circuit using BJTs and explain its applications in integrated circuits. [7]</p>
+    <p><b>(b)</b> Explain the structure and operation of an n-channel enhancement MOSFET with neat sketches and transfer curves. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.3 Small-Signal Hybrid-&pi; Model & Full-Wave Center-Tapped Rectifier [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Derive the small-signal hybrid-&pi; model of a BJT at high frequencies. [7]</p>
+    <p><b>(b)</b> Explain the operation of a full-wave rectifier using a center-tapped transformer with suitable circuit and waveforms. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.4 Depletion MOSFET & Multistage Amplifier Configurations [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Discuss the working principle and drain characteristics of a depletion-type MOSFET. [7]</p>
+    <p><b>(b)</b> What are the different types of coupling configurations used in multistage amplifier circuits (RC, Direct, Transformer)? Compare their characteristics. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.5 Op-Amp Square-Wave Generator & P-N Junction Current Equation [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Design a square wave generator circuit using an op-amp. Explain its charging and discharging waveforms. [7]</p>
+    <p><b>(b)</b> Explain the formation of a P-N junction diode. Derive the Shockley diode current equation. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.6 PI Controller using Op-Amp & MOSFET Channel Pinch-off [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Design a Proportional-Integral (PI) controller using an op-amp circuit. Derive its transfer function. [7]</p>
+    <p><b>(b)</b> Explain why the inversion channel in a MOSFET becomes wedge-shaped under an applied drain-to-source voltage \(V_{DS}\). [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.7 Miller Capacitance in BJT & Op-Amp Inverting/Non-inverting Gains [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Explain the effect of Miller capacitance in BJT amplifiers. Derive the expression for Miller input capacitance. [7]</p>
+    <p><b>(b)</b> Derive voltage gain expressions for the inverting and non-inverting op-amp amplifier configurations. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.8 Clamping Circuits & Transistor Current Gain Relationships [7 + 7 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p><b>(a)</b> Explain the concept of clamping. Describe the operation of positive and negative clamper circuits with diagrams. [7]</p>
+    <p><b>(b)</b> Define \(\alpha\), \(\beta\), and \(\gamma\) of a transistor and derive their mathematical relationships. [7]</p>
+    
+        </div>
+    </div>
+    
+
+    <div class="question-block">
+        <div class="question-title">
+            <span>Q.9 Short Notes [7 &times; 2 = 14]</span>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+        </div>
+        <div class="question-body">
+            
+    <p>Write short notes on any two of the following:</p>
+    <p><b>(a)</b> Darlington amplifier configuration and its advantages</p>
+    <p><b>(b)</b> Slew rate and virtual ground concept in an op-amp</p>
+    <p><b>(c)</b> Q-point selection and stability factor in BJT biasing</p>
+    <p><b>(d)</b> First-order active low-pass filter using an op-amp</p>
+    
+        </div>
+    </div>
+    
+</main>
+
+<button id="fab-top" class="fab-top" title="Scroll to Top">TOP</button>
+
+
+<!-- NOTHING STYLE AI SOLVER MODAL -->
+<div id="aiModal" class="nt-modal-backdrop">
+    <div class="nt-modal">
+        <div class="nt-modal-header">
+            <div class="nt-modal-title">
+                <span class="nt-red-dot"></span>
+                <span>AI QUESTION SOLVER</span>
+            </div>
+            <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
+        </div>
+        
+        <div id="aiQuestionPreview" class="nt-question-preview"></div>
+        
+        <div class="nt-ai-grid">
+            <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
+                <span>ChatGPT</span>
+            </a>
+            <a id="btnGemini" target="_blank" class="nt-ai-btn">
+                <span>Google Gemini</span>
+            </a>
+            <a id="btnClaude" target="_blank" class="nt-ai-btn">
+                <span>Claude AI</span>
+            </a>
+            <a id="btnDeepSeek" target="_blank" class="nt-ai-btn">
+                <span>DeepSeek</span>
+            </a>
+            <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
+                <span>Open in AI App</span>
+            </button>
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
+                <span>Copy Solution Prompt</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="ntToast" class="nt-toast">Prompt copied to clipboard!</div>
+
+<script>
+let activeQuestionText = '';
+
+function openAiModal(btn) {
+    const qBlock = btn.closest('.question-block');
+    if (!qBlock) return;
+    
+    const qTitle = qBlock.querySelector('.question-title span')?.innerText || '';
+    const qBody = qBlock.querySelector('.question-body')?.innerText || '';
+    activeQuestionText = (qTitle + '\n\n' + qBody).trim();
+    
+    document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
+    
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
+    
+    document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
+    document.getElementById('btnClaude').href = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+    document.getElementById('btnDeepSeek').href = `https://chat.deepseek.com/`;
+    
+    document.getElementById('aiModal').classList.add('open');
+}
+
+function closeAiModal() {
+    document.getElementById('aiModal').classList.remove('open');
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('ntToast');
+    toast.innerText = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+function copyAiPrompt() {
+    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    navigator.clipboard.writeText(prompt).then(() => {
+        showToast('Solution prompt copied to clipboard!');
+    }).catch(() => {
+        showToast('Failed to copy');
+    });
+}
+
+function shareQuestion() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'BEU ECE Question',
+            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+        }).catch(() => {});
+    } else {
+        copyAiPrompt();
+    }
+}
+
+document.getElementById('aiModal').addEventListener('click', (e) => {
+    if (e.target.id === 'aiModal') closeAiModal();
+});
+
+// Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        if (localStorage.getItem('nt-theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeBtn.textContent = 'DARK';
+        }
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-mode');
+            themeBtn.textContent = isLight ? 'DARK' : 'LIGHT';
+            localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
+        });
+    }
+
+    const fabTop = document.getElementById('fab-top');
+    if (fabTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) fabTop.classList.add('show');
+            else fabTop.classList.remove('show');
+        });
+        fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+});
+</script>
+
+
+<footer class="nt-footer">
+    <div>Credit: Apna BEU &bull; Crafted by <a href="https://stutosed.vercel.app" target="_blank">Stutosed</a></div>
+</footer>
+
+</body>
+</html>
