@@ -1,7 +1,5 @@
 # Node & Package
 node_modules/
-package.json
-package-lock.json
 
 # Original APK archive and dump
 *.xapk
@@ -13,11 +11,16 @@ extracted_apk/
 __pycache__/
 *.pyc
 *.py
-*.js
 qp*_extracted.html
 *.png
 render_manifest.json
 papers_inventory.txt
+
+# Ignore build/utility scripts but keep analytics config
+build.js
+extract*.js
+process*.js
+utils*.js
 
 scratch/
 ECE-4th-SEM-PYQs.pdf
