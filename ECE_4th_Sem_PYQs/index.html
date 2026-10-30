@@ -1,10 +1,1154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=../index.html" />
-<script>window.location.href = "../index.html";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#000000">
+<title>BEU ECE 4th Sem PYQ</title>
+<!-- Vercel Web Analytics & Speed Insights -->
+<script>
+  window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};
+  window.si = window.si || function () {{ (window.siq = window.siq || []).push(arguments); }};
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Atyp';
+  src: local('Atyp'), local('Atyp Display'), local('Space Grotesk');
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-card: #121212;
+  --bg-card-hover: #171717;
+  --border-color: #242424;
+  --border-light: #333333;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8e8e93;
+  --text-muted: #555555;
+  --accent-red: #d71921;
+  --btn-bg: #1c1c1c;
+  --btn-border: #2e2e2e;
+  --font-main: 'Atyp', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --dot-color: rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode {
+  --bg-primary: #f8f8fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f5f7;
+  --border-color: #e5e5e5;
+  --border-light: #d4d4d4;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --accent-red: #d71921;
+  --btn-bg: #f0f0f2;
+  --btn-border: #d4d4d4;
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0 0 40px 0;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Top Navigation Bar */
+.nt-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(14, 14, 14, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+body.light-mode .nt-nav {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.nt-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
+}
+
+.nt-red-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 6px var(--accent-red);
+  flex-shrink: 0;
+  display: inline-block;
+  animation: pulse-dot 2.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.nt-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.nt-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--btn-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.nt-btn:hover {
+  border-color: var(--border-light);
+  background: var(--border-color);
+}
+
+.nt-btn.active {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #ffffff;
+}
+
+.nt-btn.active:hover {
+  opacity: 0.9;
+}
+
+/* Main Layout */
+.nt-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Hero Section */
+.hero-box {
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(215, 25, 33, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-title {
+  font-size: clamp(24px, 5.5vw, 40px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px 0;
+  line-height: 1.15;
+}
+
+.hero-desc {
+  font-size: clamp(14px, 3.5vw, 15.5px);
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-large {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.btn-large.primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
+}
+
+.btn-large.primary:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-large.secondary {
+  background: var(--btn-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-large.secondary:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Routine Grid */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0 14px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+}
+
+.section-header .tag {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.routine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.routine-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s ease;
+}
+
+.routine-card:hover {
+  border-color: var(--border-light);
+}
+
+.routine-card .date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.routine-card .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Search */
+.search-wrapper {
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-box:focus {
+  border-color: var(--text-primary);
+}
+
+/* VVI Packs Grid */
+.vvi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.vvi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.vvi-card:hover {
+  border-color: var(--border-light);
+}
+
+.vvi-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-red);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.vvi-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 6px 0 0 0;
+}
+
+.vvi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.vvi-size {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.vvi-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  background: var(--btn-bg);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+
+.vvi-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Notes Section Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.note-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--text-secondary);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.note-card:hover {
+  border-color: var(--border-light);
+}
+
+.note-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.note-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 6px 0 0 0;
+}
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.note-size {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.note-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  background: var(--btn-bg);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+
+.note-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Subject Cards */
+.subjects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.subject-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 18px;
+  transition: border-color 0.15s ease;
+}
+
+.subject-item:hover {
+  border-color: var(--border-light);
+}
+
+.subject-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.subject-name {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.3px;
+}
+
+.subject-code-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subject-code-tag .date-tag {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.subject-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 600px) {
+  .subject-actions {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.sub-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.sub-btn.primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
+}
+
+.sub-btn.primary:hover {
+  opacity: 0.9;
+}
+
+.sub-btn.secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.sub-btn.secondary:hover {
+  border-color: var(--border-light);
+}
+
+.year-chips {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.year-chip-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.chip-item {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 4px 9px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.chip-item:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+/* Footer */
+.nt-footer {
+  margin-top: 48px;
+  padding: 20px 16px;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.nt-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nt-footer a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+</style>
 </head>
 <body>
-<p>Redirecting to <a href="../index.html">BEU ECE 4th Sem PYQ Hub</a>...</p>
+
+<header class="nt-nav">
+    <a href="#" class="nt-brand">
+        <span class="nt-red-dot"></span>
+        <span>BEU // ECE 4TH SEM</span>
+    </a>
+    <div class="nt-controls">
+        <button id="theme-toggle" class="nt-btn">LIGHT</button>
+        <a href="https://files.catbox.moe/o9v4eo.pdf" target="_blank" class="nt-btn active" title="Master PDF 1 (1.8 MB)">MASTER 1</a>
+        <a href="https://files.catbox.moe/fqdvdz.pdf" target="_blank" class="nt-btn active" title="Master PDF 2 (2.2 MB)">MASTER 2</a>
+    </div>
+</header>
+
+<main class="nt-container">
+
+    <!-- Hero Card -->
+    <section class="hero-box">
+        <div class="hero-meta">
+            <span>Bihar Engineering University</span>
+            <span>&bull;</span>
+            <span>Session 2026</span>
+        </div>
+        <h1 class="hero-title">Previous Year Questions</h1>
+        <p class="hero-desc">
+            Minimalist, high-performance exam repository for B.Tech ECE 4th Semester. Complete with question papers, circuit diagrams, LaTeX formulas, subject notes, and AI-assisted solutions.
+        </p>
+        <div class="hero-actions">
+            <a href="BEU_ECE_4th_Semester_All_Subjects_Master_Compilation.html" class="btn-large primary">
+                <span>READ MASTER ARCHIVE</span>
+            </a>
+            <a href="https://files.catbox.moe/o9v4eo.pdf" target="_blank" class="btn-large secondary">
+                <span>MASTER PDF 1 (1.8 MB)</span>
+            </a>
+            <a href="https://files.catbox.moe/fqdvdz.pdf" target="_blank" class="btn-large secondary">
+                <span>MASTER PDF 2 (2.2 MB)</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Routine Bar -->
+    <div class="section-header">
+        <span>Exam Routine Timeline</span>
+        <span class="tag">2:00 PM &ndash; 5:00 PM</span>
+    </div>
+    <div class="routine-grid">
+        <div class="routine-card">
+            <span class="date">29 OCT 2026</span>
+            <span class="title">Analog Communication</span>
+        </div>
+        <div class="routine-card">
+            <span class="date">31 OCT 2026</span>
+            <span class="title">Analog Electronics & IC</span>
+        </div>
+        <div class="routine-card">
+            <span class="date">03 NOV 2026</span>
+            <span class="title">Digital Circuits</span>
+        </div>
+        <div class="routine-card">
+            <span class="date">05 NOV 2026</span>
+            <span class="title">EMFT</span>
+        </div>
+        <div class="routine-card">
+            <span class="date">07 NOV 2026</span>
+            <span class="title">Electronics Materials</span>
+        </div>
+    </div>
+
+    <!-- 25 VVI Question Answers Section -->
+    <div class="section-header">
+        <span>25 VVI Question Answers Packs</span>
+        <span class="tag">High Priority Exam Bank</span>
+    </div>
+    <div class="vvi-grid">
+        <div class="vvi-card">
+            <div>
+                <div class="vvi-badge">Code: 104402 &bull; 25 VVI</div>
+                <h3 class="vvi-title">Analog Communication</h3>
+            </div>
+            <div class="vvi-footer">
+                <span class="vvi-size">2.3 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/gqx7rp.pdf" target="_blank" class="vvi-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="vvi-card">
+            <div>
+                <div class="vvi-badge">Code: 104401 &bull; 25 VVI</div>
+                <h3 class="vvi-title">Analog Electronics & Integrated Circuits</h3>
+            </div>
+            <div class="vvi-footer">
+                <span class="vvi-size">2.4 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/nvpkfq.pdf" target="_blank" class="vvi-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="vvi-card">
+            <div>
+                <div class="vvi-badge">Code: 104405 &bull; 25 VVI</div>
+                <h3 class="vvi-title">Electronic Materials and Instruments</h3>
+            </div>
+            <div class="vvi-footer">
+                <span class="vvi-size">2.4 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/shsj9m.pdf" target="_blank" class="vvi-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="vvi-card">
+            <div>
+                <div class="vvi-badge">Code: 104404 &bull; 25 VVI</div>
+                <h3 class="vvi-title">Electromagnetic Field Theory (EMFT)</h3>
+            </div>
+            <div class="vvi-footer">
+                <span class="vvi-size">2.5 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/azn68d.pdf" target="_blank" class="vvi-btn">DOWNLOAD</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ECE 4th Sem Notes Section -->
+    <div class="section-header">
+        <span>Subject Notes & Study Material</span>
+        <span class="tag">5 Core Subjects</span>
+    </div>
+    <div class="notes-grid">
+        <div class="note-card">
+            <div>
+                <div class="note-badge">Code: 104402 &bull; NOTES</div>
+                <h3 class="note-title">Analog Communication</h3>
+            </div>
+            <div class="note-footer">
+                <span class="note-size">4.5 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/xiy2ks.pdf" target="_blank" class="note-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="note-card">
+            <div>
+                <div class="note-badge">Code: 104401 &bull; NOTES</div>
+                <h3 class="note-title">Analog Electronics & Integrated Circuits</h3>
+            </div>
+            <div class="note-footer">
+                <span class="note-size">13.8 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/hzi2q3.pdf" target="_blank" class="note-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="note-card">
+            <div>
+                <div class="note-badge">Code: 104403 &bull; NOTES</div>
+                <h3 class="note-title">Digital Circuits</h3>
+            </div>
+            <div class="note-footer">
+                <span class="note-size">5.9 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/6ozhhb.pdf" target="_blank" class="note-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="note-card">
+            <div>
+                <div class="note-badge">Code: 104404 &bull; NOTES</div>
+                <h3 class="note-title">Electromagnetic Field Theory (EMFT)</h3>
+            </div>
+            <div class="note-footer">
+                <span class="note-size">5.9 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/edrmjs.pdf" target="_blank" class="note-btn">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <div class="note-card">
+            <div>
+                <div class="note-badge">Code: 104405 &bull; NOTES</div>
+                <h3 class="note-title">Electronic Materials & Instrumentation</h3>
+            </div>
+            <div class="note-footer">
+                <span class="note-size">6.9 MB &bull; PDF</span>
+                <a href="https://files.catbox.moe/ldgf6w.pdf" target="_blank" class="note-btn">DOWNLOAD</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Input -->
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-box" placeholder="// Search papers, course codes, or years...">
+    </div>
+
+    <!-- Subjects Archive List -->
+    <div class="section-header">
+        <span>Theory Subjects & Papers</span>
+        <span class="tag">5 Core Subjects</span>
+    </div>
+
+    <div class="subjects-list" id="subjectsList">
+
+        <!-- 1. Analog Communication -->
+        <div class="subject-item" data-keywords="analog communication anacom 104402 am fm pm modulation noise">
+            <div class="subject-top">
+                <div>
+                    <h2 class="subject-name">Analog Communication</h2>
+                    <div class="subject-code-tag">
+                        <span>CODE: 104402</span>
+                        <span>&bull;</span>
+                        <span class="date-tag">EXAM: 29 OCT 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-actions">
+                <a href="01_Analog_Communication/BEU_ECE_4thSem_Analog_Communication_All_Years.html" class="sub-btn primary">
+                    <span>Read All Years</span>
+                </a>
+                <a href="https://files.catbox.moe/3u6hbi.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Subject PDF</span>
+                </a>
+                <a href="https://files.catbox.moe/xiy2ks.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Notes PDF</span>
+                </a>
+            </div>
+            <div class="year-chips">
+                <span class="year-chip-label">Years:</span>
+                <a href="01_Analog_Communication/BEU_ECE_4thSem_Analog_Communication_2025.html" class="chip-item">
+                    <span>2025 (HTML)</span>
+                </a>
+                <a href="01_Analog_Communication/BEU_ECE_4thSem_Analog_Communication_2024.html" class="chip-item">
+                    <span>2024 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/v2hsw7.pdf" target="_blank" class="chip-item">
+                    <span>2024 PDF</span>
+                </a>
+                <a href="01_Analog_Communication/BEU_ECE_4thSem_Analog_Communication_2023.html" class="chip-item">
+                    <span>2023 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/pe4vpp.pdf" target="_blank" class="chip-item">
+                    <span>2023 PDF</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. Analog Electronics and Integrated Circuits -->
+        <div class="subject-item" data-keywords="analog electronics integrated circuits aec ic bjt opamp mosfet 104401 110401 104504 feedback amplifiers">
+            <div class="subject-top">
+                <div>
+                    <h2 class="subject-name">Analog Electronics & Integrated Circuits</h2>
+                    <div class="subject-code-tag">
+                        <span>CODE: 104401 / 110401</span>
+                        <span>&bull;</span>
+                        <span class="date-tag">EXAM: 31 OCT 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-actions">
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronics_and_IC_All_Years.html" class="sub-btn primary">
+                    <span>Read All Years</span>
+                </a>
+                <a href="https://files.catbox.moe/j42oi9.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Subject PDF</span>
+                </a>
+                <a href="https://files.catbox.moe/hzi2q3.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Notes PDF</span>
+                </a>
+            </div>
+            <div class="year-chips">
+                <span class="year-chip-label">Years:</span>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronics_110401_2026.html" class="chip-item">
+                    <span>2026 (HTML)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronics_110401_2025.html" class="chip-item">
+                    <span>2025 (110401)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Circuits_2025.html" class="chip-item">
+                    <span>2025 (104401)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Circuits_2024.html" class="chip-item">
+                    <span>2024 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/yn0726.pdf" target="_blank" class="chip-item">
+                    <span>2024 PDF</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronics_110401_2024S.html" class="chip-item">
+                    <span>2024 (Special)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Circuits_2023.html" class="chip-item">
+                    <span>2023 (104401)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronics_110401_2023.html" class="chip-item">
+                    <span>2023 (110401)</span>
+                </a>
+                <a href="https://files.catbox.moe/ar22y7.pdf" target="_blank" class="chip-item">
+                    <span>2023 PDF</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_4thSem_Analog_Electronic_Circuits_2022.html" class="chip-item">
+                    <span>2022 (HTML)</span>
+                </a>
+                <a href="02_Analog_Electronics_and_Integrated_Circuits/BEU_ECE_Linear_Integrated_Circuits_Bonus.html" class="chip-item">
+                    <span>Linear IC Bonus (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/4avvs6.pdf" target="_blank" class="chip-item">
+                    <span>Linear IC PDF</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. Digital Circuits -->
+        <div class="subject-item" data-keywords="digital circuits electronics boolean logic gates kmap flipflop mux counters 104403 100403 verilog fsm">
+            <div class="subject-top">
+                <div>
+                    <h2 class="subject-name">Digital Circuits & Electronics</h2>
+                    <div class="subject-code-tag">
+                        <span>CODE: 104403 / 100403</span>
+                        <span>&bull;</span>
+                        <span class="date-tag">EXAM: 03 NOV 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-actions">
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Circuits_All_Years.html" class="sub-btn primary">
+                    <span>Read All Years</span>
+                </a>
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Circuits_All_Years.html" class="sub-btn secondary">
+                    <span>Papers Hub</span>
+                </a>
+                <a href="https://files.catbox.moe/6ozhhb.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Notes PDF</span>
+                </a>
+            </div>
+            <div class="year-chips">
+                <span class="year-chip-label">Years:</span>
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Electronics_2024.html" class="chip-item">
+                    <span>2024 DE (HTML)</span>
+                </a>
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Circuits_2023.html" class="chip-item">
+                    <span>2023 DC (HTML)</span>
+                </a>
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Electronics_2023_Regular.html" class="chip-item">
+                    <span>2023 Reg (HTML)</span>
+                </a>
+                <a href="03_Digital_Circuits/BEU_ECE_4thSem_Digital_Electronics_2023_Special.html" class="chip-item">
+                    <span>2023 Spec (HTML)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 4. Electromagnetic Field Theory -->
+        <div class="subject-item" data-keywords="electromagnetic field theory emft maxwell equations wave transmission lines poynting 104404 100308 waveguides smith chart">
+            <div class="subject-top">
+                <div>
+                    <h2 class="subject-name">Electromagnetic Field Theory (EMFT)</h2>
+                    <div class="subject-code-tag">
+                        <span>CODE: 104404 / 100308</span>
+                        <span>&bull;</span>
+                        <span class="date-tag">EXAM: 05 NOV 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-actions">
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_4thSem_Electromagnetic_Field_Theory_All_Years.html" class="sub-btn primary">
+                    <span>Read All Years</span>
+                </a>
+                <a href="https://files.catbox.moe/vx615v.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Subject PDF</span>
+                </a>
+                <a href="https://files.catbox.moe/edrmjs.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Notes PDF</span>
+                </a>
+            </div>
+            <div class="year-chips">
+                <span class="year-chip-label">Years:</span>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_4thSem_Electromagnetic_Field_Theory_2025.html" class="chip-item">
+                    <span>2025 (HTML)</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_4thSem_Electromagnetic_Theory_2024.html" class="chip-item">
+                    <span>2024 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/h7t21e.pdf" target="_blank" class="chip-item">
+                    <span>2024 PDF</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_Electromagnetic_Fields_100308_2024.html" class="chip-item">
+                    <span>2024 (100308)</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_4thSem_Electromagnetic_Theory_2023.html" class="chip-item">
+                    <span>2023 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/wwualw.pdf" target="_blank" class="chip-item">
+                    <span>2023 PDF</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_Electromagnetic_Fields_100308_2023.html" class="chip-item">
+                    <span>2023 (100308)</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_Electromagnetic_Fields_100308_2022.html" class="chip-item">
+                    <span>2022 (100308)</span>
+                </a>
+                <a href="04_Electromagnetic_Field_Theory/BEU_ECE_Electromagnetic_Field_Theory_2020.html" class="chip-item">
+                    <span>2020 (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/64n05t.pdf" target="_blank" class="chip-item">
+                    <span>2020 PDF</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 5. Electronics Materials and Instrumentation -->
+        <div class="subject-item" data-keywords="electronics materials instrumentation semiconductor physics devices measurement eim 104405 104604 110601 102404 kelvin bridge transducers">
+            <div class="subject-top">
+                <div>
+                    <h2 class="subject-name">Electronics Materials & Instrumentation</h2>
+                    <div class="subject-code-tag">
+                        <span>CODE: 104405 / 104604 / 110601</span>
+                        <span>&bull;</span>
+                        <span class="date-tag">EXAM: 07 NOV 2026</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-actions">
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_4thSem_Electronics_Materials_and_Instrumentation_All_Years.html" class="sub-btn primary">
+                    <span>Read All Years</span>
+                </a>
+                <a href="https://files.catbox.moe/mmrzg0.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Subject PDF</span>
+                </a>
+                <a href="https://files.catbox.moe/ldgf6w.pdf" target="_blank" class="sub-btn secondary">
+                    <span>Notes PDF</span>
+                </a>
+            </div>
+            <div class="year-chips">
+                <span class="year-chip-label">Years:</span>
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_4thSem_Semiconductor_Physics_and_Devices_2024.html" class="chip-item">
+                    <span>2024 Semi (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/xpqh2n.pdf" target="_blank" class="chip-item">
+                    <span>2024 Semi PDF</span>
+                </a>
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_4thSem_Semiconductor_Physics_and_Devices_2023.html" class="chip-item">
+                    <span>2023 Semi (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/cn8iwl.pdf" target="_blank" class="chip-item">
+                    <span>2023 Semi PDF</span>
+                </a>
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_Electronics_Instruments_and_Measurement_2024.html" class="chip-item">
+                    <span>2024 EIM (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/60n0f0.pdf" target="_blank" class="chip-item">
+                    <span>2024 EIM PDF</span>
+                </a>
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_Measurements_and_Instrumentation_2024.html" class="chip-item">
+                    <span>2024 MI (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/6sveuz.pdf" target="_blank" class="chip-item">
+                    <span>2024 MI PDF</span>
+                </a>
+                <a href="05_Electronics_Materials_and_Instrumentation/BEU_ECE_Instrumentation_and_Control_2022.html" class="chip-item">
+                    <span>2022 IC (HTML)</span>
+                </a>
+                <a href="https://files.catbox.moe/pxwwd6.pdf" target="_blank" class="chip-item">
+                    <span>2022 IC PDF</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="nt-footer">
+    <div>Credit: Apna BEU &bull; Crafted by <a href="https://stutosed.vercel.app" target="_blank">Stutosed</a></div>
+</footer>
+
+<script>
+// Search Filter
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const items = document.querySelectorAll('.subject-item');
+    items.forEach(item => {
+        const text = (item.textContent + ' ' + (item.getAttribute('data-keywords') || '')).toLowerCase();
+        if (text.includes(query)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+// Theme Toggle
+const themeBtn = document.getElementById('theme-toggle');
+if (localStorage.getItem('nt-theme') === 'light') {
+    document.body.classList.add('light-mode');
+    themeBtn.innerText = 'DARK';
+}
+themeBtn.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    themeBtn.innerText = isLight ? 'DARK' : 'LIGHT';
+    localStorage.setItem('nt-theme', isLight ? 'light' : 'dark');
+});
+</script>
+
 </body>
 </html>
