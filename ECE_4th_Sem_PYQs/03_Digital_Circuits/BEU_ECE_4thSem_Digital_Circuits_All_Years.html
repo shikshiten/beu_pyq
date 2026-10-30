@@ -372,20 +372,22 @@ body.light-mode .nt-nav {
   border-radius: 6px;
 }
 
-/* ASK AI BUTTON */
+/* COPY SOLUTION PROMPT BUTTON */
 .ask-ai-btn {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   background: var(--bg-primary);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
@@ -764,7 +766,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Write the short answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the hexadecimal equivalent of the decimal number 256.</p>
@@ -800,7 +802,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[10+4=14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the procedure to design of asynchronous sequential circuit in detail with an example.
@@ -813,7 +815,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[10+4=14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the characteristics and about TTL parameters. Discuss implementation of the following
@@ -826,7 +828,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the realization of JK flipflop from T flipflop.</p>
@@ -837,7 +839,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is meant by magnitude comparator? Discuss in detail about two bit magnitude comparator.</p>
@@ -848,7 +850,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain briefly about SOP and POS forms with example.</p>
@@ -861,7 +863,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>How does don't care condition in K-map help for circuit simplification?</p>
@@ -874,7 +876,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Implement the following function using suitable multiplexer. \( F(a,b,c)=\Sigma m(3,4,5,7) \).
@@ -886,7 +888,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write Short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write Short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>(a) Analog to Digital Converter</p>
@@ -918,7 +920,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Answer of the following questions (any seven only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.1 Answer of the following questions (any seven only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>What is the use of K-map?</p>
@@ -953,7 +955,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Realize XNOR logic function using NAND gate only.</p>
@@ -964,7 +966,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>A logic circuit has four inputs A, B, C, D and output Y. Y = 1 when A &amp; B are both 1 subjected to
@@ -973,7 +975,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design 8 to 3 line Encoder circuit.</p>
@@ -984,7 +986,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Design a parallel-to-serial converter using shift registers and explain its operation.</p>
@@ -995,7 +997,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Explain the working principle of an R-2R ladder DAC with a detailed diagram.</p>
@@ -1006,7 +1008,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the Simplified logical expression for Y.<br/>
@@ -1019,7 +1021,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Implement S-R, T, D flip-flops using J-K flip-flop. Also show the implementation with help of
@@ -1031,7 +1033,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>(a) Binary Parallel Adder<br/>
@@ -1059,7 +1061,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define Dynamic RAM.</p>
@@ -1094,7 +1096,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>What are weighted, non-weighted, cyclic and self-complementary codes? Explain each with examples.
@@ -1103,7 +1105,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design a BCD to 7-segment display decoder circuit using logic gates.</p>
@@ -1111,7 +1113,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design a 3-bit parallel comparator A/D convertor that provides output in 2's complement format.
@@ -1120,7 +1122,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Design full adder using 8:1 mux.</p>
@@ -1131,7 +1133,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is binary shift register? Write down their application.</p>
@@ -1139,7 +1141,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Minimize the following expression using k-map<br/>
@@ -1148,7 +1150,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the procedure to design Mod-6 counter.</p>
@@ -1156,7 +1158,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-roman; padding-left: 20px;">
@@ -1188,7 +1190,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven Question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Draw Truth table of JK flip flop.</p>
@@ -1223,7 +1225,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Implement the following function using only NAND gate \( F(A,B,C)=\Sigma m(0,1,2,3,7) \).</p>
@@ -1231,7 +1233,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Realize XNOR logic function using NAND gate only.</p>
@@ -1242,7 +1244,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>A logic circuit has four inputs A,B,C,D and output Y. Y=1 when A &amp; B are both 1, subjected to the
@@ -1251,7 +1253,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain Master-slave flip flop. What are race around condition?. How it can be circumvented with
@@ -1261,7 +1263,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Design 8 to 3 line Encoder circuit.</p>
@@ -1272,7 +1274,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>Summarize the design procedure for a synchronous sequential circuit.</p>
@@ -1280,7 +1282,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Explain the working of R-2R Ladder DAC. </p>
@@ -1292,7 +1294,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.9 Write short notes on the following:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>(a) Binary Parallel Adder</p>
@@ -1314,7 +1316,7 @@ mjx-container {
         <div class="nt-modal-header">
             <div class="nt-modal-title">
                 <span class="nt-red-dot"></span>
-                <span>AI QUESTION SOLVER</span>
+                <span>SOLUTION PROMPT &amp; AI SOLVER</span>
             </div>
             <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
         </div>
@@ -1322,6 +1324,9 @@ mjx-container {
         <div id="aiQuestionPreview" class="nt-question-preview"></div>
         
         <div class="nt-ai-grid">
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700;">
+                <span>COPY DETAILED SOLUTION PROMPT</span>
+            </button>
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
                 <span>ChatGPT</span>
             </a>
@@ -1335,10 +1340,7 @@ mjx-container {
                 <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>Open in AI App</span>
-            </button>
-            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>Copy Solution Prompt</span>
+                <span>Open in Mobile AI App</span>
             </button>
         </div>
     </div>
@@ -1348,6 +1350,24 @@ mjx-container {
 
 <script>
 let activeQuestionText = '';
+
+function buildComprehensivePrompt(qText) {
+    return `You are an expert university professor and engineering examiner specializing in Electronics & Communication Engineering (ECE) for Bihar Engineering University (BEU).
+
+Please provide an exhaustive, high-scoring university examination solution for the following question:
+
+--------------------------------------------------
+QUESTION:
+${qText}
+--------------------------------------------------
+
+STRUCTURE YOUR SOLUTION SYSTEMATICALLY AS FOLLOWS:
+1. Core Concepts & Definitions: Clearly state key terms, theorems, working principles, and governing physical laws.
+2. Complete Step-by-Step Derivation & Equations: Show every algebraic/differential step with standard notations, LaTeX formulas, boundary conditions, and parameter definitions.
+3. Circuit Diagrams & Waveforms: Describe clearly all schematic connections, labeled terminals (base/collector/emitter or gate/drain/source), component values, input/output waveforms, and polarities.
+4. Numerical Calculations (if applicable): State all given data, conversion of units, exact step-by-step substitution into formulas, calculation steps, and highlight the final answer with appropriate SI units.
+5. Critical Examination Notes & Summary: Highlight university exam tips, practical significance, advantages/disadvantages, and key conclusions to maximize marks.`;
+}
 
 function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');
@@ -1359,7 +1379,7 @@ function openAiModal(btn) {
     
     document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
     
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     
     document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
     document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
@@ -1381,7 +1401,7 @@ function showToast(msg) {
 }
 
 function copyAiPrompt() {
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     navigator.clipboard.writeText(prompt).then(() => {
         showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
@@ -1390,10 +1410,11 @@ function copyAiPrompt() {
 }
 
 function shareQuestion() {
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     if (navigator.share) {
         navigator.share({
-            title: 'BEU ECE Question',
-            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+            title: 'BEU ECE Solution Prompt',
+            text: prompt
         }).catch(() => {});
     } else {
         copyAiPrompt();

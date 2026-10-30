@@ -372,20 +372,22 @@ body.light-mode .nt-nav {
   border-radius: 6px;
 }
 
-/* ASK AI BUTTON */
+/* COPY SOLUTION PROMPT BUTTON */
 .ask-ai-btn {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   background: var(--bg-primary);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
@@ -764,7 +766,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct option/answer the following (Any seven question
-                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Which of the following best describes the energy band model of a semiconductor?</p>
@@ -864,7 +866,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain the concept of the bonding model and energy band model in semiconductors.</p>
@@ -877,7 +879,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Discuss the different types of recombination mechanisms and their significance in semiconductor
@@ -891,7 +893,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain the Ideal Diode Equation. Derive it quantitatively using the band model and boundary
@@ -906,7 +908,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Discuss the two primary mechanisms of junction breakdown in a PN junction diode- Avalanche
@@ -916,7 +918,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Describe the impact of base width modulation (Early effect) on BJT operation. How does it affect
@@ -927,7 +929,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Explain the deviations from ideal MOS behaviour, including metal-semiconductor work function
@@ -937,7 +939,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Discuss the working principles and characteristics of different optoelectronic devices: PIN
@@ -946,7 +948,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>Explain the working of a solid-state laser diode. How does it differ from an LED in terms of
@@ -976,7 +978,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Write the short answer of the following (Any seven question
-                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Define the term drift velocity.</p>
@@ -1011,7 +1013,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Explain (i) Solar Cell (ii) LED (iii) LASER diode.</p>
@@ -1022,7 +1024,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>What is MOS Capacitor? Draw its C-V Characteristic.</p>
@@ -1033,7 +1035,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Discuss the punch-through breakdown in BJT. Write the expression for the punch though voltage.
@@ -1047,7 +1049,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>With a neat diagrams explain the working of a PN junction diode in forward bias and reverse bias
@@ -1062,7 +1064,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>What is Zener diode. Explain V-I characteristics of Zener diode.</p>
@@ -1074,7 +1076,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <p>What is intrinsic semiconductor and explain the formation extrinsic semiconductors through
@@ -1084,7 +1086,7 @@ mjx-container {
 </div>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" type="a">
 <li class="sub-question">
 <p>Derive the expression for current generated due to drifting of charge carriers in semiconductors
@@ -1097,7 +1099,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write Short notes ver any two of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write Short notes ver any two of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -1128,7 +1130,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The high torque to weight ratio in an analog indicating instrument indicates</p>
@@ -1223,7 +1225,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain how the unknown frequency is measured using Wien bridge method?</p>
@@ -1234,7 +1236,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>How do you measure the unknown inductance using Hay's Bridge?</p>
@@ -1247,7 +1249,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>How do you measure the unknown capacitance using Schering Bridge? Also draw the phasor diagram.
@@ -1261,7 +1263,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>List out comparisons between CT's and PT's (Any four).</p>
@@ -1278,7 +1280,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the construction and principle of operation of D' Arsonval type Galvanometer.</p>
@@ -1289,7 +1291,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the measurement of frequency, phase angle and time delay using oscilloscope with
@@ -1307,7 +1309,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Draw the block diagram of an electronic voltmeter and explain its operation.</p>
@@ -1318,7 +1320,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Prove that for electrodynamometer type wattmeter true power = \( \frac{\cos \Phi}{\cos \Phi
@@ -1358,7 +1360,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer the following (Any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Which system analyzes brain wave activity?</p>
@@ -1453,7 +1455,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss the use of instrument transformers for current and voltage measurement in power systems.
@@ -1465,7 +1467,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the Hall effect and its application in Hall sensors for current and voltage measurements.
@@ -1477,7 +1479,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define and differentiate between true value, accuracy, and precision in measurement systems.</p>
@@ -1490,7 +1492,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the Six-Sigma approach to quality control in industrial processes.</p>
@@ -1501,7 +1503,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain hysteresis and dead-band in measurement systems. How do they influence the performance of
@@ -1513,7 +1515,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss the types of errors that occur in measurements. Explain the difference between systematic
@@ -1526,7 +1528,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Describe the role of sensitivity in measurement systems. How is sensitivity calculated, and what
@@ -1540,7 +1542,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha;">
@@ -1571,7 +1573,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven):</span><span class="marks">[2x7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Which of the following causes a controlled variable to change?</p>
@@ -1672,7 +1674,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Define the following: (i) Transducer (ii) Resolution (iii) Linearity (iv) Accuracy (v)
@@ -1685,7 +1687,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Differentiate among piezoelectric, inductive and capacitance-type transducers.</p>
@@ -1696,7 +1698,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the working of electrical resistance strain gauge. Explain how the resistance change of a
@@ -1711,7 +1713,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve all questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve all questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Consider a system with controller \( G_c \), reference input \( R \), and disturbance input
@@ -1745,7 +1747,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With the help of a suitable example, explain the difference between open-loop control and
@@ -1761,7 +1763,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Explain the operations of the following: (i) Inverting op-amp (ii) Summing op-amp (iii)
@@ -1773,7 +1775,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>For the open-loop transfer function \( G(s) = \frac{400(s+1)(s+10)}{s^3(s+100)(s+1000)} \),
@@ -1785,7 +1787,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any four of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any four of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <ol class="options-list" style="list-style-type: lower-alpha;">
@@ -1810,7 +1812,7 @@ mjx-container {
         <div class="nt-modal-header">
             <div class="nt-modal-title">
                 <span class="nt-red-dot"></span>
-                <span>AI QUESTION SOLVER</span>
+                <span>SOLUTION PROMPT &amp; AI SOLVER</span>
             </div>
             <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
         </div>
@@ -1818,6 +1820,9 @@ mjx-container {
         <div id="aiQuestionPreview" class="nt-question-preview"></div>
         
         <div class="nt-ai-grid">
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700;">
+                <span>COPY DETAILED SOLUTION PROMPT</span>
+            </button>
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
                 <span>ChatGPT</span>
             </a>
@@ -1831,10 +1836,7 @@ mjx-container {
                 <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>Open in AI App</span>
-            </button>
-            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>Copy Solution Prompt</span>
+                <span>Open in Mobile AI App</span>
             </button>
         </div>
     </div>
@@ -1844,6 +1846,24 @@ mjx-container {
 
 <script>
 let activeQuestionText = '';
+
+function buildComprehensivePrompt(qText) {
+    return `You are an expert university professor and engineering examiner specializing in Electronics & Communication Engineering (ECE) for Bihar Engineering University (BEU).
+
+Please provide an exhaustive, high-scoring university examination solution for the following question:
+
+--------------------------------------------------
+QUESTION:
+${qText}
+--------------------------------------------------
+
+STRUCTURE YOUR SOLUTION SYSTEMATICALLY AS FOLLOWS:
+1. Core Concepts & Definitions: Clearly state key terms, theorems, working principles, and governing physical laws.
+2. Complete Step-by-Step Derivation & Equations: Show every algebraic/differential step with standard notations, LaTeX formulas, boundary conditions, and parameter definitions.
+3. Circuit Diagrams & Waveforms: Describe clearly all schematic connections, labeled terminals (base/collector/emitter or gate/drain/source), component values, input/output waveforms, and polarities.
+4. Numerical Calculations (if applicable): State all given data, conversion of units, exact step-by-step substitution into formulas, calculation steps, and highlight the final answer with appropriate SI units.
+5. Critical Examination Notes & Summary: Highlight university exam tips, practical significance, advantages/disadvantages, and key conclusions to maximize marks.`;
+}
 
 function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');
@@ -1855,7 +1875,7 @@ function openAiModal(btn) {
     
     document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
     
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     
     document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
     document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
@@ -1877,7 +1897,7 @@ function showToast(msg) {
 }
 
 function copyAiPrompt() {
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     navigator.clipboard.writeText(prompt).then(() => {
         showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
@@ -1886,10 +1906,11 @@ function copyAiPrompt() {
 }
 
 function shareQuestion() {
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     if (navigator.share) {
         navigator.share({
-            title: 'BEU ECE Question',
-            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+            title: 'BEU ECE Solution Prompt',
+            text: prompt
         }).catch(() => {});
     } else {
         copyAiPrompt();

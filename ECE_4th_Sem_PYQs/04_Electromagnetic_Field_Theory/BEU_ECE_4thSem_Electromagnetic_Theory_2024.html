@@ -372,20 +372,22 @@ body.light-mode .nt-nav {
   border-radius: 6px;
 }
 
-/* ASK AI BUTTON */
+/* COPY SOLUTION PROMPT BUTTON */
 .ask-ai-btn {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   background: var(--bg-primary);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
@@ -764,7 +766,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The divergence of the vector field is</p>
@@ -860,7 +862,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write the differential elements (dl, da, dv) in both Cartesian, cylindrical co-ordinate system.
@@ -872,7 +874,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Given the two points, \( C(-3,2,1) \) and \( D(r=5, \theta=20^{\circ},
@@ -888,7 +890,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>State and derive Coulomb's law. Write coulomb's law in vector forms.</p>
@@ -900,7 +902,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>An infinite long line charge of uniform density \( \rho_{L} \) C/cm is situated along the
@@ -913,7 +915,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Four 3pC charges are at the corners of a 1-m square. The two charges at the left side of the
@@ -932,7 +934,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Show that the Faraday's law of electromagnetic induction can be expressed as \( \nabla \times
@@ -948,7 +950,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss reflection of plane electromagnetic wave incident normally on a perfect dielectric and
@@ -961,7 +963,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -985,7 +987,7 @@ mjx-container {
         <div class="nt-modal-header">
             <div class="nt-modal-title">
                 <span class="nt-red-dot"></span>
-                <span>AI QUESTION SOLVER</span>
+                <span>SOLUTION PROMPT &amp; AI SOLVER</span>
             </div>
             <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
         </div>
@@ -993,6 +995,9 @@ mjx-container {
         <div id="aiQuestionPreview" class="nt-question-preview"></div>
         
         <div class="nt-ai-grid">
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700;">
+                <span>COPY DETAILED SOLUTION PROMPT</span>
+            </button>
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
                 <span>ChatGPT</span>
             </a>
@@ -1006,10 +1011,7 @@ mjx-container {
                 <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>Open in AI App</span>
-            </button>
-            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>Copy Solution Prompt</span>
+                <span>Open in Mobile AI App</span>
             </button>
         </div>
     </div>
@@ -1019,6 +1021,24 @@ mjx-container {
 
 <script>
 let activeQuestionText = '';
+
+function buildComprehensivePrompt(qText) {
+    return `You are an expert university professor and engineering examiner specializing in Electronics & Communication Engineering (ECE) for Bihar Engineering University (BEU).
+
+Please provide an exhaustive, high-scoring university examination solution for the following question:
+
+--------------------------------------------------
+QUESTION:
+${qText}
+--------------------------------------------------
+
+STRUCTURE YOUR SOLUTION SYSTEMATICALLY AS FOLLOWS:
+1. Core Concepts & Definitions: Clearly state key terms, theorems, working principles, and governing physical laws.
+2. Complete Step-by-Step Derivation & Equations: Show every algebraic/differential step with standard notations, LaTeX formulas, boundary conditions, and parameter definitions.
+3. Circuit Diagrams & Waveforms: Describe clearly all schematic connections, labeled terminals (base/collector/emitter or gate/drain/source), component values, input/output waveforms, and polarities.
+4. Numerical Calculations (if applicable): State all given data, conversion of units, exact step-by-step substitution into formulas, calculation steps, and highlight the final answer with appropriate SI units.
+5. Critical Examination Notes & Summary: Highlight university exam tips, practical significance, advantages/disadvantages, and key conclusions to maximize marks.`;
+}
 
 function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');
@@ -1030,7 +1050,7 @@ function openAiModal(btn) {
     
     document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
     
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     
     document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
     document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
@@ -1052,7 +1072,7 @@ function showToast(msg) {
 }
 
 function copyAiPrompt() {
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     navigator.clipboard.writeText(prompt).then(() => {
         showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
@@ -1061,10 +1081,11 @@ function copyAiPrompt() {
 }
 
 function shareQuestion() {
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     if (navigator.share) {
         navigator.share({
-            title: 'BEU ECE Question',
-            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+            title: 'BEU ECE Solution Prompt',
+            text: prompt
         }).catch(() => {});
     } else {
         copyAiPrompt();

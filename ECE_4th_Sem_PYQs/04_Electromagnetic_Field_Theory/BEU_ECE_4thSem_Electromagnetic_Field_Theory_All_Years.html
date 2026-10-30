@@ -372,20 +372,22 @@ body.light-mode .nt-nav {
   border-radius: 6px;
 }
 
-/* ASK AI BUTTON */
+/* COPY SOLUTION PROMPT BUTTON */
 .ask-ai-btn {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   background: var(--bg-primary);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   transition: all 0.15s ease;
 }
 
@@ -759,7 +761,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.1 Choose the correct option/answer the following (Any seven only): [2 &times; 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -862,7 +864,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.2 Gauss's Law & Electric Field Calculation [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -876,7 +878,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.3 Ampere's Circuital Law & Magnetic Fields [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -890,7 +892,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.4 Maxwell's Equations & EM Wave Equation [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -904,7 +906,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.5 Reflection of EM Waves & Brewster's Angle [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -918,7 +920,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.6 Poynting's Theorem & Energy Flow [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -932,7 +934,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.7 Transmission Lines & Impedance Matching [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -946,7 +948,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.8 Electrostatic Boundary-Value Problems & Capacitance [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -960,7 +962,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.9 Short Notes [7 &times; 2 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -992,7 +994,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Choose the correct answer of the following (any seven question
-                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+                    only):</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>The divergence of the vector field is</p>
@@ -1088,7 +1090,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Write the differential elements (dl, da, dv) in both Cartesian, cylindrical co-ordinate system.
@@ -1100,7 +1102,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Given the two points, \( C(-3,2,1) \) and \( D(r=5, \theta=20^{\circ},
@@ -1116,7 +1118,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>State and derive Coulomb's law. Write coulomb's law in vector forms.</p>
@@ -1128,7 +1130,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>An infinite long line charge of uniform density \( \rho_{L} \) C/cm is situated along the
@@ -1141,7 +1143,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Four 3pC charges are at the corners of a 1-m square. The two charges at the left side of the
@@ -1160,7 +1162,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Show that the Faraday's law of electromagnetic induction can be expressed as \( \nabla \times
@@ -1176,7 +1178,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Discuss reflection of plane electromagnetic wave incident normally on a perfect dielectric and
@@ -1189,7 +1191,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -1216,7 +1218,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.1 Choose the correct option/answer the following (Any seven only): [2 &times; 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1319,7 +1321,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.2 Coordinate Transformation & Vector Theorems [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1333,7 +1335,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.3 Electric Field Intensity & Potential [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1347,7 +1349,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.4 Capacitance & Laplace/Poisson Equations [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1361,7 +1363,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.5 Magnetic Flux Density & Motional EMF [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1375,7 +1377,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.6 Current Element Force & Magnetic Materials [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1389,7 +1391,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.7 Maxwell's Equations Point & Integral Forms [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1403,7 +1405,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.8 Poynting Theorem & Skin Effect [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1417,7 +1419,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.9 Current Density & Magnetization [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1446,7 +1448,7 @@ mjx-container {
 </div>
 <div class="question-block">
 <div class="question-title"><span>Q.1 Answer any seven question only:</span><span class="marks">[14]</span>
-<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body" style="list-style-type: lower-alpha;">
 <li class="sub-question">
 <p>What is physical significance of divergence?</p>
@@ -1481,7 +1483,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the expression for the attenuation constant, phase constant and intrinsic impedance for a
@@ -1495,7 +1497,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive suitable relations for integral and point forms of poynting theorem.</p>
@@ -1506,7 +1508,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Solve this question :</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>With explanation, derive the Maxwell's equation in differential and integral forms.</p>
@@ -1514,7 +1516,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>An iron ring with a cross sectional area of 3 \( cm^{2} \) and mean circumference of 15 cm is
@@ -1529,7 +1531,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>State and proof gauss law and explain applications of Gauss law.</p>
@@ -1540,7 +1542,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="3" data-stars="★★★">
 <p>State and proof divergence theorem.</p>
@@ -1552,7 +1554,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Solve both questions :</span><span class="marks">[7+7=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question" data-freq="2" data-stars="★★">
 <p>Define and explain Biot-Savart Law.</p>
@@ -1564,7 +1566,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Write short notes on any two of the following:-</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <div class="question-body" style="list-style-type: none; padding-left: 0;">
 <li class="sub-question">
 <ul class="options-list" style="list-style-type: lower-alpha; padding-left: 20px;">
@@ -1591,7 +1593,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.1 Choose the correct option/answer the following (Any seven only): [2 &times; 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1694,7 +1696,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.2 Coordinate Conversion & Dielectric Interface [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1708,7 +1710,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.3 Current Mechanisms & Coordinate Transformation Matrix [10 + 4 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1722,7 +1724,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.4 Divergence of Vector Field & Gauss's Law [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1736,7 +1738,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.5 Magnetic Boundary Conditions & Plane Waves [8 + 6 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1750,7 +1752,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.6 Ampere's Law in Conductors & Transformer EMF [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1764,7 +1766,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.7 Maxwell's Equations & EMF Types [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1778,7 +1780,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.8 Propagation in Good Conductors (Copper) [14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1795,7 +1797,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.9 Short Notes [7 &times; 2 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1822,7 +1824,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.1 Choose the correct option of the following (Answer any seven): [2 &times; 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1925,7 +1927,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.2 Dielectric Boundary Conditions & Polystyrene Capacitor [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1939,7 +1941,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.3 Wave Equations in Vacuum & Coaxial Cable Resistance [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1953,7 +1955,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.4 Two-Wire Cylindrical Capacitance & Vector Products [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1967,7 +1969,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.5 Time-Varying Maxwell's Equations & Magnetic Boundary Conditions [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1981,7 +1983,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.6 Gauss's Law Line Charge & Coulomb Force Calculation [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -1995,7 +1997,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.7 Helmholtz Wave Equations & Lossy Medium Propagation [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -2009,7 +2011,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.8 Transmission Line Telegrapher Equations & Input Impedance [7 + 7 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -2023,7 +2025,7 @@ mjx-container {
     <div class="question-block">
         <div class="question-title">
             <span>Q.9 Short Notes [7 &times; 2 = 14]</span>
-            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button>
+            <button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button>
         </div>
         <div class="question-body">
             
@@ -2055,7 +2057,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.1 Choose the correct answer of any seven of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.1 Choose the correct answer of any seven of the following:</span><span class="marks">[14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>In free space, the Poisson equation becomes</p>
@@ -2143,7 +2145,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.2 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.2 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A rectangular waveguide with dimensions of \( 3 \text{ cm} \times 2 \text{ cm} \) operates
@@ -2161,7 +2163,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.3 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.3 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>(i) Define quality factor. Give its relation with attenuation factor. (ii) Define reflection
@@ -2177,7 +2179,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.4 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.4 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive an expression for input impedance when transmission line is terminated with any load
@@ -2192,7 +2194,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.5 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.5 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Derive the Gauss divergence theorem and Stokes' theorem along with their significances.</p>
@@ -2209,7 +2211,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.6 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.6 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>Find the reflection and transmission
@@ -2234,7 +2236,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.7 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.7 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>What is polarization of wave? Discuss the properties of S- and P-polarized light. Explain why
@@ -2251,7 +2253,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.8 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.8 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A transmission line has a characteristic impedance of 100 ohms and is terminated in a load
@@ -2269,7 +2271,7 @@ mjx-container {
 </ol>
 </div>
 <div class="question-block">
-<div class="question-title"><span>Q.9 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Solve with AI">ASK AI</button></div>
+<div class="question-title"><span>Q.9 Attempt any two parts of the following:</span><span class="marks">[7x2=14]</span><button type="button" class="ask-ai-btn" onclick="openAiModal(this)" title="Copy Solution Prompt">COPY SOLUTION PROMPT</button></div>
 <ol class="question-body">
 <li class="sub-question">
 <p>A uniform plane wave propagating in a medium has \( E = 2e^{-\alpha z}\sin(10^8t - \beta
@@ -2302,7 +2304,7 @@ mjx-container {
         <div class="nt-modal-header">
             <div class="nt-modal-title">
                 <span class="nt-red-dot"></span>
-                <span>AI QUESTION SOLVER</span>
+                <span>SOLUTION PROMPT &amp; AI SOLVER</span>
             </div>
             <button class="nt-modal-close" onclick="closeAiModal()">&times;</button>
         </div>
@@ -2310,6 +2312,9 @@ mjx-container {
         <div id="aiQuestionPreview" class="nt-question-preview"></div>
         
         <div class="nt-ai-grid">
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700;">
+                <span>COPY DETAILED SOLUTION PROMPT</span>
+            </button>
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
                 <span>ChatGPT</span>
             </a>
@@ -2323,10 +2328,7 @@ mjx-container {
                 <span>DeepSeek</span>
             </a>
             <button id="btnShareApp" class="nt-ai-btn full-width" onclick="shareQuestion()">
-                <span>Open in AI App</span>
-            </button>
-            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
-                <span>Copy Solution Prompt</span>
+                <span>Open in Mobile AI App</span>
             </button>
         </div>
     </div>
@@ -2336,6 +2338,24 @@ mjx-container {
 
 <script>
 let activeQuestionText = '';
+
+function buildComprehensivePrompt(qText) {
+    return `You are an expert university professor and engineering examiner specializing in Electronics & Communication Engineering (ECE) for Bihar Engineering University (BEU).
+
+Please provide an exhaustive, high-scoring university examination solution for the following question:
+
+--------------------------------------------------
+QUESTION:
+${qText}
+--------------------------------------------------
+
+STRUCTURE YOUR SOLUTION SYSTEMATICALLY AS FOLLOWS:
+1. Core Concepts & Definitions: Clearly state key terms, theorems, working principles, and governing physical laws.
+2. Complete Step-by-Step Derivation & Equations: Show every algebraic/differential step with standard notations, LaTeX formulas, boundary conditions, and parameter definitions.
+3. Circuit Diagrams & Waveforms: Describe clearly all schematic connections, labeled terminals (base/collector/emitter or gate/drain/source), component values, input/output waveforms, and polarities.
+4. Numerical Calculations (if applicable): State all given data, conversion of units, exact step-by-step substitution into formulas, calculation steps, and highlight the final answer with appropriate SI units.
+5. Critical Examination Notes & Summary: Highlight university exam tips, practical significance, advantages/disadvantages, and key conclusions to maximize marks.`;
+}
 
 function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');
@@ -2347,7 +2367,7 @@ function openAiModal(btn) {
     
     document.getElementById('aiQuestionPreview').innerText = activeQuestionText;
     
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     
     document.getElementById('btnChatGPT').href = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
     document.getElementById('btnGemini').href = `https://gemini.google.com/app`;
@@ -2369,7 +2389,7 @@ function showToast(msg) {
 }
 
 function copyAiPrompt() {
-    const prompt = `Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, diagrams and final answers:\n\n${activeQuestionText}`;
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     navigator.clipboard.writeText(prompt).then(() => {
         showToast('Solution prompt copied to clipboard!');
     }).catch(() => {
@@ -2378,10 +2398,11 @@ function copyAiPrompt() {
 }
 
 function shareQuestion() {
+    const prompt = buildComprehensivePrompt(activeQuestionText);
     if (navigator.share) {
         navigator.share({
-            title: 'BEU ECE Question',
-            text: `Please solve this BEU ECE 4th Sem question:\n\n${activeQuestionText}`
+            title: 'BEU ECE Solution Prompt',
+            text: prompt
         }).catch(() => {});
     } else {
         copyAiPrompt();
