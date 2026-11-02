@@ -719,28 +719,122 @@ body.light-mode {
   color: var(--nt-bot-text);
 }
 
-/* Typing Indicator */
-.nt-bot-typing {
+/* Thinking Indicator */
+.nt-bot-thinking-bubble {
+  background: var(--nt-bot-card);
+  border: 1px solid var(--nt-bot-border);
+  border-left: 3px solid var(--nt-bot-red);
+  padding: 12px 14px;
+  border-radius: 10px;
   display: flex;
-  gap: 4px;
-  align-items: center;
-  padding: 8px 12px;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 240px;
 }
 
-.nt-bot-dot {
+.nt-thinking-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--nt-bot-text);
+  letter-spacing: 0.6px;
+}
+
+.nt-thinking-red-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--nt-bot-red);
+  box-shadow: 0 0 8px var(--nt-bot-red);
+  animation: nt-bot-pulse 1.2s infinite ease-in-out;
+}
+
+.nt-thinking-timer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--nt-bot-text-muted);
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.nt-thinking-subtext {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11.5px;
+  color: var(--nt-bot-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nt-thinking-wave {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.nt-thinking-wave-bar {
+  width: 2px;
+  height: 10px;
+  background: var(--nt-bot-text-muted);
+  border-radius: 1px;
+  animation: nt-thinking-wave 1.2s infinite ease-in-out;
+}
+.nt-thinking-wave-bar:nth-child(2) { animation-delay: 0.2s; }
+.nt-thinking-wave-bar:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes nt-thinking-wave {
+  0%, 100% { height: 6px; opacity: 0.4; }
+  50% { height: 12px; opacity: 1; }
+}
+
+/* Thought Process Accordion */
+.nt-chat-thought-box {
+  margin-bottom: 12px;
+  background: rgba(125, 125, 125, 0.05);
+  border: 1px solid var(--nt-bot-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nt-chat-thought-summary {
+  padding: 7px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--nt-bot-text-muted);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nt-chat-thought-summary:hover {
+  color: var(--nt-bot-text);
+  background: rgba(125, 125, 125, 0.08);
+}
+
+.nt-chat-thought-summary .nt-red-dot-mini {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--nt-bot-text-muted);
-  animation: nt-bot-bounce 1.4s infinite ease-in-out both;
+  background: var(--nt-bot-red);
 }
 
-.nt-bot-dot:nth-child(1) { animation-delay: -0.32s; }
-.nt-bot-dot:nth-child(2) { animation-delay: -0.16s; }
-
-@keyframes nt-bot-bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1); }
+.nt-chat-thought-body {
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--nt-bot-text-muted);
+  border-top: 1px solid var(--nt-bot-border);
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 /* Input Area */
@@ -892,7 +986,7 @@ body.light-mode {
   }
 
   // Append message to UI
-  function appendMessage(role, rawContent) {
+  function appendMessage(role, rawContent, customHtml) {
     const container = document.getElementById('ntBotMessages');
     if (!container) return null;
 
@@ -905,7 +999,11 @@ body.light-mode {
 
     const bubble = document.createElement('div');
     bubble.className = 'nt-bot-bubble';
-    bubble.innerHTML = role === 'user' ? rawContent.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>') : formatMarkdown(rawContent);
+    if (role === 'user') {
+      bubble.innerHTML = rawContent.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+    } else {
+      bubble.innerHTML = customHtml || formatMarkdown(rawContent);
+    }
 
     msgDiv.appendChild(roleSpan);
     msgDiv.appendChild(bubble);
@@ -934,26 +1032,60 @@ body.light-mode {
     return bubble;
   }
 
-  // Show typing indicator
-  function showTypingIndicator() {
+  // Thinking Indicator state
+  let thinkingInterval = null;
+  let thinkingStartTime = 0;
+
+  function showThinkingIndicator() {
+    removeThinkingIndicator();
     const container = document.getElementById('ntBotMessages');
     const indicator = document.createElement('div');
-    indicator.id = 'ntBotTyping';
+    indicator.id = 'ntBotThinking';
     indicator.className = 'nt-bot-msg bot';
     indicator.innerHTML = `
       <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
-      <div class="nt-bot-bubble nt-bot-typing">
-        <span class="nt-bot-dot"></span>
-        <span class="nt-bot-dot"></span>
-        <span class="nt-bot-dot"></span>
+      <div class="nt-bot-bubble nt-bot-thinking-bubble">
+        <div class="nt-thinking-header">
+          <span class="nt-thinking-red-dot"></span>
+          <span>THINKING</span>
+          <span class="nt-thinking-timer" id="ntThinkingTimer">0.0s</span>
+        </div>
+        <div class="nt-thinking-subtext">
+          <span class="nt-thinking-wave">
+            <span class="nt-thinking-wave-bar"></span>
+            <span class="nt-thinking-wave-bar"></span>
+            <span class="nt-thinking-wave-bar"></span>
+          </span>
+          <span id="ntThinkingStatusText">Analyzing query & scanning paper context...</span>
+        </div>
       </div>
     `;
     container.appendChild(indicator);
     container.scrollTop = container.scrollHeight;
+
+    thinkingStartTime = Date.now();
+    thinkingInterval = setInterval(() => {
+      const elapsedMs = Date.now() - thinkingStartTime;
+      const elapsedSec = (elapsedMs / 1000).toFixed(1);
+      const timerEl = document.getElementById('ntThinkingTimer');
+      const textEl = document.getElementById('ntThinkingStatusText');
+      if (timerEl) timerEl.innerText = `${elapsedSec}s`;
+      if (textEl) {
+        if (elapsedMs > 5000) {
+          textEl.innerText = 'Synthesizing derivations & formatting solution...';
+        } else if (elapsedMs > 2500) {
+          textEl.innerText = 'Evaluating circuit equations & BEU syllabus...';
+        }
+      }
+    }, 100);
   }
 
-  function removeTypingIndicator() {
-    const indicator = document.getElementById('ntBotTyping');
+  function removeThinkingIndicator() {
+    if (thinkingInterval) {
+      clearInterval(thinkingInterval);
+      thinkingInterval = null;
+    }
+    const indicator = document.getElementById('ntBotThinking');
     if (indicator) indicator.remove();
   }
 
@@ -971,7 +1103,7 @@ body.light-mode {
     appendMessage('user', userPrompt);
     conversationHistory.push({ role: 'user', content: userPrompt });
 
-    showTypingIndicator();
+    showThinkingIndicator();
 
     try {
       const systemPrompt = buildSystemPrompt();
@@ -998,7 +1130,8 @@ body.light-mode {
         signal: abortController.signal
       });
 
-      removeTypingIndicator();
+      const elapsedSec = ((Date.now() - thinkingStartTime) / 1000).toFixed(1);
+      removeThinkingIndicator();
 
       if (!response.ok) {
         const errJson = await response.json().catch(() => ({}));
@@ -1008,13 +1141,30 @@ body.light-mode {
       }
 
       const data = await response.json();
-      const reply = data.choices?.[0]?.message?.content || 'No response returned from model.';
+      const choice = data.choices?.[0];
+      const reply = choice?.message?.content || 'No response returned from model.';
+      const reasoning = choice?.message?.reasoning || choice?.message?.reasoning_details?.[0]?.text;
 
-      appendMessage('bot', reply);
+      let fullHtml = '';
+      if (reasoning && reasoning.trim()) {
+        const safeReasoning = reasoning.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        fullHtml += `
+          <details class="nt-chat-thought-box">
+            <summary class="nt-chat-thought-summary">
+              <span class="nt-red-dot-mini"></span>
+              <span>Thought process (${elapsedSec}s)</span>
+            </summary>
+            <div class="nt-chat-thought-body">${safeReasoning}</div>
+          </details>
+        `;
+      }
+      fullHtml += formatMarkdown(reply);
+
+      appendMessage('bot', reply, fullHtml);
       conversationHistory.push({ role: 'assistant', content: reply });
 
     } catch (err) {
-      removeTypingIndicator();
+      removeThinkingIndicator();
       if (err.name === 'AbortError') {
         appendMessage('bot', 'Generation stopped.');
       } else {
