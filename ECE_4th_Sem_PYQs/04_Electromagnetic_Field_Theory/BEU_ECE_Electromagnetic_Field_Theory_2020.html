@@ -12,6 +12,19 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- BEU AI Chatbot (NVIDIA Nemotron 3.5 Super VL) -->
+<script defer src="/chatbot.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (!window.BEUChatbot) {
+      const s = document.createElement('script');
+      const depth = (location.pathname.indexOf('ECE_4th_Sem_PYQs') !== -1) ? '../../chatbot.js' : 'chatbot.js';
+      s.src = depth;
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+  });
+</script>
 <script>
 MathJax = {
   tex: {
@@ -1028,7 +1041,10 @@ mjx-container {
         <div id="aiQuestionPreview" class="nt-question-preview"></div>
         
         <div class="nt-ai-grid">
-            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700;">
+            <button id="btnAskBotDirect" class="nt-ai-btn full-width" onclick="askChatbotQuestion()" style="background: var(--text-primary); color: var(--bg-primary); font-weight: 700; border-color: var(--text-primary);">
+                <span>SOLVE WITH NEMOTRON 3.5 AI BOT</span>
+            </button>
+            <button id="btnCopyPrompt" class="nt-ai-btn full-width" onclick="copyAiPrompt()">
                 <span>COPY DETAILED SOLUTION PROMPT</span>
             </button>
             <a id="btnChatGPT" target="_blank" class="nt-ai-btn">
@@ -1054,6 +1070,13 @@ mjx-container {
 
 <script>
 let activeQuestionText = '';
+
+function askChatbotQuestion() {
+    closeAiModal();
+    if (window.BEUChatbot) {
+        window.BEUChatbot.openAndAsk(`Please solve this Bihar Engineering University (BEU) B.Tech ECE 4th Sem question step-by-step with clear derivations, equations, circuits and final answer:\n\n${activeQuestionText}`);
+    }
+}
 
 function openAiModal(btn) {
     const qBlock = btn.closest('.question-block');

@@ -12,6 +12,34 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- MathJax for rendering formulas in AI Assistant -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<!-- BEU AI Chatbot (NVIDIA Nemotron 3.5 Super VL) -->
+<script defer src="/chatbot.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (!window.BEUChatbot) {
+      const s = document.createElement('script');
+      const depth = (location.pathname.indexOf('ECE_4th_Sem_PYQs') !== -1) ? '../chatbot.js' : 'chatbot.js';
+      s.src = depth;
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+  });
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
