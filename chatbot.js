@@ -48,10 +48,31 @@
     ]
   };
 
+  // Storage Key for Chat History
+  const STORAGE_KEY = 'beu_ai_chat_history_v1';
+
   // State
   let conversationHistory = [];
   let isGenerating = false;
   let abortController = null;
+
+  function loadChatHistory() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return [];
+      const parsed = JSON.parse(saved);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveChatHistory(history) {
+    try {
+      const trimmed = history.slice(-40);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+    } catch (e) {}
+  }
 
   // --- Page Scanner ---
   function scanPage() {
@@ -969,6 +990,32 @@ body.light-mode {
     // Initial scanner status update
     updateScannerStatus();
     attachEventListeners();
+    restoreChatHistoryUI();
+  }
+
+  // Restore Chat History in UI
+  function restoreChatHistoryUI() {
+    const history = loadChatHistory();
+    if (!history || history.length === 0) return;
+
+    conversationHistory = history.map(item => ({
+      role: item.role,
+      content: item.content
+    }));
+
+    const container = document.getElementById('ntBotMessages');
+    if (!container) return;
+
+    // Clear default welcome message
+    container.innerHTML = '';
+
+    // Render all saved messages
+    history.forEach(item => {
+      const role = item.role === 'user' ? 'user' : 'bot';
+      appendMessage(role, item.content, item.customHtml, false);
+    });
+
+    container.scrollTop = container.scrollHeight;
   }
 
   // Update Scanner status label
@@ -986,7 +1033,7 @@ body.light-mode {
   }
 
   // Append message to UI
-  function appendMessage(role, rawContent, customHtml) {
+  function appendMessage(role, rawContent, customHtml, shouldSave = true) {
     const container = document.getElementById('ntBotMessages');
     if (!container) return null;
 
@@ -1029,6 +1076,18 @@ body.light-mode {
 
     container.appendChild(msgDiv);
     container.scrollTop = container.scrollHeight;
+
+    if (shouldSave) {
+      const stored = loadChatHistory();
+      stored.push({
+        role: role === 'user' ? 'user' : 'assistant',
+        content: rawContent,
+        customHtml: customHtml || '',
+        timestamp: Date.now()
+      });
+      saveChatHistory(stored);
+    }
+
     return bubble;
   }
 
@@ -1206,12 +1265,15 @@ body.light-mode {
 
     clearBtn.addEventListener('click', () => {
       conversationHistory = [];
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
       const container = document.getElementById('ntBotMessages');
       container.innerHTML = `
         <div class="nt-bot-msg bot">
           <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
           <div class="nt-bot-bubble">
-            Chat cleared! How can I assist you with BEU ECE 4th Sem PYQs?
+            Chat history cleared! How can I assist you with BEU ECE 4th Sem PYQs?
           </div>
         </div>
       `;
