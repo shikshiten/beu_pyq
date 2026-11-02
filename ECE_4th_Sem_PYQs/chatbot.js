@@ -137,103 +137,237 @@ ${scan.bodyText}`;
     const prompt = `You are the official AI Study Assistant for Bihar Engineering University (BEU) Patna B.Tech ECE 4th Semester students on the Apna BEU PYQ Portal.
 You are powered by NVIDIA Nemotron 3.5 Super VL.
 
-YOUR CAPABILITIES & KNOWLEDGE:
-1. You have direct, real-time access to the scanned page content provided below.
-2. When answering or solving questions:
-   - Provide rigorous, step-by-step solutions with clear derivations, circuit operation, truth tables, and final formulas.
-   - Format all mathematical equations with standard LaTeX notation: inline with \\( ... \\) and display blocks with \\[ ... \\].
-   - If solving an objective or MCQ question, state the correct option clearly and provide the exact mathematical or conceptual justification.
-3. You have full knowledge of the BEU ECE 4th Sem syllabus, subject codes, routine, and official portal resources:
-   - Routine:
-     * Analog Comm (104402): 28 Oct 2026
-     * Analog Electronics & IC (104401 / 110401): 31 Oct 2026
-     * Digital Circuits & Electronics (104403 / 100403 / 105301): 03 Nov 2026
-     * EMFT (104404 / 100308): 05 Nov 2026
-     * Electronic Materials & Instrumentation (104405 / 104604 / 110601 / 102404): 07 Nov 2026
-   - Notes PDF Links:
-     * Analog Comm: https://files.catbox.moe/xiy2ks.pdf
-     * Analog Electronics & IC: https://files.catbox.moe/hzi2q3.pdf
-     * Digital Circuits: https://u.pone.rs/wvfjwvlb.pdf
-     * EMFT: https://files.catbox.moe/edrmjs.pdf
-     * Electronic Materials & Instrumentation: https://files.catbox.moe/ldgf6w.pdf
-   - 25 VVI Packs:
-     * Analog Comm: https://files.catbox.moe/gqx7rp.pdf
-     * Analog Electronics & IC: https://files.catbox.moe/nvpkfq.pdf
-     * EMFT: https://files.catbox.moe/azn68d.pdf
-     * Materials & Instrumentation: https://files.catbox.moe/shsj9m.pdf
-   - Master PDFs:
-     * Master Compilation 1: https://files.catbox.moe/o9v4eo.pdf
-     * Master Compilation 2: https://files.catbox.moe/fqdvdz.pdf
-4. TONE & STYLE:
-   - Pure academic, engineering-level precision, concise, and structured.
-   - Do NOT use emojis. Maintain the clean monochrome Nothing Tech ethos.
-   - Structure long explanations with clear markdown headings, bold points, and numbered steps.
+CRITICAL FORMATTING INSTRUCTIONS:
+1. Always format answers with clean, beautiful Markdown structure:
+   - Use headings (### for major sections, #### for subheadings).
+   - Use bullet points and numbered lists for steps.
+   - For comparisons, truth tables, or parameter values, ALWAYS format them as Markdown tables with headers (| Col 1 | Col 2 |).
+2. Mathematics and Equations (LaTeX):
+   - Place display equations on their own lines using standard LaTeX delimiters: \\[ ... \\]
+   - Use inline math notation with \\( ... \\)
+   - Ensure clean equation formatting without clumping.
+3. Solution Structure:
+   - Step 1: Definition / Core Principle
+   - Step 2: Circuit Description or Mathematical Formulation
+   - Step 3: Derivation / Calculation
+   - Step 4: Final Answer or Conclusion (highlight key formula in bold)
+4. Do NOT use emojis. Maintain the clean monochrome Nothing Tech ethos.
+
+PORTAL KNOWLEDGE & RESOURCES:
+- Routine:
+  * Analog Comm (104402): 28 Oct 2026
+  * Analog Electronics & IC (104401 / 110401): 31 Oct 2026
+  * Digital Circuits & Electronics (104403 / 100403 / 105301): 03 Nov 2026
+  * EMFT (104404 / 100308): 05 Nov 2026
+  * Electronic Materials & Instrumentation (104405 / 104604 / 110601 / 102404): 07 Nov 2026
+- Notes PDF Links:
+  * Analog Comm: https://files.catbox.moe/xiy2ks.pdf
+  * Analog Electronics & IC: https://files.catbox.moe/hzi2q3.pdf
+  * Digital Circuits: https://u.pone.rs/wvfjwvlb.pdf
+  * EMFT: https://files.catbox.moe/edrmjs.pdf
+  * Electronic Materials & Instrumentation: https://files.catbox.moe/ldgf6w.pdf
+- 25 VVI Packs:
+  * Analog Comm: https://files.catbox.moe/gqx7rp.pdf
+  * Analog Electronics & IC: https://files.catbox.moe/nvpkfq.pdf
+  * EMFT: https://files.catbox.moe/azn68d.pdf
+  * Materials & Instrumentation: https://files.catbox.moe/shsj9m.pdf
+- Master PDFs:
+  * Master Compilation 1: https://files.catbox.moe/o9v4eo.pdf
+  * Master Compilation 2: https://files.catbox.moe/fqdvdz.pdf
 
 ${scanContext}`;
 
     return prompt;
   }
 
-  // --- Lightweight Markdown Formatter ---
-  function formatMarkdown(text) {
-    if (!text) return '';
-    
-    // Preserve LaTeX blocks during parsing
-    const latexMath = [];
-    text = text.replace(/(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$\$[\s\S]*?\$\$|\$[^\$\n]+\$)/g, (match) => {
-      latexMath.push(match);
-      return `___LATEX_MATH_${latexMath.length - 1}___`;
+  // --- Robust Markdown & LaTeX Formatter ---
+  function formatMarkdown(md) {
+    if (!md) return '';
+
+    const mathBlocks = [];
+    const codeBlocks = [];
+
+    // 1. Protect Code Blocks
+    let text = md.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
+      codeBlocks.push({ lang, code });
+      return `\n\n___CODE_BLOCK_${codeBlocks.length - 1}___\n\n`;
     });
 
-    // Escape basic HTML
-    let out = text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
-
-    // Code blocks
-    out = out.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
-      return `<pre class="nt-chat-pre"><code>${code.trim()}</code></pre>`;
+    // 2. Protect Display Math: \[ ... \] or $$ ... $$
+    text = text.replace(/(\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$)/g, (match) => {
+      mathBlocks.push(match);
+      return `\n\n___MATH_BLOCK_${mathBlocks.length - 1}___\n\n`;
     });
 
-    // Inline code
-    out = out.replace(/`([^`]+)`/g, '<code class="nt-chat-code">$1</code>');
-
-    // Bold & Italics
-    out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    out = out.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-
-    // Headers
-    out = out.replace(/^### (.*$)/gim, '<h4 class="nt-chat-h4">$1</h4>');
-    out = out.replace(/^## (.*$)/gim, '<h3 class="nt-chat-h3">$1</h3>');
-    out = out.replace(/^# (.*$)/gim, '<h2 class="nt-chat-h2">$1</h2>');
-
-    // Lists
-    out = out.replace(/^\s*[-*]\s+(.*$)/gim, '<li class="nt-chat-li">$1</li>');
-    out = out.replace(/(<li class="nt-chat-li">[\s\S]*?<\/li>)+/g, '<ul class="nt-chat-ul">$&</ul>');
-    
-    out = out.replace(/^\s*(\d+)\.\s+(.*$)/gim, '<li class="nt-chat-oli">$2</li>');
-    out = out.replace(/(<li class="nt-chat-oli">[\s\S]*?<\/li>)+/g, '<ol class="nt-chat-ol">$&</ol>');
-
-    // Paragraphs
-    out = out.replace(/\n{2,}/g, '</p><p class="nt-chat-p">');
-    out = '<p class="nt-chat-p">' + out + '</p>';
-    out = out.replace(/<p class="nt-chat-p"><\/(ul|ol|pre|h2|h3|h4)>/g, '</$1>');
-    out = out.replace(/<(ul|ol|pre|h2|h3|h4)><\/p>/g, '<$1>');
-    out = out.replace(/\n/g, '<br>');
-
-    // Restore LaTeX blocks
-    out = out.replace(/___LATEX_MATH_(\d+)___/g, (match, idx) => {
-      return latexMath[parseInt(idx, 10)] || '';
+    // 3. Protect Inline Math: \( ... \) or $ ... $
+    text = text.replace(/(\\\([\s\S]*?\\\)|\$[^$\n]+\$)/g, (match) => {
+      mathBlocks.push(match);
+      return `___MATH_BLOCK_${mathBlocks.length - 1}___`;
     });
 
-    return out;
+    // Helper for inline spans: bold, italic, code, links
+    function formatInline(str) {
+      let s = str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      // Bold
+      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      // Italic
+      s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      // Inline code
+      s = s.replace(/`([^`]+)`/g, '<code class="nt-chat-code">$1</code>');
+      // Links
+      s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="nt-chat-link">$1</a>');
+
+      return s;
+    }
+
+    // Separate non-matching lines before transitions
+    text = text.replace(/([^\n])\n(#{1,6}\s+)/g, '$1\n\n$2');
+    text = text.replace(/([^\n* -])\n([*-]\s+)/g, '$1\n\n$2');
+    text = text.replace(/([^\n0-9 .])\n(\d+\.\s+)/g, '$1\n\n$2');
+    text = text.replace(/([^\n|])\n(\|)/g, '$1\n\n$2');
+
+    const rawBlocks = text.split(/\n{2,}/);
+    const outBlocks = [];
+
+    for (let raw of rawBlocks) {
+      let block = raw.trim();
+      if (!block) continue;
+
+      // Code block placeholder
+      if (/^___CODE_BLOCK_\d+___$/.test(block)) {
+        outBlocks.push(block);
+        continue;
+      }
+
+      // Display math block placeholder
+      if (/^___MATH_BLOCK_\d+___$/.test(block)) {
+        outBlocks.push(`<div class="nt-chat-math">${block}</div>`);
+        continue;
+      }
+
+      // Headings: #, ##, ###, ####
+      if (/^#{1,6}\s+/.test(block)) {
+        const match = block.match(/^(#{1,6})\s+(.*)$/);
+        const level = match[1].length;
+        const hTag = level === 1 ? 'h2' : level === 2 ? 'h3' : 'h4';
+        outBlocks.push(`<${hTag} class="nt-chat-${hTag}">${formatInline(match[2])}</${hTag}>`);
+        continue;
+      }
+
+      // Blockquote: > ...
+      if (/^>\s+/.test(block)) {
+        const qLines = block.split('\n').map(l => l.replace(/^>\s*/, ''));
+        outBlocks.push(`<blockquote class="nt-chat-quote">${formatInline(qLines.join(' '))}</blockquote>`);
+        continue;
+      }
+
+      // Markdown Table
+      const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+      const isTable = lines.length >= 2 && lines.every(l => l.includes('|')) && /\|?\s*:?-+:?\s*\|/.test(lines[1]);
+      if (isTable) {
+        const parseRow = (rowStr) => {
+          return rowStr.replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+        };
+        const headerCols = parseRow(lines[0]);
+        let tableHtml = '<div class="nt-chat-table-wrap"><table class="nt-chat-table"><thead><tr>';
+        for (const h of headerCols) {
+          tableHtml += `<th>${formatInline(h)}</th>`;
+        }
+        tableHtml += '</tr></thead><tbody>';
+
+        for (let i = 2; i < lines.length; i++) {
+          const rowCols = parseRow(lines[i]);
+          tableHtml += '<tr>';
+          for (const col of rowCols) {
+            tableHtml += `<td>${formatInline(col)}</td>`;
+          }
+          tableHtml += '</tr>';
+        }
+        tableHtml += '</tbody></table></div>';
+        outBlocks.push(tableHtml);
+        continue;
+      }
+
+      // Unordered List
+      const isUList = lines.length > 0 && lines.every(l => /^[*-]\s+/.test(l));
+      if (isUList) {
+        let listHtml = '<ul class="nt-chat-ul">';
+        for (const line of lines) {
+          const item = line.replace(/^[*-]\s+/, '');
+          listHtml += `<li class="nt-chat-li">${formatInline(item)}</li>`;
+        }
+        listHtml += '</ul>';
+        outBlocks.push(listHtml);
+        continue;
+      }
+
+      // Ordered List
+      const isOList = lines.length > 0 && lines.every(l => /^\d+\.\s+/.test(l));
+      if (isOList) {
+        let listHtml = '<ol class="nt-chat-ol">';
+        for (const line of lines) {
+          const item = line.replace(/^\d+\.\s+/, '');
+          listHtml += `<li class="nt-chat-oli">${formatInline(item)}</li>`;
+        }
+        listHtml += '</ol>';
+        outBlocks.push(listHtml);
+        continue;
+      }
+
+      // Standard Paragraph with inline breaks
+      const pLines = lines.map(l => formatInline(l)).join('<br>');
+      outBlocks.push(`<p class="nt-chat-p">${pLines}</p>`);
+    }
+
+    // Merge adjacent <ul> and <ol> blocks
+    let mergedBlocks = [];
+    for (let b of outBlocks) {
+      if (mergedBlocks.length > 0) {
+        const prev = mergedBlocks[mergedBlocks.length - 1];
+        if (prev.endsWith('</ul>') && b.startsWith('<ul class="nt-chat-ul">')) {
+          mergedBlocks[mergedBlocks.length - 1] = prev.slice(0, -5) + b.replace(/^<ul class="nt-chat-ul">/, '');
+          continue;
+        }
+        if (prev.endsWith('</ol>') && b.startsWith('<ol class="nt-chat-ol">')) {
+          mergedBlocks[mergedBlocks.length - 1] = prev.slice(0, -5) + b.replace(/^<ol class="nt-chat-ol">/, '');
+          continue;
+        }
+      }
+      mergedBlocks.push(b);
+    }
+
+    let finalHtml = mergedBlocks.join('\n');
+
+    // Restore Code Blocks
+    finalHtml = finalHtml.replace(/___CODE_BLOCK_(\d+)___/g, (match, idx) => {
+      const item = codeBlocks[parseInt(idx, 10)];
+      if (!item) return '';
+      const safeCode = item.code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return `<pre class="nt-chat-pre"><code>${safeCode}</code></pre>`;
+    });
+
+    // Restore Math Blocks
+    finalHtml = finalHtml.replace(/___MATH_BLOCK_(\d+)___/g, (match, idx) => {
+      return mathBlocks[parseInt(idx, 10)] || '';
+    });
+
+    return finalHtml;
   }
 
   // Trigger MathJax re-render
   function triggerMathJax(elem) {
     if (window.MathJax && window.MathJax.typesetPromise) {
       window.MathJax.typesetPromise([elem]).catch(() => {});
+    } else {
+      setTimeout(() => {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          window.MathJax.typesetPromise([elem]).catch(() => {});
+        }
+      }, 400);
     }
   }
 
@@ -315,7 +449,7 @@ body.light-mode {
   right: 24px;
   width: 440px;
   max-width: calc(100vw - 32px);
-  height: 640px;
+  height: 620px;
   max-height: calc(100vh - 100px);
   background: var(--nt-bot-bg);
   border: 1px solid var(--nt-bot-border);
@@ -339,7 +473,7 @@ body.light-mode {
 
 /* Header */
 .nt-bot-header {
-  padding: 14px 16px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--nt-bot-border);
   display: flex;
   align-items: center;
@@ -393,79 +527,6 @@ body.light-mode {
   border-color: var(--nt-bot-text);
 }
 
-/* Scanner Context Bar */
-.nt-bot-scan-bar {
-  padding: 8px 14px;
-  background: var(--nt-bot-bg);
-  border-bottom: 1px dashed var(--nt-bot-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--nt-bot-text-muted);
-}
-
-.nt-bot-scan-status {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nt-bot-scan-btn {
-  background: var(--nt-bot-card);
-  border: 1px solid var(--nt-bot-border);
-  color: var(--nt-bot-text);
-  padding: 3px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
-  font-weight: 600;
-  transition: all 0.15s;
-  flex-shrink: 0;
-}
-
-.nt-bot-scan-btn:hover {
-  border-color: var(--nt-bot-text);
-}
-
-/* Quick Action Chips */
-.nt-bot-chips {
-  padding: 8px 12px;
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  border-bottom: 1px solid var(--nt-bot-border);
-  scrollbar-width: none;
-  background: var(--nt-bot-bg);
-}
-
-.nt-bot-chips::-webkit-scrollbar {
-  display: none;
-}
-
-.nt-bot-chip {
-  padding: 4px 10px;
-  border-radius: 12px;
-  border: 1px solid var(--nt-bot-border);
-  background: var(--nt-bot-card);
-  color: var(--nt-bot-text);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.nt-bot-chip:hover {
-  border-color: var(--nt-bot-text);
-  background: var(--nt-bot-border-light);
-}
-
 /* Chat Messages */
 .nt-bot-messages {
   flex: 1;
@@ -496,7 +557,7 @@ body.light-mode {
 
 .nt-bot-msg.bot {
   align-self: flex-start;
-  max-width: 95%;
+  max-width: 96%;
 }
 
 .nt-bot-msg-role {
@@ -518,7 +579,7 @@ body.light-mode {
   border-radius: 12px;
   font-family: 'Space Grotesk', -apple-system, sans-serif;
   font-size: 12.5px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--nt-bot-text);
   word-break: break-word;
 }
@@ -535,26 +596,33 @@ body.light-mode {
   border-bottom-left-radius: 2px;
 }
 
-/* Markdown inside bubble */
-.nt-chat-p { margin: 0 0 8px 0; }
-.nt-chat-p:last-child { margin-bottom: 0; }
+/* Formatted Elements inside bubble */
+.nt-chat-p {
+  margin: 0 0 10px 0;
+}
+.nt-chat-p:last-child {
+  margin-bottom: 0;
+}
+
 .nt-chat-h2, .nt-chat-h3, .nt-chat-h4 {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  margin: 10px 0 4px 0;
+  margin: 12px 0 6px 0;
   color: var(--nt-bot-text);
+  line-height: 1.3;
 }
-.nt-chat-h2 { font-size: 14px; }
+.nt-chat-h2 { font-size: 14px; border-bottom: 1px solid var(--nt-bot-border); padding-bottom: 4px; }
 .nt-chat-h3 { font-size: 13px; }
 .nt-chat-h4 { font-size: 12px; }
 
 .nt-chat-ul, .nt-chat-ol {
-  margin: 4px 0 8px 18px;
+  margin: 6px 0 10px 18px;
   padding: 0;
 }
 .nt-chat-li, .nt-chat-oli {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
+
 .nt-chat-code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -563,18 +631,71 @@ body.light-mode {
   border-radius: 4px;
   border: 1px solid var(--nt-bot-border);
 }
+
 .nt-chat-pre {
   background: #000;
   border: 1px solid var(--nt-bot-border);
   border-radius: 8px;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 10px 12px;
+  margin: 10px 0;
   overflow-x: auto;
 }
 .nt-chat-pre code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: #eee;
+  display: block;
+  white-space: pre;
+}
+
+/* Tables */
+.nt-chat-table-wrap {
+  overflow-x: auto;
+  margin: 10px 0;
+  border: 1px solid var(--nt-bot-border);
+  border-radius: 8px;
+  background: var(--nt-bot-bg);
+}
+.nt-chat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.nt-chat-table th {
+  background: rgba(125, 125, 125, 0.08);
+  padding: 7px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--nt-bot-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--nt-bot-text);
+  white-space: nowrap;
+}
+.nt-chat-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--nt-bot-border);
+  color: var(--nt-bot-text);
+}
+.nt-chat-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Math block */
+.nt-chat-math {
+  margin: 8px 0;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+/* Blockquote */
+.nt-chat-quote {
+  margin: 8px 0;
+  padding: 6px 12px;
+  border-left: 2px solid var(--nt-bot-red);
+  background: rgba(125, 125, 125, 0.08);
+  font-style: italic;
+  font-size: 12px;
 }
 
 /* Bubble Actions */
@@ -627,18 +748,15 @@ body.light-mode {
   padding: 10px 14px;
   background: var(--nt-bot-card);
   border-top: 1px solid var(--nt-bot-border);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 }
 
 .nt-bot-input-box {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 8px;
   background: var(--nt-bot-bg);
   border: 1px solid var(--nt-bot-border);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 6px 10px;
 }
 
@@ -655,15 +773,15 @@ body.light-mode {
   font-size: 12.5px;
   resize: none;
   outline: none;
-  max-height: 100px;
+  max-height: 90px;
   line-height: 1.4;
-  padding: 4px 0;
+  padding: 3px 0;
 }
 
 .nt-bot-textarea::placeholder {
   color: var(--nt-bot-text-muted);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 11.5px;
 }
 
 .nt-bot-send-btn {
@@ -683,14 +801,6 @@ body.light-mode {
 .nt-bot-send-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-}
-
-.nt-bot-footer-note {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  color: var(--nt-bot-text-muted);
-  text-align: center;
-  letter-spacing: 0.3px;
 }
 
 @media (max-width: 600px) {
@@ -729,7 +839,7 @@ body.light-mode {
             <span class="nt-bot-red-pulse"></span>
             <div class="nt-bot-title-group">
               <h3>BEU AI ASSISTANT</h3>
-              <div class="nt-bot-subtitle">NVIDIA NEMOTRON 3.5 &bull; LIVE SCANNER</div>
+              <div class="nt-bot-subtitle" id="ntBotScanLabel">NVIDIA NEMOTRON 3.5 &bull; LIVE SCANNER</div>
             </div>
           </div>
           <div class="nt-bot-header-actions">
@@ -738,46 +848,23 @@ body.light-mode {
           </div>
         </div>
 
-        <!-- Live Scanner Status Bar -->
-        <div class="nt-bot-scan-bar">
-          <div id="ntBotScanStatus" class="nt-bot-scan-status">
-            <span>&bull;</span>
-            <span id="ntBotScanLabel">Scanning page content...</span>
-          </div>
-          <button id="ntBotRescanBtn" class="nt-bot-scan-btn">RE-SCAN</button>
-        </div>
-
-        <!-- Quick Action Chips -->
-        <div class="nt-bot-chips">
-          <button class="nt-bot-chip" data-query="Scan this page and give me a full summary of questions and topics covered.">Scan This Page</button>
-          <button class="nt-bot-chip" data-query="Solve Question 1 (compulsory questions) from this paper step-by-step.">Solve Compulsory Q1</button>
-          <button class="nt-bot-chip" data-query="Show me the exam routine, dates, and subject codes for BEU ECE 4th Sem.">Exam Routine</button>
-          <button class="nt-bot-chip" data-query="Provide the direct PDF notes links for all 5 ECE 4th semester subjects.">Subject Notes</button>
-          <button class="nt-bot-chip" data-query="Where can I find 25 VVI Questions for 4th Sem ECE?">VVI Questions</button>
-        </div>
-
         <!-- Messages Area -->
         <div id="ntBotMessages" class="nt-bot-messages">
           <div class="nt-bot-msg bot">
             <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
             <div class="nt-bot-bubble">
-              Hello! I am your <strong>BEU ECE 4th Sem AI Study Assistant</strong>, powered by NVIDIA Nemotron 3.5 Super VL.
+              Hello! I am your <strong>BEU ECE 4th Sem AI Study Assistant</strong>.
               <br><br>
-              I can scan this page, solve any question with derivations and circuits, find notes links, and answer syllabus queries.
-              <br><br>
-              Click a chip above or type your question below!
+              I can solve questions step-by-step with clear derivations, provide subject notes links, and answer any syllabus queries.
             </div>
           </div>
         </div>
 
-        <!-- Input Area -->
+        <!-- Input Area (Clean & Simple) -->
         <div class="nt-bot-input-area">
           <div class="nt-bot-input-box">
-            <textarea id="ntBotTextarea" class="nt-bot-textarea" placeholder="Ask about this paper, solve questions, or search..." rows="1"></textarea>
+            <textarea id="ntBotTextarea" class="nt-bot-textarea" placeholder="Ask your query..." rows="1"></textarea>
             <button id="ntBotSendBtn" class="nt-bot-send-btn">SEND</button>
-          </div>
-          <div class="nt-bot-footer-note">
-            Press Enter to send &bull; Shift+Enter for new line
           </div>
         </div>
       </div>
@@ -796,11 +883,11 @@ body.light-mode {
     if (!label) return;
     const scan = scanPage();
     if (scan.type === 'question_paper') {
-      label.innerText = `Scanned: ${scan.totalQuestions} Questions from ${scan.title}`;
+      label.innerText = `SCANNED: ${scan.totalQuestions} Questions from ${scan.title.replace('BEU ECE 4th Sem PYQ', '').replace(/[\-–|]/g, '').trim() || scan.title}`;
     } else if (scan.type === 'portal_index') {
-      label.innerText = `Scanned: Portal Index (${scan.subjectsCount} Subjects & Packs)`;
+      label.innerText = `SCANNED: Portal Hub (${scan.subjectsCount} Subjects & Packs)`;
     } else {
-      label.innerText = `Scanned: ${scan.title}`;
+      label.innerText = `SCANNED: Current Page`;
     }
   }
 
@@ -906,7 +993,7 @@ body.light-mode {
         body: JSON.stringify({
           model: DEFAULT_MODEL,
           messages: messages,
-          stream: false // Non-streaming ensures solid completion without truncation of reasoning tokens
+          stream: false
         }),
         signal: abortController.signal
       });
@@ -950,7 +1037,6 @@ body.light-mode {
     const win = document.getElementById('ntBotWindow');
     const closeBtn = document.getElementById('ntBotCloseBtn');
     const clearBtn = document.getElementById('ntBotClearBtn');
-    const rescanBtn = document.getElementById('ntBotRescanBtn');
     const textarea = document.getElementById('ntBotTextarea');
     const sendBtn = document.getElementById('ntBotSendBtn');
 
@@ -981,11 +1067,6 @@ body.light-mode {
       `;
     });
 
-    rescanBtn.addEventListener('click', () => {
-      updateScannerStatus();
-      appendMessage('bot', `Page re-scanned! I have updated my knowledge with the latest content on this page.`);
-    });
-
     function handleSend() {
       const text = textarea.value.trim();
       if (!text || isGenerating) return;
@@ -1005,18 +1086,7 @@ body.light-mode {
 
     textarea.addEventListener('input', () => {
       textarea.style.height = 'auto';
-      textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
-    });
-
-    // Quick Action Chips
-    document.querySelectorAll('.nt-bot-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const query = chip.getAttribute('data-query');
-        if (query) {
-          if (!win.classList.contains('open')) toggleChat(true);
-          sendToOpenRouter(query);
-        }
-      });
+      textarea.style.height = Math.min(textarea.scrollHeight, 90) + 'px';
     });
 
     // Keyboard Shortcut (Alt + C or Ctrl + Space)
