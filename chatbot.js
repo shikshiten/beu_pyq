@@ -25,7 +25,7 @@
     examRoutine: [
       { subject: 'Analog Communication', code: '104402', date: 'Wednesday, 28 Oct 2026' },
       { subject: 'Analog Electronics & Integrated Circuits', code: '104401 / 110401', date: 'Saturday, 31 Oct 2026' },
-      { subject: 'Digital Circuits & Electronics', code: '104403 / 100403 / 105301', date: 'Tuesday, 03 Nov 2026' },
+      { subject: 'Digital Circuits & Electronics', code: '104403 / 100403 / 105301 / 103401', date: 'Tuesday, 03 Nov 2026' },
       { subject: 'Electromagnetic Field Theory (EMFT)', code: '104404 / 100308', date: 'Thursday, 05 Nov 2026' },
       { subject: 'Electronics Materials & Instrumentation', code: '104405 / 104604 / 110601 / 102404', date: 'Saturday, 07 Nov 2026' }
     ],
@@ -178,7 +178,7 @@ PORTAL KNOWLEDGE & RESOURCES:
 - Routine:
   * Analog Comm (104402): 28 Oct 2026
   * Analog Electronics & IC (104401 / 110401): 31 Oct 2026
-  * Digital Circuits & Electronics (104403 / 100403 / 105301): 03 Nov 2026
+  * Digital Circuits & Electronics (104403 / 100403 / 105301 / 103401): 03 Nov 2026
   * EMFT (104404 / 100308): 05 Nov 2026
   * Electronic Materials & Instrumentation (104405 / 104604 / 110601 / 102404): 07 Nov 2026
 - Notes PDF Links:
