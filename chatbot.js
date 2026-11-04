@@ -1,6 +1,6 @@
 /**
  * BEU ECE 4th Sem AI Study Assistant Chatbot
- * Powered by NVIDIA Nemotron 3.5 Super VL via OpenRouter
+ * Powered by Google Gemini AI
  * Pure Monochrome Nothing Tech Design (Zero emojis, Zero lucid icons)
  */
 
@@ -8,13 +8,19 @@
   'use strict';
 
   // --- Configuration ---
-  const OPENROUTER_ENDPOINT = 'https://openrouter.ai/api/v1/chat/completions';
-  const DEFAULT_MODEL = 'nvidia/nemotron-3.5-super-vl';
-  const DEFAULT_KEY_B64 = 'c2stb3ItdjEtYTk0YTFlNThmM2QwN2YyMmE0MzlmMWEwZDA4NTdiYjgyYzE5MGQwNTVkYTBiZTQwMTU3Y2UyYjYxYjMzNjcyYw==';
+  const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models/';
+  // Auto-fallback model list in priority order
+  const CANDIDATE_MODELS = [
+    'gemini-flash-lite-latest',
+    'gemini-3.5-flash-lite',
+    'gemini-3.5-flash',
+    'gemini-flash-latest'
+  ];
+  const DEFAULT_KEY_B64 = 'QVEuQWI4Uk42STY1SndmRGJsRDE3ajVleXpNQzhsS040dTNEZXZFZ0pCSFVhZDl5NHctT2c=';
 
   function getApiKey() {
     try {
-      return localStorage.getItem('beu_openrouter_key') || atob(DEFAULT_KEY_B64);
+      return localStorage.getItem('beu_gemini_key') || localStorage.getItem('beu_openrouter_key') || atob(DEFAULT_KEY_B64);
     } catch (e) {
       return atob(DEFAULT_KEY_B64);
     }
@@ -156,7 +162,7 @@ ${scan.bodyText}`;
     }
 
     const prompt = `You are the official AI Study Assistant for Bihar Engineering University (BEU) Patna B.Tech ECE 4th Semester students on the Apna BEU PYQ Portal.
-You are powered by NVIDIA Nemotron 3.5 Super VL.
+You are powered by Google Gemini AI.
 
 CRITICAL FORMATTING INSTRUCTIONS:
 1. Always format answers with clean, beautiful Markdown structure:
@@ -954,7 +960,7 @@ body.light-mode {
             <span class="nt-bot-red-pulse"></span>
             <div class="nt-bot-title-group">
               <h3>BEU AI ASSISTANT</h3>
-              <div class="nt-bot-subtitle" id="ntBotScanLabel">NVIDIA NEMOTRON 3.5 &bull; LIVE SCANNER</div>
+              <div class="nt-bot-subtitle" id="ntBotScanLabel">GOOGLE GEMINI AI &bull; LIVE SCANNER</div>
             </div>
           </div>
           <div class="nt-bot-header-actions">
@@ -966,7 +972,7 @@ body.light-mode {
         <!-- Messages Area -->
         <div id="ntBotMessages" class="nt-bot-messages">
           <div class="nt-bot-msg bot">
-            <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
+            <span class="nt-bot-msg-role">Google Gemini AI</span>
             <div class="nt-bot-bubble">
               Hello! I am your <strong>BEU ECE 4th Sem AI Study Assistant</strong>.
               <br><br>
@@ -1042,7 +1048,7 @@ body.light-mode {
 
     const roleSpan = document.createElement('span');
     roleSpan.className = 'nt-bot-msg-role';
-    roleSpan.innerText = role === 'user' ? 'YOU' : 'NVIDIA Nemotron 3.5';
+    roleSpan.innerText = role === 'user' ? 'YOU' : 'Google Gemini AI';
 
     const bubble = document.createElement('div');
     bubble.className = 'nt-bot-bubble';
@@ -1102,7 +1108,7 @@ body.light-mode {
     indicator.id = 'ntBotThinking';
     indicator.className = 'nt-bot-msg bot';
     indicator.innerHTML = `
-      <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
+      <span class="nt-bot-msg-role">Google Gemini AI</span>
       <div class="nt-bot-bubble nt-bot-thinking-bubble">
         <div class="nt-thinking-header">
           <span class="nt-thinking-red-dot"></span>
@@ -1148,8 +1154,8 @@ body.light-mode {
     if (indicator) indicator.remove();
   }
 
-  // --- API Call via OpenRouter ---
-  async function sendToOpenRouter(userPrompt) {
+  // --- API Call via Google Gemini API ---
+  async function sendToGemini(userPrompt) {
     if (isGenerating) return;
     isGenerating = true;
 
@@ -1166,57 +1172,94 @@ body.light-mode {
 
     try {
       const systemPrompt = buildSystemPrompt();
-      const messages = [
-        { role: 'system', content: systemPrompt },
-        ...conversationHistory.slice(-6) // Send recent context
-      ];
+
+      // Format multi-turn conversation contents for Gemini API (roles must alternate: user -> model)
+      const recentHistory = conversationHistory.slice(-8);
+      const contents = [];
+      for (const msg of recentHistory) {
+        const geminiRole = (msg.role === 'user') ? 'user' : 'model';
+        if (contents.length > 0 && contents[contents.length - 1].role === geminiRole) {
+          contents[contents.length - 1].parts[0].text += '\n\n' + msg.content;
+        } else {
+          contents.push({
+            role: geminiRole,
+            parts: [{ text: msg.content }]
+          });
+        }
+      }
+      if (contents.length > 0 && contents[0].role !== 'user') {
+        contents.shift();
+      }
+
+      const payload = {
+        system_instruction: {
+          parts: [{ text: systemPrompt }]
+        },
+        contents: contents,
+        generationConfig: {
+          temperature: 0.3
+        }
+      };
 
       abortController = new AbortController();
+      const apiKey = getApiKey();
 
-      const response = await fetch(OPENROUTER_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${getApiKey()}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://stutosed.vercel.app',
-          'X-Title': 'BEU ECE PYQ Portal'
-        },
-        body: JSON.stringify({
-          model: DEFAULT_MODEL,
-          messages: messages,
-          stream: false
-        }),
-        signal: abortController.signal
-      });
+      let reply = null;
+      let activeModel = null;
+      let lastErrMsg = '';
+
+      // Auto-fallback across available Gemini models
+      for (const model of CANDIDATE_MODELS) {
+        try {
+          const endpoint = `${GEMINI_API_BASE}${model}:generateContent?key=${encodeURIComponent(apiKey)}`;
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload),
+            signal: abortController.signal
+          });
+
+          if (!response.ok) {
+            const errJson = await response.json().catch(() => ({}));
+            lastErrMsg = errJson?.error?.message || `HTTP ${response.status}`;
+            // If high demand (503) or rate limit (429) or not found (404), fallback to next candidate model
+            if (response.status === 503 || response.status === 429 || response.status === 404) {
+              continue;
+            }
+            throw new Error(lastErrMsg);
+          }
+
+          const data = await response.json();
+          reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (reply) {
+            activeModel = model;
+            break;
+          }
+        } catch (mErr) {
+          if (mErr.name === 'AbortError') throw mErr;
+          lastErrMsg = mErr.message;
+        }
+      }
 
       const elapsedSec = ((Date.now() - thinkingStartTime) / 1000).toFixed(1);
       removeThinkingIndicator();
 
-      if (!response.ok) {
-        const errJson = await response.json().catch(() => ({}));
-        const errMsg = errJson?.error?.message || `HTTP ${response.status}: Failed to generate response`;
-        appendMessage('bot', `**Error from AI service:** ${errMsg}`);
+      if (!reply) {
+        appendMessage('bot', `**Error from AI service:** ${lastErrMsg || 'All Gemini models unavailable. Please try again shortly.'}`);
         return;
       }
 
-      const data = await response.json();
-      const choice = data.choices?.[0];
-      const reply = choice?.message?.content || 'No response returned from model.';
-      const reasoning = choice?.message?.reasoning || choice?.message?.reasoning_details?.[0]?.text;
-
-      let fullHtml = '';
-      if (reasoning && reasoning.trim()) {
-        const safeReasoning = reasoning.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        fullHtml += `
-          <details class="nt-chat-thought-box">
-            <summary class="nt-chat-thought-summary">
-              <span class="nt-red-dot-mini"></span>
-              <span>Thought process (${elapsedSec}s)</span>
-            </summary>
-            <div class="nt-chat-thought-body">${safeReasoning}</div>
-          </details>
-        `;
-      }
+      let fullHtml = `
+        <details class="nt-chat-thought-box">
+          <summary class="nt-chat-thought-summary">
+            <span class="nt-red-dot-mini"></span>
+            <span>Generated in ${elapsedSec}s &bull; ${activeModel}</span>
+          </summary>
+          <div class="nt-chat-thought-body">Engine: Google Gemini (${activeModel})<br>Status: Success (200 OK)</div>
+        </details>
+      `;
       fullHtml += formatMarkdown(reply);
 
       appendMessage('bot', reply, fullHtml);
@@ -1227,7 +1270,7 @@ body.light-mode {
       if (err.name === 'AbortError') {
         appendMessage('bot', 'Generation stopped.');
       } else {
-        appendMessage('bot', `**Network Error:** Could not connect to OpenRouter (${err.message}). Check your internet connection.`);
+        appendMessage('bot', `**Network Error:** Could not connect to Gemini API (${err.message}). Check your internet connection.`);
       }
     } finally {
       isGenerating = false;
@@ -1271,7 +1314,7 @@ body.light-mode {
       const container = document.getElementById('ntBotMessages');
       container.innerHTML = `
         <div class="nt-bot-msg bot">
-          <span class="nt-bot-msg-role">NVIDIA Nemotron 3.5 Super VL</span>
+          <span class="nt-bot-msg-role">Google Gemini AI</span>
           <div class="nt-bot-bubble">
             Chat history cleared! How can I assist you with BEU ECE 4th Sem PYQs?
           </div>
@@ -1284,7 +1327,7 @@ body.light-mode {
       if (!text || isGenerating) return;
       textarea.value = '';
       textarea.style.height = 'auto';
-      sendToOpenRouter(text);
+      sendToGemini(text);
     }
 
     sendBtn.addEventListener('click', handleSend);
@@ -1321,7 +1364,7 @@ body.light-mode {
         win.classList.add('open');
       }
       updateScannerStatus();
-      sendToOpenRouter(promptText);
+      sendToGemini(promptText);
     },
     toggle: function () {
       const trigger = document.getElementById('ntBotTrigger');
