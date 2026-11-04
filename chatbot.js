@@ -26,6 +26,11 @@
     }
   }
 
+  function getAvatarUrl() {
+    const isSub = (typeof location !== 'undefined') && (location.pathname.indexOf('ECE_4th_Sem_PYQs') !== -1);
+    return isSub ? '../ai_assistant_avatar.jpg' : 'ai_assistant_avatar.jpg';
+  }
+
   // Portal Master Knowledge Base
   const PORTAL_KNOWLEDGE = {
     examRoutine: [
@@ -433,26 +438,179 @@ body.light-mode {
   z-index: 9998;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: var(--nt-bot-bg);
   border: 1px solid var(--nt-bot-border-light);
-  padding: 10px 14px;
-  border-radius: 24px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 28px;
   color: var(--nt-bot-text);
   font-family: 'JetBrains Mono', Consolas, monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 15px rgba(215, 25, 33, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
 .nt-bot-trigger:hover {
   border-color: var(--nt-bot-text);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7), 0 0 25px rgba(215, 25, 33, 0.35);
+}
+
+/* AI Avatar Orb (Muse AI & ChatGPT Dot Aesthetic) */
+.nt-bot-avatar-orb {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.45), 0 0 16px rgba(120, 80, 255, 0.25);
+  animation: nt-orb-breathe 3s ease-in-out infinite alternate;
+}
+
+.nt-bot-avatar-orb.header-orb {
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 14px rgba(215, 25, 33, 0.45), 0 0 22px rgba(120, 80, 255, 0.3);
+}
+
+.nt-bot-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nt-bot-orb-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: nt-orb-ripple 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes nt-orb-breathe {
+  0% { transform: scale(0.95); box-shadow: 0 0 8px rgba(215, 25, 33, 0.3), 0 0 12px rgba(120, 80, 255, 0.2); }
+  100% { transform: scale(1.05); box-shadow: 0 0 14px rgba(215, 25, 33, 0.6), 0 0 24px rgba(120, 80, 255, 0.4); }
+}
+
+@keyframes nt-orb-ripple {
+  0% { transform: scale(0.9); opacity: 0.85; }
+  60% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Inline Mini Avatar for Role and Messages */
+.nt-bot-role-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+}
+
+.nt-bot-avatar-mini {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(215, 25, 33, 0.35);
+}
+
+.nt-bot-avatar-img-mini {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.nt-bot-avatar-mini.thinking-orb {
+  animation: nt-orb-spin 5s linear infinite;
+}
+
+@keyframes nt-orb-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Welcome Card with Hero Orb */
+.nt-bot-welcome-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 14px 16px 14px;
+  margin-bottom: 6px;
+  background: radial-gradient(circle at 50% 25%, rgba(215, 25, 33, 0.08), rgba(20, 20, 20, 0.5) 75%);
+  border: 1px solid var(--nt-bot-border);
+  border-radius: 12px;
+}
+
+.nt-bot-welcome-orb-wrap {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nt-bot-welcome-orb {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(215, 25, 33, 0.5), 0 0 32px rgba(120, 80, 255, 0.35);
+  animation: nt-orb-breathe 3.5s ease-in-out infinite alternate;
+}
+
+.nt-bot-welcome-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.nt-bot-welcome-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(215, 25, 33, 0.4);
+  animation: nt-orb-ripple 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.nt-bot-welcome-text h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--nt-bot-text);
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.nt-bot-welcome-text p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  color: var(--nt-bot-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 320px;
 }
 
 .nt-bot-red-pulse {
@@ -945,10 +1103,14 @@ body.light-mode {
     // Create UI container
     const root = document.createElement('div');
     root.id = 'beuChatbotRoot';
+    const avatarSrc = getAvatarUrl();
     root.innerHTML = `
       <!-- Launcher Button -->
       <button id="ntBotTrigger" class="nt-bot-trigger" title="Open AI Study Assistant">
-        <span class="nt-bot-red-pulse"></span>
+        <div class="nt-bot-avatar-orb">
+          <img src="${avatarSrc}" alt="AI Orb" class="nt-bot-avatar-img" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+          <span class="nt-bot-orb-ring"></span>
+        </div>
         <span>AI ASSISTANT</span>
       </button>
 
@@ -957,7 +1119,10 @@ body.light-mode {
         <!-- Header -->
         <div class="nt-bot-header">
           <div class="nt-bot-header-left">
-            <span class="nt-bot-red-pulse"></span>
+            <div class="nt-bot-avatar-orb header-orb">
+              <img src="${avatarSrc}" alt="AI Orb" class="nt-bot-avatar-img" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+              <span class="nt-bot-orb-ring"></span>
+            </div>
             <div class="nt-bot-title-group">
               <h3>BEU AI ASSISTANT</h3>
               <div class="nt-bot-subtitle" id="ntBotScanLabel">GOOGLE GEMINI AI &bull; LIVE SCANNER</div>
@@ -971,12 +1136,16 @@ body.light-mode {
 
         <!-- Messages Area -->
         <div id="ntBotMessages" class="nt-bot-messages">
-          <div class="nt-bot-msg bot">
-            <span class="nt-bot-msg-role">Google Gemini AI</span>
-            <div class="nt-bot-bubble">
-              Hello! I am your <strong>BEU ECE 4th Sem AI Study Assistant</strong>.
-              <br><br>
-              I can solve questions step-by-step with clear derivations, provide subject notes links, and answer any syllabus queries.
+          <div class="nt-bot-welcome-card">
+            <div class="nt-bot-welcome-orb-wrap">
+              <div class="nt-bot-welcome-orb">
+                <img src="${avatarSrc}" alt="BEU AI Orb" class="nt-bot-welcome-img" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+                <div class="nt-bot-welcome-pulse-ring"></div>
+              </div>
+            </div>
+            <div class="nt-bot-welcome-text">
+              <h4>BEU AI STUDY ASSISTANT</h4>
+              <p>Powered by Google Gemini with live syllabus & PYQ scanner. Ask any question, circuit derivation, or formula derivation.</p>
             </div>
           </div>
         </div>
@@ -1046,9 +1215,22 @@ body.light-mode {
     const msgDiv = document.createElement('div');
     msgDiv.className = `nt-bot-msg ${role}`;
 
-    const roleSpan = document.createElement('span');
-    roleSpan.className = 'nt-bot-msg-role';
-    roleSpan.innerText = role === 'user' ? 'YOU' : 'Google Gemini AI';
+    if (role === 'bot') {
+      const roleLine = document.createElement('div');
+      roleLine.className = 'nt-bot-role-line';
+      roleLine.innerHTML = `
+        <div class="nt-bot-avatar-mini">
+          <img src="${getAvatarUrl()}" alt="AI" class="nt-bot-avatar-img-mini" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+        </div>
+        <span class="nt-bot-msg-role">Google Gemini AI</span>
+      `;
+      msgDiv.appendChild(roleLine);
+    } else {
+      const roleSpan = document.createElement('span');
+      roleSpan.className = 'nt-bot-msg-role';
+      roleSpan.innerText = 'YOU';
+      msgDiv.appendChild(roleSpan);
+    }
 
     const bubble = document.createElement('div');
     bubble.className = 'nt-bot-bubble';
@@ -1058,7 +1240,6 @@ body.light-mode {
       bubble.innerHTML = customHtml || formatMarkdown(rawContent);
     }
 
-    msgDiv.appendChild(roleSpan);
     msgDiv.appendChild(bubble);
 
     if (role === 'bot') {
@@ -1108,10 +1289,17 @@ body.light-mode {
     indicator.id = 'ntBotThinking';
     indicator.className = 'nt-bot-msg bot';
     indicator.innerHTML = `
-      <span class="nt-bot-msg-role">Google Gemini AI</span>
+      <div class="nt-bot-role-line">
+        <div class="nt-bot-avatar-mini thinking-orb">
+          <img src="${getAvatarUrl()}" alt="AI" class="nt-bot-avatar-img-mini" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+        </div>
+        <span class="nt-bot-msg-role">Google Gemini AI</span>
+      </div>
       <div class="nt-bot-bubble nt-bot-thinking-bubble">
         <div class="nt-thinking-header">
-          <span class="nt-thinking-red-dot"></span>
+          <div class="nt-bot-avatar-mini">
+            <img src="${getAvatarUrl()}" alt="AI" class="nt-bot-avatar-img-mini" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+          </div>
           <span>THINKING</span>
           <span class="nt-thinking-timer" id="ntThinkingTimer">0.0s</span>
         </div>
@@ -1312,11 +1500,18 @@ body.light-mode {
         localStorage.removeItem(STORAGE_KEY);
       } catch (e) {}
       const container = document.getElementById('ntBotMessages');
+      const avatarSrc = getAvatarUrl();
       container.innerHTML = `
-        <div class="nt-bot-msg bot">
-          <span class="nt-bot-msg-role">Google Gemini AI</span>
-          <div class="nt-bot-bubble">
-            Chat history cleared! How can I assist you with BEU ECE 4th Sem PYQs?
+        <div class="nt-bot-welcome-card">
+          <div class="nt-bot-welcome-orb-wrap">
+            <div class="nt-bot-welcome-orb">
+              <img src="${avatarSrc}" alt="BEU AI Orb" class="nt-bot-welcome-img" onerror="this.onerror=null;this.src='/ai_assistant_avatar.jpg';">
+              <div class="nt-bot-welcome-pulse-ring"></div>
+            </div>
+          </div>
+          <div class="nt-bot-welcome-text">
+            <h4>BEU AI STUDY ASSISTANT</h4>
+            <p>Chat cleared! Ready to solve BEU ECE 4th Sem PYQs, derivations & subject notes.</p>
           </div>
         </div>
       `;
